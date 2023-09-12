@@ -1,0 +1,24 @@
+user www-data;
+worker_procecces auto;
+pid /run/nginx.pid;
+
+events {
+      worker_connections 768;
+}
+
+http {
+      server {
+              listen 127.0.0.1:80;
+              root /var/www/html/faradis.net;   
+              domain_name faradis.net
+              access_log /var/log/nginx/faradis_access.log;
+              error_log /var/log/nginx/faradis_error.log;
+    }
+      server {
+              listen 127.0.0.1:80;
+              domain_name faratest.net
+              root /var/www/html/faratest.net
+              access_log /var/log/nginx/faratest_access.log;
+              error_log /var/log/nginx/faratest_error.log;
+  }
+}

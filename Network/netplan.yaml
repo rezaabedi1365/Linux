@@ -46,6 +46,6 @@ network:
         wifi:
           password: 0912@sam$2044
 ------------------------------------------------------
-
+#sudo netplan try
 #sudo netplan apply
 #sudo netplan --debug apply

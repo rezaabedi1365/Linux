@@ -1,0 +1,19 @@
+
+# /etc/bind/named.conf.options
+#named-checkconf /etc/bind/named.conf.options
+
+
+options {
+        directory "/var/cache/bind";
+        listen-on {
+          10.10.10.0/24;
+          10.1.0.0/16;
+          };
+        forwarders {
+          8.8.8.8;
+          8.8.4.4;
+          };
+        allow-query { any; };
+        dnssec-validation auto;
+        listen-on-v6 { any; };
+};

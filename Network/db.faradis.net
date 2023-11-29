@@ -1,0 +1,14 @@
+
+$TTL    604800  #ttl for SOA record
+@       IN      SOA     faradis.net     root.localhost. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry interval
+                        2419200         ; Expire
+                         604800 )       ; Cache TTL
+
+@       IN      NS      localhost.      
+@       IN      A       127.0.0.1       
+
+srv01.faradis.net.        IN        A        192.168.20.10
+srv02.faradis.net.        IN        A        192.168.20.11

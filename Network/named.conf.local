@@ -1,1 +1,10 @@
+#https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04
+# /etc/bind/named.conf.local
+
+zone "faradis.net" {
+    type master;
+    file "/etc/bind/zones/db.faradis.net"; # zone file path
+    allow-transfer { 10.128.20.12; };           # ns2 private IP address - secondary
+};
+
 

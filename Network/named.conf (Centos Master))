@@ -1,101 +1,58 @@
 #https://www.linuxteck.com/how-to-install-and-configure-master-slave-dns-in-centos-rhel-7-6/
-
+# /etc/bind/named.conf
 
     options {
-
     listen-on port 53 { 127.0.0.1; 192.168.0.100; }; ### Master DNS IP ##
-
     //              listen-on-v6 port 53 { ::1; }
-
     directory "/var/named";
-
     dump-file "/var/named/data/cache_dump.db";
-
     statistics-file "/var/named/data/named_stats.txt";
-
     memstatistics-file "/var/named/data/named_mem_stats.txt";
-
     recursing-file "/var/named/data/named.recursing";
-
     secroots-file "/var/named/data/named.secroots";
-
     allow-query { localhost; 192.168.0.0/24; }; ### IP Range ###
-
     allow-transfer { localhost; 192.168.0.101; }; ### Slave DNS IP ###
-
-     
-
     recursion no;
-
-     
-
     dnssec-enable yes;
-
     dnssec-validation yes;
-
     dnssec-lookaside auto;
-
-     
-
     /* Path to ISC DLV key */
-
     bindkeys-file "/etc/named.iscdlv.key";
-
     managed-keys-directory "/var/named/dynamic";
-
     pid-file "/run/named/named.pid";
-
     session-keyfile "/run/named/session.key";
-
     };
+
 
     logging {
-
     channel default_debug {
-
     file "data/named.run";
-
     severity dynamic;
-
     };
-
     };
 
      
-
-    # New entries added for the forward zone and reverser zone #
-
-     
-
+##Forward zone 
     zone "." IN {
-
     type hint;
-
     file "named.ca";
-
     };
-
     zone "linuxteck.com" IN {
-
     type master;
-
     file "forward.linuxteck";
-
     allow-update { none; };
-
     };
 
+
+
+##Reverse zone
     zone "0.168.192.in-addr.arpa" IN {
-
     type master;
-
     file "reverse.linuxteck";
-
     allow-update { none; };
-
     };
 
-    include "/etc/named.rfc1912.zones";
 
-    include "/etc/named.root.key";
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";
 

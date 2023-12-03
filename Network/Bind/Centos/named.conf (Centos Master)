@@ -1,5 +1,6 @@
 #https://www.linuxteck.com/how-to-install-and-configure-master-slave-dns-in-centos-rhel-7-6/
 # /etc/bind/named.conf
+# /var/log/messages | grep -i transfer
 
     options {
     listen-on port 53 { 127.0.0.1; 192.168.0.100; }; ### Master DNS IP ##
@@ -39,7 +40,7 @@
     };
     zone "faradis.net" IN {
     type master;
-    file "forward.linuxteck";
+    file "faradis.fwd.zone";
     allow-update { none; };
     };
 
@@ -48,7 +49,7 @@
 ##Reverse zone
     zone "0.168.192.in-addr.arpa" IN {
     type master;
-    file "reverse.linuxteck";
+    file "faradis.rev.zone";
     allow-update { none; };
     };
 

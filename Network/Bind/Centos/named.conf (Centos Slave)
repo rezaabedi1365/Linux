@@ -42,7 +42,7 @@
 ##Forward zone
     zone "linuxteck.com" IN {
     type slave;
-    file "slaves/linuxteck.fwd.zone";
+    file "slaves/faradis.fwd.zone";
     masters { 192.168.0.100; };
     };
 
@@ -50,7 +50,7 @@
 ##Reverse zone
     zone "0.168.192.in-addr.arpa" IN {
     type slave;
-    file "slaves/linuxteck.rev.zone";
+    file "slaves/faradis.rev.zone";
     masters { 192.168.0.100; };
     };
 

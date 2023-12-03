@@ -6,7 +6,7 @@
 ##Forward zone
 zone "faradis.net" IN {
     type master;                                 // Primary DNS
-    file "/etc/bind/zones/db.faradis.net";       // Forward lookup file
+    file "/etc/bind/zones/faradis.fwd.zone";       // Forward lookup file
     allow-update { none; };                      // Since this is the primary DNS, it should be none.    
     allow-transfer { 10.128.20.12; };            // Slave address
     also-notify { 172.16.10.10; };               //Notify slave for zone changes
@@ -17,7 +17,7 @@ zone "faradis.net" IN {
 ##Reverse zone
 zone "168.192.in-addr.arpa" IN {                 //Reverse lookup name, should match your network in reverse order
     type master;                                 // Primary DNS
-    file "/etc/bind/db.192.168";                 //Reverse lookup file
+    file "/etc/bind/faradis.rev.zone";                 //Reverse lookup file
     allow-transfer { 172.16.10.10; };            // Slave address
     allow-update { none; };                      //Since this is the primary DNS, it should be none.
     allow-transfer  { 172.16.10.10; };           //Allow Transfer of zone from the master server

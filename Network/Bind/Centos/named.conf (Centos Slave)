@@ -1,11 +1,12 @@
 
 #https://www.linuxteck.com/how-to-install-and-configure-master-slave-dns-in-centos-rhel-7-6/
 # /etc/bind/named.conf
-
+# /var/log/messages | grep -i transfer
 
     options {
-    listen-on port 53 { 127.0.0.1; 192.168.0.101; };              ##Slave Server IP
-    //                       listen-on-v6 port 53 { ::1; };
+    listen-on port 53 { any; };
+ // listen-on port 53 { 127.0.0.1; 192.168.0.101; };              ##Slave Server IP's
+ // listen-on-v6 port 53 { ::1; };
     directory "/var/named";
     dump-file "/var/named/data/cache_dump.db";
     statistics-file "/var/named/data/named_stats.txt";
@@ -40,9 +41,9 @@
 
      
 ##Forward zone
-    zone "linuxteck.com" IN {
+    zone "faradis.net" IN {
     type slave;
-    file "slaves/faradis.fwd.zone";
+    file "slaves/faradis.fwd.zone";       #default path /var/named
     masters { 192.168.0.100; };
     };
 
@@ -50,7 +51,7 @@
 ##Reverse zone
     zone "0.168.192.in-addr.arpa" IN {
     type slave;
-    file "slaves/faradis.rev.zone";
+    file "slaves/faradis.rev.zone";       #default path /var/named
     masters { 192.168.0.100; };
     };
 

@@ -1,5 +1,6 @@
-#sudo apt-get install -y bind9 bind9utils bind9-doc dnsutils
-
+#sudo apt-get install -y bind9 bind9utils bind9-doc dnsutils#https://computingforgeeks.com/configure-slave-bind-dns-server-on-ubuntu/
+#https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04
+# /etc/bind/named.conf.local
 
 ###Forward Zone
 zone "computingforgeeks.local" IN {                      //Domain name

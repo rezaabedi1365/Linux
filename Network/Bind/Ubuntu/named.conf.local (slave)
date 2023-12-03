@@ -1,25 +1,19 @@
 #sudo apt-get install -y bind9 bind9utils bind9-doc dnsutils
 
+
 ###Forward Zone
-
 zone "computingforgeeks.local" IN {                      //Domain name
-
-     type slave;                                        //Secondary Slave DNS
-
-     file "/etc/bind/192.168.db";                       //Forward Zone Cache file
-
+     type slave;                                         //Secondary Slave DNS
+     file "/etc/bind/faradis.fwd.zone";                  //Forward Zone Cache file
      masters { 172.16.10.2; };                          //Master Server IP
-
 };
 
+
+
+
 ####Reverse zone
-
 zone "10.16.172.in-addr.arpa" IN { //Reverse lookup name. Should match your network in reverse order
-
      type slave;                                       // Secondary/Slave DNS
-
-     file "/etc/bind/192.168.db"";                     //Reverse Zone Cache file
-
+     file "/etc/bind/faradis.rev.zone"";               //Reverse Zone Cache file
      masters { 172.16.10.2; };                         //Master Server IP
-
 };

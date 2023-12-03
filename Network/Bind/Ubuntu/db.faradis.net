@@ -8,8 +8,10 @@ $TTL    604800  #ttl for SOA record
                         2419200         ; Expire
                          604800 )       ; Cache TTL
 
-@       IN      NS      localhost.      
-@       IN      A       127.0.0.1       
+@       IN      NS      ns01.faradis.net.      
+@       IN      NS       ns02.faradis.net   
 
-srv01.faradis.net.        IN        A        192.168.20.10
-srv02.faradis.net.        IN        A        192.168.20.11
+ns01.faradis.net.         IN        A        192.168.20.10
+ns02.faradis.net.         IN        A        192.168.20.11
+srv01.faradis.net.        IN        A        192.168.20.15
+srv02.faradis.net.        IN        A        192.168.20.16

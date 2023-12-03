@@ -1,0 +1,34 @@
+
+#https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04
+
+# /etc/bind/named.conf.options
+#named-checkconf /etc/bind/named.conf.options
+
+acl "trusted" {
+        192.168.10.0/24;
+        10.128.10.11;    # ns1 - can be set to localhost
+        10.128.20.12;    # ns2
+        10.128.100.101;  # host1
+        10.128.200.102;  # host2
+};
+
+options {
+        directory "/var/cache/bind";
+        listen-on {
+          10.10.10.0/24;
+          10.1.0.0/16;
+          };
+
+        recursion yes;                 # enables resursive queries
+        allow-transfer { none; };      # disable zone transfers by default
+        allow-recursion { trusted; };  # allows recursive queries from "trusted" clients
+        allow-query { any; };
+        dnssec-validation auto;
+        listen-on-v6 { any; };
+
+        forwarders {
+          8.8.8.8;
+          8.8.4.4;
+          };
+};
+

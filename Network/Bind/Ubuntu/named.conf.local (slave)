@@ -2,8 +2,8 @@
 #https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04
 # /etc/bind/named.conf.local
 
-###Forward Zone
-zone "computingforgeeks.local" IN {                      //Domain name
+####Forward Zone
+zone "faraids.net" IN {                                  //Domain name
      type slave;                                         //Secondary Slave DNS
      file "/etc/bind/faradis.fwd.zone";                  //Forward Zone Cache file
      masters { 172.16.10.2; };                          //Master Server IP
@@ -11,9 +11,8 @@ zone "computingforgeeks.local" IN {                      //Domain name
 
 
 
-
 ####Reverse zone
-zone "10.16.172.in-addr.arpa" IN { //Reverse lookup name. Should match your network in reverse order
+zone "10.16.172.in-addr.arpa" IN {                     //Reverse lookup name. Should match your network in reverse order
      type slave;                                       // Secondary/Slave DNS
      file "/etc/bind/faradis.rev.zone"";               //Reverse Zone Cache file
      masters { 172.16.10.2; };                         //Master Server IP

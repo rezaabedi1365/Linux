@@ -1,3 +1,5 @@
+#/etc/netplan/00-installer-config.yaml 
+
 network:
   version: 2
 # renderer: NetworkManager
@@ -9,9 +11,6 @@ network:
 #     addresses: [10.10.11.110/24]
       addresses:
         - 10.10.11.110/24
-#     gateway4: 10.10.11.1
-     gateway4: 
-        - 10.10.11.1
       routes:
         - to: default
           via: 10.10.10.1

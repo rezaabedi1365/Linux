@@ -37,7 +37,7 @@
     type hint;
     file "named.ca";
     };
-    zone "linuxteck.com" IN {
+    zone "faradis.net" IN {
     type master;
     file "forward.linuxteck";
     allow-update { none; };

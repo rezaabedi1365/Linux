@@ -3,8 +3,17 @@
 # /etc/bind/named.conf
 # /var/log/messages | grep -i transfer
 
-// #sed -i '10 r /root/named.conf.tsig' /etc/baind/named.conf
 
+// #sed -i '10 r /root/named.conf.tsig' /etc/baind/named.conf 
+##secure zone trnasfer
+// key "dnskey" {
+//        algorithm hmac-md5;
+//        secret "3Uomm8fLpgkN2vRylI31rA==";
+// };
+
+// server 192.168.1.5 {
+//    keys { dnskey; } ;
+// };
 
 
 

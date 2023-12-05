@@ -33,9 +33,11 @@ options {
 
 logging {
     channel query.log {
-        file "/var/log/query.log";
-        // Set the severity to dynamic to see all the debug messages.
-        severity dynamic;
+        file "/var/log/query.log" versions 3 size 20m;
+        print-time yes;
+        Print-category yes;
+        print-severity yes;
+        severity info;
         };
      };
 

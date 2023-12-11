@@ -5,20 +5,22 @@
 
 ```
 cd /etc/apache2/sites-enabled
-sudo ln -s /etc/apache2/sites-available/subdomain-example-com.conf
+sudo ln -s /etc/apache2/sites-available/my_site.conf
 
 ```
 
 ### Method 2
 
 ```
-a2ensite <site>
+cd /etc/apache2/sites-available
+a2ensite my_site.conf
 
 ```
 
 
 ```
- a2dissite <site>
+cd /etc/apache2/sites-available
+ a2dissite my_site.conf
 
 ```
 

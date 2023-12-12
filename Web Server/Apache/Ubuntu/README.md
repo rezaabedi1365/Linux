@@ -24,7 +24,11 @@ cd /etc/apache2/sites-available
 
 ```
 
+# Verify
+```
+sudo apache2ctl configtest
 
+```
 
 
 

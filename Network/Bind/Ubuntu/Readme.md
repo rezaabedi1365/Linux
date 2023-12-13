@@ -22,6 +22,12 @@ key "dnskey" {
 ```
 echo " include "/etc/bind/named.conf.tsig" " >> /etc/bind/named.conf
 ```
+
+### Send key to DNS Slave with scp
+
+```
+SCP 
+```
 ### add transfer method in specific zone  both master and slave side
 /etc/bind/named.conf.local
 ```
@@ -33,11 +39,11 @@ allow-transfer ( key "dnskey"; )
 ```
 rndc reload
 ```
-### Send key to DNS Slave with scp
+## Verify:
+```
+grep -i transfer /var/log/messages
+```
 
-```
-SCP 
-```
 
 
 

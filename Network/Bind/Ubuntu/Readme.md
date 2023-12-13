@@ -7,6 +7,7 @@ Generate key on master DNS and send it with scp to slave DNS
 ```
 tsig-keygen -a hmac-sha512 dnskey
 ```
+Output:
 
 ```
 key "dnskey" {

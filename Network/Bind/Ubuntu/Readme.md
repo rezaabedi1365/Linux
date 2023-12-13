@@ -20,13 +20,18 @@ key "dnskey" {
 ```
 echo " include "/etc/bind/named.conf.tsig" " >> /etc/bind/named.conf
 ```
+### add transfer method in specific zone  both master and slave side
+/etc/bind/named.conf.local
+```
+allow-transer ( key "dnskey"; )
+```
 
 ### Reload BIND Config file
 
 ```
 rndc reload
 ```
-### Send ksy to DNS Slave with scp
+### Send key to DNS Slave with scp
 
 ```
 SCP 

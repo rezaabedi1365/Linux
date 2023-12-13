@@ -5,7 +5,7 @@
 ### Transaction SIGnitures (TSIG)
 Generate key on master DNS and send it with scp to slave DNS
 ```
-tsig-keygen -a hmac-sha512 dnskey
+tsig-keygen -a hmac-sha512 dnskey  > /etc/bind/named.conf.tsig
 ```
 Output:
 
@@ -16,8 +16,21 @@ key "dnskey" {
 };
 
 ```
+### Add file path in named.conf
+```
+echo " include "/etc/bind/named.conf.tsig" " >> /etc/bind/named.conf
+```
 
+### Reload BIND Config file
 
+```
+rndc reload
+```
+### Send ksy to DNS Slave with scp
+
+```
+SCP 
+```
 
 
 

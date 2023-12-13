@@ -4,6 +4,8 @@
 
 ### Transaction SIGnitures (TSIG)
 Generate key on master DNS and send it with scp to slave DNS
+
+### Generate key in named.conf.tsig
 ```
 tsig-keygen -a hmac-sha512 dnskey  > /etc/bind/named.conf.tsig
 ```

@@ -20,14 +20,3 @@ a2ensite my_site.conf
 cd /etc/apache2/sites-available
  a2dissite my_site.conf
 ```
-```
-
-
-
-
-
-
-
-
-
-

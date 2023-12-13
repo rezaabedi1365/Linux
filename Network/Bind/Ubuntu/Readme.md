@@ -23,7 +23,7 @@ echo " include "/etc/bind/named.conf.tsig" " >> /etc/bind/named.conf
 ### add transfer method in specific zone  both master and slave side
 /etc/bind/named.conf.local
 ```
-allow-transer ( key "dnskey"; )
+allow-transfer ( key "dnskey"; )
 ```
 
 ### Reload BIND Config file

@@ -23,17 +23,24 @@ key "dnskey" {
 echo " include "/etc/bind/named.conf.tsig" " >> /etc/bind/named.conf
 ```
 
-### Send key to DNS Slave with scp
-
-```
-SCP 
-```
-### add transfer method in specific zone  both master and slave side
+### add transfer method in specific zone in master
 /etc/bind/named.conf.local
 ```
 allow-transfer ( key "dnskey"; )
 ```
+### add transfer method in slave
+/etc/bind/named.conf
+```
+key "dnskey" {
+        algorithm hmac-sha512;
+        secret "ylSw8yq98XYHfqXrmbbqF9tQ07ck7PekYQ6jF1H1vP1OrDIQckA0b/0OuGe2sFPpj+HCGg/cE1Pj4Viyi8r09w==";
+};
 
+server 10.10.11.110 {
+        keys { dnskey; };
+ };
+
+```
 ### Reload BIND Config file
 
 ```

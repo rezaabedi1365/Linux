@@ -4,16 +4,24 @@
 ### Method 1
 
 ```
-tsig-keygen -a hmac-sha512 dnskey
+cd /etc/apache2/sites-enabled
+sudo ln -s /etc/apache2/sites-available/my_site.conf
+```
+
+### Method 2
 
 ```
-output:
+cd /etc/apache2/sites-available
+a2ensite my_site.conf
 ```
-key "dnskey" {
-        algorithm hmac-sha512;
-        secret "ylSw8yq98XYHfqXrmbbqF9tQ07ck7PekYQ6jF1H1vP1OrDIQckA0b/0OuGe2sFPpj+HCGg/cE1Pj4Viyi8r09w==";
-};
+
+
 ```
+cd /etc/apache2/sites-available
+ a2dissite my_site.conf
+```
+```
+
 
 
 

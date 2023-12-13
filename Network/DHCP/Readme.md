@@ -8,7 +8,9 @@ sudo nano ddns-keys/dhcp1.key
 ```
 include "/etc/bind/rndc.key";
 \\ key rndc-key {
-          algorithm hmac-sha256; secret "FxU11YBMFyXP8evP1Ei0zw==";}
+          algorithm hmac-sha256;
+          secret "FxU11YBMFyXP8evP1Ei0zw=="
+          ;}
           *youcan enter key direct in config file or use incude
 
 authoritative;

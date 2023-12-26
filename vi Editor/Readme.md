@@ -1,8 +1,8 @@
 
 # Vi 
-
-### Delete
-
+## Delete Line
+-----------------------------------------------------------
+###  Remove Lines Based on Regular Expressions 
 ```
 :g!/word/d
 ```

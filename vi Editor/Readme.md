@@ -16,4 +16,11 @@
 ######  How to Delete a Single Line in Vi/Vim 
 Hitting dd or D multiple times will delete several lines one by one.
 
+## cut , copy , past Lines
+
+* dd - detelte line
+* d  - cut line
+* yy - copy line
+* p  - past line
+
 

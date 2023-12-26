@@ -11,5 +11,5 @@
 :[start],[end]d
 :.,5d # deletes lines between the current line and the fifth line
 :.,$d # removes all lines starting from the current line till the end
-:%d # clears the entire file
+:%d # clears all line
 ```

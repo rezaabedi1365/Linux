@@ -31,6 +31,10 @@ Hitting dd or D multiple times will delete several lines one by one.
 ## Select
  * V - select line
  * v + arrow keys - selection
+   
+## Undo / Redo 
+* u  - Undo
+* ctrl+r - Redo
 
 ## Page 
 * gg - Go to first line file

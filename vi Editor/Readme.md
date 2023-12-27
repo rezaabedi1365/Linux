@@ -3,6 +3,11 @@
 
 ## Delete Line
 ######  Remove Lines Based on Regular Expressions 
+Remove line contain word
+```
+:g/word/d
+```
+Remove line dosnot contain word
 ```
 :g!/word/d
 ```
@@ -26,3 +31,7 @@ Hitting dd or D multiple times will delete several lines one by one.
 ## Select
  * V - select line
  * v + arrow keys - selection
+
+## Page 
+* gg - Go to first line file
+* G  - Go to last line in file

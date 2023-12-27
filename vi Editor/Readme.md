@@ -23,4 +23,6 @@ Hitting dd or D multiple times will delete several lines one by one.
 * yy - copy line
 * p  - past line
 
-
+## Select
+ * V - select line
+ * v + arrow keys - selection

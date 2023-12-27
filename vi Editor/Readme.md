@@ -11,7 +11,19 @@ Remove Lines Based on Regular Expressions
 ```
 :g!/word/d
 ```
+Find and Replace
+###### Find first word after curser and repelace with word2
+```
+:s/word/word2
+```
+###### Find all word in file and replace with word2
+```
+:%s/word/word2
+```
+
+
 ######  Deleting Multiple Lines in Vi and Vim 
+
 ```
 :[start],[end]d
 :.,5d # deletes lines between the current line and the fifth line

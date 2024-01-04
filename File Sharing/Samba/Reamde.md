@@ -27,15 +27,15 @@ smb://ip-address/sharing
     log level = 1 
     max log size = 1000
     read only = no
-### Networking #####
+  ### Networking #####
     interfaces= ens160
     bind interfaces only= yes
-### Debuging #####
+  ### Debuging #####
     log file = /var/log/samba/log.%m
     max log size = 1000
     logging = file
     panic action = /usr/share/samba/panic-action %d
-### Authentication, Domain, and Misc #####
+  ### Authentication, Domain, and Misc #####
     server role = standalone server
     obey pam restrictions = yes
     unix password sync = yes

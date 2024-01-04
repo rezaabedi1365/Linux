@@ -28,7 +28,18 @@ systemctsl status smbd
     printable = yes
     min print space = 2000
 [test]
-    browsable = yes
-    read only = yes
-    path = /usr/local/samba/tmp
+    comment = Samba share directory
+    path = /home/sharing
+    read only = no
+    writable = yes
+    browseable = yes
+    guest ok = no
+    valid users = @saraz @new_user
+```
+###  Set Up a User Account
+```
+smbpasswd -a new_user.
+```
+```
+sudo setfacl -R -m "u:new_user:rwx" /home/sharing
 ```

@@ -5,7 +5,8 @@ https://phoenixnap.com/kb/ubuntu-samba
 * winbindd (join linux to Windows Domain)
 
 ```
-apt install samba 
+apt install samba
+apt install samba-client
 ```
 ```
 systemctsl status smbd
@@ -18,6 +19,7 @@ smb://ip-address/sharing
 ```
 ### Configuration files
 * /etc/samba/smb.conf
+* /var/lib/samba/private/passdb.tdb
   
 ```
 [global]
@@ -69,6 +71,28 @@ check for syntax errors:
 testparm
 ```
 ###  Set Up a User Account
+samba user must be created in passwd
+```
+grep -E 'reza' /etc/passwd
+```
+### pdbedit
+show users
+```
+pdbedit -L
+```
+add user
+```
+useradd -md /home/reza -s /bin/bash reza
+```
+```
+pdbedit -a -u reza
+```
+
+Detete users
+```
+pdbedit -X
+```
+### smbpasswd
 ```
 smbpasswd -a new_user.
 ```

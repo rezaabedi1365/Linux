@@ -75,7 +75,7 @@ samba user must be created in passwd
 ```
 grep -E 'reza' /etc/passwd
 ```
-### pdbedit
+##### pdbedit
 show users
 ```
 pdbedit -L
@@ -92,7 +92,7 @@ Detete users
 ```
 pdbedit -X
 ```
-### smbpasswd
+##### smbpasswd
 ```
 smbpasswd -a new_user.
 ```

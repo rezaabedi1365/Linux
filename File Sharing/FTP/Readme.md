@@ -3,7 +3,7 @@
 * /etc/vsftpd.conf
 * /etc/vsftpd.userlist
 * /etc/nsswitch.conf
-  dir /etc/pam.d/
+* dir /etc/pam.d/
 
   -----------------------------------------------------------------
 ```

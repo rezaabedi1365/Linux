@@ -3,6 +3,9 @@
 * nmbd  ( wins )
 * winbindd (join linux to Windows Domain)
 
+### Configuration files
+* /etc/samba/smb.conf
+
 ```
 apt install samba 
 ```

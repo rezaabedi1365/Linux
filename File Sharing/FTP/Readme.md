@@ -2,6 +2,6 @@
 
 
 ```
-apt install nfs-kernel-server
+apt install vsftpd
 ```
 

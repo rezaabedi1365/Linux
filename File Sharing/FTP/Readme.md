@@ -3,7 +3,7 @@
 * /etc/vsftpd.conf
 * /etc/vsftpd.userlist
 * /etc/nsswitch.conf
-* /etc/pam.d
+  dir /etc/pam.d/
 
   -----------------------------------------------------------------
 ```
@@ -17,12 +17,7 @@ ufw allow from any to any port 20,21,10000:10100 proto tcp
  systemctl restart vsftpd
 ```
 ## /etc/vsftpd.conf
-* /etc/vsftpd.userlist
-```
-userlist_enable=YES
-userlist_file=/etc/vsftp.user_list
-userlist_deny=NO
-```
+
 ```
 listen=NO
  listen ipv6=YES 
@@ -43,4 +38,10 @@ pasv_enable=Yes
 pasv_min_port=10000 
 pasv_max_port=10100 
 allow_writeable_chroot=YES
+```
+* /etc/vsftpd.userlist
+```
+userlist_enable=YES
+userlist_file=/etc/vsftp.user_list
+userlist_deny=NO
 ```

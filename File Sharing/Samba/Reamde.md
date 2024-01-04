@@ -17,6 +17,7 @@ ufw allow samba
 smb://ip-address/sharing
 ```
 smbclient -L 192.168.10.10 -U reza
+smbclient //192.168.10.10 -U reza
 ```
 ### Configuration files
 * /etc/samba/smb.conf

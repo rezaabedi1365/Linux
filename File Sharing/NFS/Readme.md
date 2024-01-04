@@ -21,5 +21,7 @@ show mount point
 ```
 showmount -e 192.168.10.10
 ```
-
+```
+df -h
+```
 

@@ -14,8 +14,9 @@ systemctsl status smbd
 ```
 ufw allow samba
 ```
-```
 smb://ip-address/sharing
+```
+smbclient -L 192.168.10.10 -U reza
 ```
 ### Configuration files
 * /etc/samba/smb.conf
@@ -28,7 +29,7 @@ smb://ip-address/sharing
     wins support = yes
     log level = 1 
     max log size = 1000
-    read only = no
+    read only = no    
   ### Networking #####
     interfaces= ens160
     bind interfaces only= yes
@@ -60,8 +61,7 @@ smb://ip-address/sharing
 [test]
     comment = Samba share directory
     path = /home/sharing
-    read only = no
-    writable = yes
+    read only = no   // or writable = yes
     browseable = yes
     guest ok = no
     valid users = @saraz @new_user

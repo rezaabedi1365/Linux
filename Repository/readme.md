@@ -2,7 +2,6 @@
 # Repository
 
 ###### add repo
-Remove Lines Based on Regular Expressions 
  
 ```
 install software-properties-common
@@ -25,7 +24,4 @@ add-apt-repository \
    stable"
 ```
 
-###### Remove line dosnot contain word
-```
-:g!/word/d
-```
+

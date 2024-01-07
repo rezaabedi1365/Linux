@@ -14,7 +14,7 @@ sudo add-apt-repository multiverse
 ```
 
 ```
-apt-add-repository -y ppa:ubuntugis/ppa
+apt-add-repository ppa:ansible/ansible
 ```
 -----------------
 #### install docker

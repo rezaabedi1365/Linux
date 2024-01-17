@@ -1,1 +1,26 @@
+curl ftp://ftp.example.com/
+curl ftps://ftp.example.com/
+curl sftp://ftp.example.com/
+
+
+curl http://ftp.example.com/
+curl https://ftp.example.com/
+
+
+curl smb://ftp.example.com/
+
+
+-o download
+
+-T upload
+
+-u username:password
+
+--limit-raye 1000k
+
+-C Resume download
+
+-# showw proccess bar 
+--silent disable procces bar
+
 

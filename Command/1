@@ -1,13 +1,13 @@
-curl ftp://ftp.example.com/
-curl ftps://ftp.example.com/
-curl sftp://ftp.example.com/
+curl ftp://example.com/file1.txt
+curl ftps://example.com/file1.txt
+curl sftp://example.com/file1.txt
 
 
-curl http://ftp.example.com/
-curl https://ftp.example.com/
+curl http://example.com/file1.txt
+curl https://example.com/file1.txt
 
 
-curl smb://ftp.example.com/
+curl smb://example.com/file1.txt
 
 
 -o download
@@ -23,4 +23,6 @@ curl smb://ftp.example.com/
 -# showw proccess bar 
 --silent disable procces bar
 
+
+wget 
 

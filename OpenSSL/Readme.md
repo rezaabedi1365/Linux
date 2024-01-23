@@ -20,4 +20,4 @@ openssl req -new -key private_key.key -out CSR.csr
 ```
 ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/b3393492-ef01-4307-9385-1b01f2a643a8)
 
-
+ ####  Step 2: Signing certificates

@@ -10,7 +10,7 @@ openssl genrsa -des3 -out private_key.key 2048
 ```
 Enables password for the private key:
 ```
-openssl req -new -key private_key.key -out CSR.csr
+openssl rsa -des3 -in path_to_private_key.key -out key_name.key
 ```
 
  ####  Create a certificate signing request (CSR)

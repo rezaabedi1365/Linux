@@ -41,9 +41,26 @@ certbot --apache -d yourdomain.com -d www.yourdomain.com
  ####  List the Certificates installed on a server
  ```
 sudo certbot certificates
+
  ```
-#### Verifying Certbot Auto-Renewal
+#### Certbot Auto-Renewal
+```
+sudo nano /etc/cron.daily/certbot-renew
+sudo chmod +x /etc/cron.daily/certbot-renew
+```
+```
+#!/bin/sh
+if certbot renew > /var/log/letsencrypt/renew.log 2>&1 ; then
+   /etc/init.d/apache2 reload >> /var/log/letsencrypt/renew.log
+fi
+exit
+```
+```
+sudo crontab -e
+01 02,14 * * * /etc/cron.daily/certbot-renew
+```
+Verifying Certbot Auto-Renewal:
 ```
 sudo systemctl status certbot.timer
-sudo certbot renew --dry-run
+sudo certbot renew --dry-run --agree-tos
 ```

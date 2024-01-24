@@ -6,7 +6,11 @@ https://www.clusterednetworks.com/blog/post/common-certbot-commands
 
  ####  Install a New Certificate
 ```
+certbot --apache
 certbot --apache -d www.faratest.com
+```
+```
+certbot --nginx
 certbot --nginx -d www.faratest.com
 ```
 nginx plugin:
@@ -37,4 +41,9 @@ certbot --apache -d yourdomain.com -d www.yourdomain.com
  ####  List the Certificates installed on a server
  ```
 sudo certbot certificates
+ ```
+#### Verifying Certbot Auto-Renewal
+```
+sudo systemctl status certbot.timer
+sudo certbot renew --dry-run
 ```

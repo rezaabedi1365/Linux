@@ -33,7 +33,7 @@ p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArPdDS3zq7wsDtXR/dP9QVaay1m0QpksDul
 https://www.mailhardener.com/tools/dns-record-splitter
  *  DNS record splitter 
 ------------------------------------------------------------------------
-# ُSPF ”Sender Policy Framework”
+# SPF ”Sender Policy Framework”
 ```
 v=spf1 mx ip4:5.100.84.78 ~all
 ```
@@ -41,7 +41,7 @@ v=spf1 mx ip4:5.100.84.78 ~all
 
 
 ------------------------------------------------------------------------
-# ُDMARC “Domain-based Message Authentication, Reporting & Conformance
+## DMARC “Domain-based Message Authentication, Reporting & Conformance
 ```
 v=DMARC1; p=reject; rua=mailto:fdmarc@fartest.net; ruf=mailto:fdmarc@faratest.net; fo=1
 ```

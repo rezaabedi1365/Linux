@@ -1,6 +1,6 @@
 
 
-# Create certificates
+# Create CSR
 https://www.mailhardener.com/kb/how-to-create-a-dkim-record-with-openssl
 
  ####  Step 1: Creating private keys and certificates

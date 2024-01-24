@@ -20,6 +20,7 @@ sudo apt install certbot python3-certbot-apache
 Install Let’s Encrypt with IIS on Windows Server 2019
 ```
 https://www.snel.com/support/how-to-install-lets-encrypt-with-iis-on-windows-server-2019/
+https://github.com/win-acme/win-acme
 ```
 #### Renew Certificates
 ```
@@ -33,3 +34,7 @@ certbot --apache -d yourdomain.com
 certbot --apache -d yourdomain.com -d www.yourdomain.com
 ```
 
+ ####  List the Certificates installed on a server
+ ```
+sudo certbot certificates
+```

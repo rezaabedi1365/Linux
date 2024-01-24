@@ -1,6 +1,6 @@
 
-
-# How to create a DKIM record with OpenSSL
+# DKIM ”Domain Keys Identified Mail”
+## How to create a DKIM record with OpenSSL
 https://www.mailhardener.com/kb/how-to-create-a-dkim-record-with-openssl
 
  ####  Generating the private key
@@ -32,4 +32,23 @@ p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArPdDS3zq7wsDtXR/dP9QVaay1m0QpksDul
 #### DNS length limitations
 https://www.mailhardener.com/tools/dns-record-splitter
  *  DNS record splitter 
+------------------------------------------------------------------------
+# ُSPF ”Sender Policy Framework”
+```
+v=spf1 mx ip4:5.100.84.78 ~all
+```
 
+
+
+------------------------------------------------------------------------
+# ُDMARC “Domain-based Message Authentication, Reporting & Conformance
+```
+v=DMARC1; p=reject; rua=mailto:fdmarc@fartest.net; ruf=mailto:fdmarc@faratest.net; fo=1
+```
+![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/7cd83fac-a65d-4ea5-bc65-af65d3c48a74)
+
+------------------------------------------------------------------------
+# ُgoogle-site-verification
+```
+google-site-verification=P6deWWdFHInTYZx6jeUfY_HRRvJgj666kbEWNbNV9b0
+```

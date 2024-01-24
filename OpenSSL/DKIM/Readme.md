@@ -1,4 +1,4 @@
-
+https://www.netafraz.com/blog/how-to-set-up-spf-dkim-dmarc/
 # DKIM ”Domain Keys Identified Mail”
 ## How to create a DKIM record with OpenSSL
 https://www.mailhardener.com/kb/how-to-create-a-dkim-record-with-openssl

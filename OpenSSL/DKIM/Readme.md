@@ -48,7 +48,7 @@ v=DMARC1; p=reject; rua=mailto:fdmarc@fartest.net; ruf=mailto:fdmarc@faratest.ne
 ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/7cd83fac-a65d-4ea5-bc65-af65d3c48a74)
 
 ------------------------------------------------------------------------
-# ُgoogle-site-verification
+# google-site-verification
 ```
 google-site-verification=P6deWWdFHInTYZx6jeUfY_HRRvJgj666kbEWNbNV9b0
 ```

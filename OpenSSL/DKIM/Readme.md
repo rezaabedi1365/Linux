@@ -1,3 +1,28 @@
+# Mail DNS Records
+ * Recive Email
+    - MX Record
+    - A Record
+ * Send Email
+    - A (smtp.faratest.net_
+    - SPF
+    - DMARC
+    - DKIM
+  --------------------------------------------------------------    
+  https://easydmarc.com/tools
+  * SPF Checker
+  * SFP Generator
+  * DMARC Checker
+  * DMARC Generator
+  * DKIM Checker
+  * DKIM Generator
+
+https://mxtoolbox.com
+ * SMTP Checker
+ * MX Checker
+ * SPF Checker
+ * DMARC Checker
+ * DKIM Checker
+---------------------------------------------------------------
 https://www.netafraz.com/blog/how-to-set-up-spf-dkim-dmarc/
 # DKIM ”Domain Keys Identified Mail”
 ## How to create a DKIM record with OpenSSL

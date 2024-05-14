@@ -1,6 +1,18 @@
 #/etc/nginx/sites-available/your_domain
+--------------------------------------------------------------------
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
 
-  
+events {
+        worker_connections 768;
+
+# Logging Settings
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+
+# Server Directions 
 server {
         server_name _;
         listen 80 default_server;

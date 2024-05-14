@@ -18,16 +18,35 @@ events {
 
 # Server Directions 
 server {
-        server_name _;
+      #http
+        server_name faradis.net;
         listen 80 default_server;
         listen [::]:80 default_server;
      // listen 443 ssl default_server;
      // listen [::]:443 ssl default_server;
 
         index index.html index.htm index.nginx-debian.html;
-          root /var/www/html;
+        root /var/www/html/your.domain.com/;
         location / {
                 try_files $uri $uri/ =404;
+      ##https
+        server_name faradis.net;
+        listen   443;
+        ssl    on;
+        ssl_certificate    /etc/ssl/your_domain_name.pem; (or bundle.crt)
+        ssl_certificate_key    /etc/ssl/your_domain_name.key;
+
+        access_log /var/log/nginx/nginx.vhost.access.log;
+        error_log /var/log/nginx/nginx.vhost.error.log;
+        location / {
+        root   /home/www/your.domain.com/;
+        index  index.html;
+}
+
+
+
+
+
         }
 
   

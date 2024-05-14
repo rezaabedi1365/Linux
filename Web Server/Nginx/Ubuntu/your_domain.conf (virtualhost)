@@ -1,3 +1,6 @@
+# Virtual Host Configs
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
 
 
 <VirtualHost 10.10.11.110:80>

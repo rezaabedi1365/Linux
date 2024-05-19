@@ -1,0 +1,17 @@
+
+upstream loadbalancer {
+
+       server 10.10.12.22:80;
+       server 10.10.12.23:80;
+
+}
+
+server {
+
+        listen 10.10.12.18:80;
+        server_name web1.faradis.net;
+        location / {
+                proxy_pass http://loadbalancer;
+
+               }
+}

@@ -1,3 +1,14 @@
+#https://coderpad.io/blog/development/how-to-configure-different-load-balancing-algorithms-on-nginx/
+##load balancing protocol
+       #Static
+              //IP-hash configuration
+              //Weighted round-robin
+              //Round-robin configuration
+       #Dynamic 
+              //Least connection configuration
+              //Least time configuration
+---------------------------------------------------------------------------------------
+
 
 upstream loadbalancer {
 

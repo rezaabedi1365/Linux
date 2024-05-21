@@ -71,9 +71,19 @@ nobody
 ```
 Client Side 
 ```
+##conect to ftp
 ftp 10.10.12.18
+
+##download and upload file
 get file1.txt
 put file2.txt
+
+##download and upload direcroty
+mget dir1
+
+ncftpget -R -v -u reza 10.10.12.18  /home  /tmp/ftp_share/dir1
+ncftpput -R -v -u reza 10.10.12.18  /tmp/ftp_share/dir1 /home  
+
 ```
 ### Authentication
 

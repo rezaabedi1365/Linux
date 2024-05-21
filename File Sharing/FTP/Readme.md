@@ -1,14 +1,46 @@
 # FTP
+Port 20-21
 
 * /etc/vsftpd.conf
 * /etc/vsftpd.userlist
+
+
+
 * /etc/nsswitch.conf
 * dir /etc/pam.d/
 
+  ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/f88b87fa-9c42-48af-9154-227aeaa0e626)
+
+
   -----------------------------------------------------------------
+
+
 ```
 apt install vsftpd
 ```
+OR 
+```
+apt install pure-ftpd
+```
+OR
+```
+apt install proftpd
+```
+
+Encrypt Password
+/etc/login.dfs
+  * ENCRYPT_METHOPD SHA512
+
+```
+apt install whois
+mkpasswd -m sha-512 "mypassword"
+```
+OR
+```
+useradd -md /home/reza -s /bin/bash 
+```
+
+
 ```
 ufw allow from any to any port 20,21,10000:10100 proto tcp
 ```
@@ -46,6 +78,14 @@ userlist_file=/etc/vsftp.user_list
 userlist_deny=NO
 ```
 # FTPS
+FTP over SSL/TLS (Certificate) Port 443
 
 
 # SFTP
+FTP over SSH Port 22
+
+# TFTP
+Port 69
+Without Authentication
+use UDP Port Not Reliable without acknowledge But Hith speed
+

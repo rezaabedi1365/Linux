@@ -14,7 +14,8 @@ Configuraion
 ```
 vi /etc/exports
 /share 192.168.210.0/24 (rw)
-/share * (r)
+/share 10.10.12.0/24 (r,sync)
+/share * (rw,async,no_subtree_check,no_root_squash)
 ```
 Restart Configuration
 ```

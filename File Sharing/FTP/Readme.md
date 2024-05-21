@@ -45,3 +45,7 @@ userlist_enable=YES
 userlist_file=/etc/vsftp.user_list
 userlist_deny=NO
 ```
+# FTPS
+
+
+# SFTP

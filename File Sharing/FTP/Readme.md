@@ -29,9 +29,11 @@ Restart Service
 
 ```
 listen=NO
- listen ipv6=YES 
 anonymous_enable=NO
-local_enable=YES 
+local_enable=YES
+
+write_enable=YES
+
 dirmessage_enable=YES 
 use_localtime=YES
 xferlog_enable=YES

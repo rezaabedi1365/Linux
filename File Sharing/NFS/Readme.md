@@ -31,7 +31,8 @@ mount 10.10.12.18:/share_name /mount_share
 Permanent Mount
 ```
 /etc/fstab
-192.168.10.10:/nfs_server_side /nfs_client_side   nfs 
+192.168.10.10:/nfs_server_side /nfs_client_side   nfs    default    0    0
+mount /nfs_client_side
 ```
 ```
 mount /share_name
@@ -54,6 +55,7 @@ showmount -e 192.168.10.10
 ```
 ```
 df -h
+du -lh
 ```
 
 # NFS with Kerberos

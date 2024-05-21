@@ -23,9 +23,9 @@ Permanent Mount
 mount /share_name
 ```
 ### mount on Windows client
-Mounting NFS on a Windows Client
+* Mounting NFS on a Windows Client
 ![(https://www.hpe.com/psnow/resources/ebooks/a00110181en_us_v11/AdministratorGuide/MountingNFSonWindowsClient.html)
-Open Start > Control Panel > Programs > Select Turn NFS Service Windows features on or off
+* Open Start > Control Panel > Programs > Select Turn NFS Service Windows features on or off
 
 ```
 mount -o 10.10.12.18:/share z:

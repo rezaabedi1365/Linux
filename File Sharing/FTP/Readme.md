@@ -50,6 +50,22 @@ userlist_deny=no
  rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
  ssl_enable=NO
 ```
+/etc/ftpusers
+```
+# /etc/ftpusers: list of users disallowed FTP access. See ftpusers(5).
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+nobody
+```
 ### Authentication
 
   ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/e829a450-5365-4614-bc92-0b17c8b51635)

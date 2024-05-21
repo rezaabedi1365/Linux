@@ -4,13 +4,8 @@ Port 20-21
 * /etc/vsftpd.conf
 * /etc/vsftpd.userlist
 
-
-
 * /etc/nsswitch.conf
 * dir /etc/pam.d/
-
-  ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/f88b87fa-9c42-48af-9154-227aeaa0e626)
-
 
   -----------------------------------------------------------------
 
@@ -77,6 +72,13 @@ userlist_enable=YES
 userlist_file=/etc/vsftp.user_list
 userlist_deny=NO
 ```
+### Authentication
+  ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/f88b87fa-9c42-48af-9154-227aeaa0e626)
+
+
+  ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/799ec595-fc43-42f5-96fe-ad890f8a0ef5)
+
+
 # FTPS
 FTP over SSL/TLS (Certificate) Port 443
 

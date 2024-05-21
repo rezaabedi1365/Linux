@@ -69,6 +69,10 @@ news
 uucp
 nobody
 ```
+Client Side 
+```
+### ftp 10.10.12.18 
+```
 ### Authentication
 
   ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/e829a450-5365-4614-bc92-0b17c8b51635)

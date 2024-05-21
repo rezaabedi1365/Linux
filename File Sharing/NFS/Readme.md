@@ -16,6 +16,10 @@ vi /etc/exports
 /share 192.168.210.0/24 (rw)
 /share * (r)
 ```
+Restart Configuration
+```
+exportfs -r
+```
 
 ### mount on Linux client
 

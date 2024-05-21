@@ -4,12 +4,7 @@ Port 20-21
 * /etc/vsftpd.conf
 * /etc/vsftpd.userlist
 
-* /etc/nsswitch.conf
-* dir /etc/pam.d/
-
   -----------------------------------------------------------------
-
-
 ```
 apt install vsftpd
 ```
@@ -22,24 +17,11 @@ OR
 apt install proftpd
 ```
 
-Encrypt Password
-/etc/login.dfs
-  * ENCRYPT_METHOPD SHA512
-
-```
-apt install whois
-mkpasswd -m sha-512 "mypassword"
-```
-OR
-```
-useradd -md /home/reza -s /bin/bash 
-```
-
-
 ```
 ufw allow from any to any port 20,21,10000:10100 proto tcp
 ```
 
+Restart Service
 ```
  systemctl restart vsftpd
 ```
@@ -56,21 +38,22 @@ write_enable=YES
 use_localtime=YES xferlog_enable=YES
  connect_from_port_20=YES
  chroot_local_user=YES 
-secure_chroot_dir=/var/run/vsftpd/empty 
-pam_service_name=vsftpd 
-rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+secure_chroot_dir=/var/run/vsftpd/empty
+
+pam_service_name=vsftpd
+userlist_enable=YES
+userlist_file=/etc/vsftpd.userlist
+userlist_deny=no
+
+
+ rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
  rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
  ssl_enable=NO 
 pasv_enable=Yes 
 pasv_min_port=10000 
 pasv_max_port=10100 
 allow_writeable_chroot=YES
-```
-* /etc/vsftpd.userlist
-```
-userlist_enable=YES
-userlist_file=/etc/vsftp.user_list
-userlist_deny=NO
+
 ```
 ### Authentication
 
@@ -78,16 +61,29 @@ userlist_deny=NO
 
   ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/f88b87fa-9c42-48af-9154-227aeaa0e626)
 
+* /etc/nsswitch.conf (set priority to authentication )
 
   ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/799ec595-fc43-42f5-96fe-ad890f8a0ef5)
 
+create user with Encrypt Password
+* /etc/login.dfs
+  * ENCRYPT_METHOPD SHA512
+```
+useradd -md /home/reza -s /bin/bash 
+```
 
+* add user ti vsftpd.userlist
+  * nano /etc/vsftpd.userlist    (use /etc/passwd and /etc/shadow)
 # FTPS
 FTP over SSL/TLS (Certificate) Port 443
 
 
 # SFTP
 FTP over SSH Port 22
+winscp
+```
+
+```
 
 # TFTP
 Port 69

@@ -73,6 +73,9 @@ userlist_file=/etc/vsftp.user_list
 userlist_deny=NO
 ```
 ### Authentication
+
+  ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/e829a450-5365-4614-bc92-0b17c8b51635)
+
   ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/f88b87fa-9c42-48af-9154-227aeaa0e626)
 
 

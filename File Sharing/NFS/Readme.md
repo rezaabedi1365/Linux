@@ -8,6 +8,15 @@ apt install nfs-kernel-server
 mkdir /root/share_name
 chmod 777 /root/share_name
 ```
+Configuraion
+- [https://ubuntu.com/server/docs/network-file-system-nfs](https://ubuntu.com/server/docs/network-file-system-nfs)
+
+```
+vi /etc/exports
+/share 192.168.210.0/24 (rw)
+/share * (r)
+```
+
 ### mount on Linux client
 
 ```

@@ -55,3 +55,6 @@ showmount -e 192.168.10.10
 df -h
 ```
 
+# NFS with Kerberos
+
+- [https://ubuntu.com/server/docs/network-file-system-nfs](https://ubuntu.com/server/docs/network-file-system-nfs)

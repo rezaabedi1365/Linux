@@ -34,6 +34,9 @@ local_enable=YES
 
 write_enable=YES
 
+#default path in ftp is home users by below directive you can change it
+local_root=/tmp/ftp_share
+
 dirmessage_enable=YES 
 use_localtime=YES
 xferlog_enable=YES

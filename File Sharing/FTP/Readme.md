@@ -71,7 +71,9 @@ nobody
 ```
 Client Side 
 ```
-### ftp 10.10.12.18 
+ftp 10.10.12.18
+get file1.txt
+put file2.txt
 ```
 ### Authentication
 

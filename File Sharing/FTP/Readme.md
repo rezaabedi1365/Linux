@@ -33,23 +33,27 @@ Restart Service
  systemctl restart vsftpd
 ```
 
-```
-Client Side 
-```
-##conect to ftp
-ftp 10.10.12.18
 
-##download and upload file
+Client Side 
+* conect to ftp
+```
+ftp 10.10.12.18
+```
+
+* download and upload file
+```
 get file1.txt
 put file2.txt
-
-##download and upload direcroty
+```
+* download and upload direcroty
 ```
 mget dir1
 
 ncftpget -R -v -u reza 10.10.12.18  /home  /tmp/ftp_share/dir1
 ncftpput -R -v -u reza 10.10.12.18  /tmp/ftp_share/dir1 /home  
 ```
+
+
 ### Authentication
 
   ![image](https://github.com/rezaabedi1365/LinuxConfigFile/assets/117336743/e829a450-5365-4614-bc92-0b17c8b51635)

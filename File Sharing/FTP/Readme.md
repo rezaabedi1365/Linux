@@ -1,19 +1,23 @@
-# FTP 
+# FTP
+
+--------------------------------------------------
 
 ### FTP
 Port 20-21
 
 ### FTPS
-FTP over SSL/TLS (Certificate) Port 443
+* Port 443
+* FTP over SSL/TLS (Certificate) 
 
 ### SFTP
-FTP over SSH Port 22
-winscp
+* Port 22
+* FTP over SSH 
+* winscp
 
 ### TFTP
-port 69
-without Authentication
-use UDP Port Not Reliable without acknowledge but hith speed
+* port 69
+* without Authentication
+* use UDP Port Not Reliable without acknowledge but hith speed
 
   -----------------------------------------------------------------
 ```

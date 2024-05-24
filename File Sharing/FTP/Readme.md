@@ -1,7 +1,3 @@
-# FTP
-
---------------------------------------------------
-
 ### FTP
 Port 20-21
 
@@ -20,11 +16,24 @@ Port 20-21
 * use UDP Port Not Reliable without acknowledge but hith speed
 
   -----------------------------------------------------------------
+# FTP
+install
 ```
 apt install vsftpd
 apt install pure-ftpd
 apt install proftpd
 ```
+
+Create the ftp folder:
+```
+sudo mkdir /home/sammy/ftp
+#Set its ownership:
+sudo chown nobody:nogroup /home/sammy/ftp
+#Remove write permissions:
+#sudo chmod a-w /home/sammy/ftp
+sudo ls -la /home/sammy/ftp
+```
+
 ```
 ufw allow from any to any port 20,21,10000:10100 proto tcp
 ```
@@ -32,7 +41,6 @@ Restart Service
 ```
  systemctl restart vsftpd
 ```
-
 
 Client Side 
 * conect to ftp

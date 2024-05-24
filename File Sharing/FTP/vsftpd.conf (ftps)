@@ -1,9 +1,13 @@
 #/etc/vsftpd.conf
 
+#access to anonymous users
+anonymous_enable=YES
+
 listen=NO
 anonymous_enable=NO
 local_enable=YES
 
+#aloow users to upload 
 write_enable=YES
 
 ###default path in ftp is home users .  by below directive you can change it

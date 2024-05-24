@@ -1,17 +1,20 @@
-# FTP
+# FTP 
+
+* FTP
 Port 20-21
 
-# FTPS
+* FTPS
 FTP over SSL/TLS (Certificate) Port 443
 
-# SFTP
+* SFTP
 FTP over SSH Port 22
 winscp
 
-# TFTP
- Port 69
- Without Authentication
-use UDP Port Not Reliable without acknowledge But Hith spee
+* TFTP
+port 69
+without Authentication
+use UDP Port Not Reliable without acknowledge but hith speed
+
   -----------------------------------------------------------------
 ```
 apt install vsftpd

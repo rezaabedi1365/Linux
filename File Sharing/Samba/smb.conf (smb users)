@@ -1,5 +1,6 @@
 [global]
     workgroup = METRAN
+    browsable = no    # administrative Share IPC$
     encrypt passwords = yes
     wins support = yes
     log level = 1 
@@ -32,7 +33,7 @@
     path = /var/tmp
     printable = yes
     min print space = 2000
-    browseable = NO
+    browseable = NO      # administrator print$
 
 [test]   #visible share name 
     comment = Samba share directory

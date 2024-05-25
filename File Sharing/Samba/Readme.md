@@ -21,11 +21,14 @@ testparm
 #show smb connection
 smbstatus
 ```
-Create sabma user 
+Create sabma user : samba user must be created in passwd
 ```
 useradd -md /home/reza -s /bin/bash reza
 pdbedit -a -u reza
-
+#delete user
+pdbedit -X
+smbpasswd -a new_user.
+etfacl -R -m "u:new_user:rwx" /home/sharing
 ```
 show samba users
 ```
@@ -40,38 +43,15 @@ smb://ip-address/sharing
 ```
 smbclient -L 192.168.10.10 -U reza
 smbclient //192.168.10.10 -U reza
-
+```
+```
+#download and upload file
 get file_name
 put file_name
+
+#download and upload direcroty
+mget directory_name
+mput directory_name
 ```
 
 
-###  Set Up a User Account
-samba user must be created in passwd
-```
-grep -E 'reza' /etc/passwd
-```
-##### pdbedit
-show users
-```
-pdbedit -L
-```
-add user
-```
-useradd -md /home/reza -s /bin/bash reza
-```
-```
-pdbedit -a -u reza
-```
-
-Detete users
-```
-pdbedit -X
-```
-##### smbpasswd
-```
-smbpasswd -a new_user.
-```
-```
-sudo setfacl -R -m "u:new_user:rwx" /home/sharing
-```

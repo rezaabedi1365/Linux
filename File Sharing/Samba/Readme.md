@@ -6,7 +6,7 @@ https://phoenixnap.com/kb/ubuntu-samba
 
 ```
 apt install samba
-apt install samba-client
+apt install smbclient
 ```
 ```
 systemctsl status smbd

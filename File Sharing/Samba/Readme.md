@@ -3,14 +3,33 @@ https://phoenixnap.com/kb/ubuntu-samba
 * smbd
 * nmbd  ( wins )
 * winbindd (join linux to Windows Domain)
-
+--------------------------------------------------------------------------
+install samba
 ```
 apt install samba
 apt install smbclient
 ```
+show service status
 ```
-systemctsl status smbd
+systemctl status smbd
+systemctl status nmbd
 ```
+show smb connection
+```
+smbstatus
+```
+Create sabma user 
+```
+useradd -md /home/reza -s /bin/bash reza
+pdbedit -a -u reza
+
+```
+show samba users
+```
+grep -E 'reza|zahra' /etc/passwd
+pdbedit -L
+```
+
 ```
 ufw allow samba
 ```

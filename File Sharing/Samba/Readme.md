@@ -16,6 +16,7 @@ systemctl status nmbd
 ```
 show smb connection
 ```
+testparm
 smbstatus
 ```
 Create sabma user 

@@ -24,7 +24,7 @@
     usershare allow guests = yesCopied!
 
 
-[homes] 
+[homes]   # share user home profile
     browsable = no
     map archive = yes
 

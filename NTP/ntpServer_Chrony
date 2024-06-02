@@ -1,0 +1,19 @@
+
+
+#apt install chrony
+#nano /etc/chrony/chrony.conf
+
+#########Server
+pool 0.ubuntu.pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+local stratum 8
+makestep 1.0 3
+rtcsync
+keyfile /etc/chrony.keys
+leapsectz right/UTC
+log measurements statistics tracking
+logdir /var/log/chrony
+allow 192.168.1650/24
+
+
+

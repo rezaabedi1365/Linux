@@ -1,0 +1,14 @@
+
+#nano /etc/chrony/chrony.conf
+#chronyc sourcestats
+
+############client 
+server 10.10.12.18 iburst
+driftfile /var/lib/chrony/drift
+keyfile /etc/chrony.keys
+log measurements statistics tracking
+logdir /var/log/chrony
+
+
+
+

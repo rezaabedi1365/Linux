@@ -1,1 +1,5 @@
 
+upstream dns_upstream {
+    server 192.168.136.130:53 fail_timeout=60s;
+    server 192.168.136.131:53 fail_timeout=60s;
+}

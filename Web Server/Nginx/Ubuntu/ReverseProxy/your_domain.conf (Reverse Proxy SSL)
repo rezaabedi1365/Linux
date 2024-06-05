@@ -1,0 +1,23 @@
+
+upstream loadbalancer {
+
+       server 10.10.12.22:80;
+       server 10.10.12.23:80;
+
+}
+
+server {
+
+        listen 10.10.12.18:443;
+        server_name web1.faradis.net;
+        ssl on;
+        ssl_certificate /tmp/faradis.net/cert.pem;
+        ssl_certificate_key     /tmp/faradis.net/server.key;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+        ssl_prefer_server_ciphers on;
+
+        location / {
+                proxy_pass http://loadbalancer;
+
+               }
+}

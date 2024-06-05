@@ -1,2 +1,10 @@
 
 #https://www.haproxy.com/documentation/haproxy-configuration-manual/latest/
+##load balancing protocol
+       #Static        
+              //Round-robin 
+              //Weighted round-robin
+              //source IP-hash 
+       #Dynamic 
+              //Least connection 
+              //Weighted Least Connections

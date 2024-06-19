@@ -18,8 +18,11 @@ leapsectz right/UTC
 log measurements statistics tracking
 logdir /var/log/chrony
 
-allow 192.168.1650/24
+allow 192.168.165.0/24
 
+--------------verify:
+#chronyc sources
+#netstat -ntlup 
 
 
 #########client with timedatectl (timesyncd)

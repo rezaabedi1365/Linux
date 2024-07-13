@@ -1,0 +1,9 @@
+/etc/nginx/
+    sites-available
+    sites-enabled
+    nginx.conf
+
+/var/www/html/
+    index.nginx-debian.html
+    Yoursite\index.html
+   

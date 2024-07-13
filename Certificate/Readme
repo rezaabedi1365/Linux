@@ -1,0 +1,7 @@
+https://linuxconfig.org/step-by-step-guide-adding-certificates-to-ubuntus-trusted-authorities
+
+
+$ sudo apt install ca-certificates
+$ sudo cp mycert.crt /usr/local/share/ca-certificates
+$ sudo update-ca-certificates
+

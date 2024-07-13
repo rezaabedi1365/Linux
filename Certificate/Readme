@@ -5,3 +5,7 @@ $ sudo apt install ca-certificates
 $ sudo cp mycert.crt /usr/local/share/ca-certificates
 $ sudo update-ca-certificates
 
+
+Root Ca Path
+/etc/ssl/certs/
+

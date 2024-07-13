@@ -1,5 +1,8 @@
 https://medium.com/@leanfolks/harnessing-the-power-of-lets-encrypt-a-step-by-step-guide-to-ssl-certificate-generation-with-9aa833b8b642
 
+Prerequisites
+Add A record to Public DNS
+
 Step1) Downloading and Installing Certbot
 apt-get update
 sudo apt-get install certbot
@@ -10,12 +13,12 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
     root /var/www/html;
-    server_name example.com www.example.com;
+    server_name pam.sanbod.net www.pam.sanbod.net;
 }
 nginx -t && nginx -s reload
 
 Step3) Obtaining the SSL/TLS Certificate
-sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot --nginx -d pam.sanbod.net -d www.pam.sanbod.net
 
 server {
     listen 80 default_server;

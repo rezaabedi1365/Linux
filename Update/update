@@ -1,0 +1,8 @@
+add-apt-repository --list
+apt-key list
+
+apt-get update --allow-unauthenticated
+apt-get update --allow-insecure-repositories
+
+
+grep " install" /var/log/dpkg.log

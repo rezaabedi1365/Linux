@@ -29,10 +29,19 @@ netstat -ntlup
 ```
 
  ### Client 
-
+with config file:
+ * nano /etc/chrony/chrony.conf
+```
+server 10.10.12.18 iburst
+driftfile /var/lib/chrony/drift
+keyfile /etc/chrony.keys
+log measurements statistics tracking
+logdir /var/log/chrony
 nano /etc/systemd/timesyncd.conf
  * NTP=10.10.12.18
  ```
+with timedatectl:
+```
 timedatectl timesync-status
 systemctl status systemd-timesyncd
 #

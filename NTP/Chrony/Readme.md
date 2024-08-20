@@ -24,6 +24,7 @@ allow 192.168.165.0/24
 verify:
 ```
 chronyc sources
+chronyc sourcestats
 netstat -ntlup 
 ```
 

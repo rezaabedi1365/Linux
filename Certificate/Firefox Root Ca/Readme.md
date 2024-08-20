@@ -20,4 +20,7 @@ Starting with version 49, Firefox can be configured to automatically search for 
     - Click the Toggle Fx71aboutconfig-ToggleButton button next to this preference to change its value to true.
     - Restart Firefox. 
 
-![image](https://github.com/user-attachments/assets/dfd7030e-add0-4bc3-b6d1-c34bbb87630a)
+
+    
+![image](https://github.com/user-attachments/assets/349fc31e-3cb5-4314-a744-11af3e629961)
+

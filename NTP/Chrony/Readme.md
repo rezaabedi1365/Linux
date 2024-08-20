@@ -27,7 +27,7 @@ chronyc sources
 netstat -ntlup 
 ```
 
- ### lient with timedatectl (timesyncd)
+ ### Client with timedatectl (timesyncd)
 
  nano /etc/systemd/timesyncd.conf
       * NTP=10.10.12.18

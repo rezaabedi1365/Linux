@@ -14,7 +14,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\S
 
 reconfig 
 ```
-      w32tm /config /update
+w32tm /config /update
 ```
 batch script:
 

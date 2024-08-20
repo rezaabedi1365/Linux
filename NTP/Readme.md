@@ -31,6 +31,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\S
 ```
 check conectivity:
 ```
+gpresult /h c:/result.html
 w32tm /stripchart /computer:ad.domaintest.net
 ```
 install and unistall w32tm service 

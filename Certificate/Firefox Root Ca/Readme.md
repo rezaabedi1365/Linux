@@ -19,3 +19,5 @@ Starting with version 49, Firefox can be configured to automatically search for 
     - Search for the security.enterprise_roots.enabled preference.
     - Click the Toggle Fx71aboutconfig-ToggleButton button next to this preference to change its value to true.
     - Restart Firefox. 
+
+![image](https://github.com/user-attachments/assets/dfd7030e-add0-4bc3-b6d1-c34bbb87630a)

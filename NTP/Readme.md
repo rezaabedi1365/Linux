@@ -21,8 +21,11 @@ net stop w32time
 net start w32time 
 EOF
 ```
+set specefic ntp server
+```
+w32tm /config /syncfromflags:manual /manualpeerlist:"[server]" /reliable:YES /update
 
-
+```
 NTP Server in windows
 
 ```

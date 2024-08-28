@@ -7,6 +7,8 @@ apt install nfs-kernel-server
 ```
 mkdir /root/share_name
 chmod 777 /root/share_name
+# OR
+chmod a+rwx -R /root/sahre_name
 ```
 Configuraion
 - [https://ubuntu.com/server/docs/network-file-system-nfs](https://ubuntu.com/server/docs/network-file-system-nfs)
@@ -16,6 +18,10 @@ vi /etc/exports
 /share 192.168.210.0/24 (rw)
 /share 10.10.12.0/24 (r,sync)
 /share * (rw,async,no_subtree_check,no_root_squash)
+```
+show share direcroy
+```
+exportfs -v
 ```
 Restart Configuration
 ```

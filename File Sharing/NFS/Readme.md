@@ -23,7 +23,9 @@ exportfs -r
 ```
 
 ### mount on Linux client
-
+```
+apt install nfs-common
+```
 ```
 mkdir /mount_share
 mount 10.10.12.18:/share_name /mount_share

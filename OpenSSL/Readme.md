@@ -43,3 +43,12 @@ Removing the password from the extracted private key
 ```
 openssl rsa -in key.pem -out server.key 
 ```
+# Adding a certificate trust chain to a PFX file
+https://www.logonbox.com/app/logonbox-documentation//en/article/3451459
+* step1) export private key as key.txt
+* step2) export cerfiticate as cert.cer
+* step3) create fullchain as bundle.cer
+  
+```
+openssl pkcs12 -export -out newcert.pfx -inkey key.txt -in cert.cer -certfile bundle.cer
+```

@@ -1,3 +1,4 @@
+https://www.mailhardener.com/kb/how-to-create-a-dkim-record-with-openssl
 # Mail DNS Records
  * Recive Email
     - MX Record

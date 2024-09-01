@@ -42,4 +42,4 @@ openssl pkcs12 -in filename.pfx -clcerts -nokeys -out cert.pem
 Removing the password from the extracted private key
 ```
 openssl rsa -in key.pem -out server.key 
-``
+```

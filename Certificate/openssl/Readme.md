@@ -2,7 +2,7 @@
 ### How to Convert pfx to pem
 https://www.xolphin.com/support/Certificate_conversions/Convert_pfx_file_to_pem_file
 
-###### To convert a PFX file to a PEM file that contains both the certificate and private key, the following command needs to be used:
+##### To convert a PFX file to a PEM file that contains both the certificate and private key, the following command needs to be used:
 ```
 openssl pkcs12 -in filename.pfx -out cert.pem -nodes 
 ```

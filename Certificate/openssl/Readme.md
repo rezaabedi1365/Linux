@@ -6,7 +6,7 @@ https://www.xolphin.com/support/Certificate_conversions/Convert_pfx_file_to_pem_
  openssl pkcs12 -in filename.pfx -out cert.pem -nodes 
 ```
  
-# Conversion to separate PEM files
+# interactive
 ```
 # We can extract the private key form a PFX to a PEM file with this command:
 openssl pkcs12 -in filename.pfx -nocerts -out key.pem
@@ -14,7 +14,7 @@ openssl pkcs12 -in filename.pfx -nocerts -out key.pem
 # Exporting the certificate only:
 openssl pkcs12 -in filename.pfx -clcerts -nokeys -out cert.pem
 ```
-# Removing the password from the extracted private key:
+# interactive
 ```
 openssl rsa -in key.pem -out server.key 
 ```

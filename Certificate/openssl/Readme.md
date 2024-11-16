@@ -2,8 +2,7 @@
 
 method 1
 ```
-openssl req -x509 -new -days 365 -nodes -out certs/domain.crt -keyout certs/domain.key
-
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout selfsigned.key -out selfsigned.crt
 ```
 method 2
 ```

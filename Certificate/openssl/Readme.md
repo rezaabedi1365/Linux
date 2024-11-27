@@ -22,7 +22,7 @@ openssl rsa -in key.pem -out server.key
 ### Generate PFX file from private key and CRT files
 * Method1
   - https://serverfault.com/questions/1097033/generate-pfx-file-from-private-key-and-crt-files
-  - create fullchain.pem
+  - Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single chain.pem file
    ```
    openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
    ```

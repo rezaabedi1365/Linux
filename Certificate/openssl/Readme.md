@@ -19,6 +19,19 @@ Remove persharkey from key
 ```
 openssl rsa -in key.pem -out server.key 
 ```
+### Generate PFX file from private key and CRT files
+* Method1
+  - https://serverfault.com/questions/1097033/generate-pfx-file-from-private-key-and-crt-files
+  - create fullchain.pem
+   ```
+   openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
+   ```
+* Method2
+  -https://stackoverflow.com/questions/6307886/how-to-create-pfx-file-from-certificate-and-private-key
+   ```
+   openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt -in intermediate.crt -in rootca.crt
+   ```
+
 ### How to generate a self-signed SSL certificate using OpenSSL
 
 method 1

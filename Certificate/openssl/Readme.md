@@ -27,7 +27,7 @@ openssl rsa -in key.pem -out server.key
    openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
    ```
 * Method2
-  -https://stackoverflow.com/questions/6307886/how-to-create-pfx-file-from-certificate-and-private-key
+  - https://stackoverflow.com/questions/6307886/how-to-create-pfx-file-from-certificate-and-private-key
    ```
    openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt -in intermediate.crt -in rootca.crt
    ```

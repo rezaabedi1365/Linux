@@ -32,6 +32,11 @@ openssl rsa -in key.pem -out server.key
    openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt -in intermediate.crt -in rootca.crt
    ```
 
+### Generate PFX file from private key and PEM files 
+
+ ```
+openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.pem
+ ```
 ### How to generate a self-signed SSL certificate using OpenSSL
 
 method 1

@@ -70,7 +70,8 @@ openssl pkcs7 -print_certs -in your_pkcs7_certificate.p7b -out your_pem_certific
 openssl crl2pkcs7 -nocrl -certfile your_pem_certificate.crt -out your_pkcs7_certificate.p7b -certfile CA-bundle.crt
 ```
 ### convert PKCS#7 to PFX:
-To convert a certificate from PKCS#7 to PFX, the certificate should be first converted into PEM:
+Method1
+- To convert a certificate from PKCS#7 to PFX, the certificate should be first converted into PEM:
 ```
 openssl pkcs7 -print_certs -in your_pkcs7_certificate.p7b -out your_pem_certificates.pem
 ```
@@ -78,6 +79,21 @@ After that, the certificate can be converted into PFX.
 ```
 openssl pkcs12 -export -out your_pfx_certificate.pfx -inkey your_private.key -in your_pem_certificate.crt
 ```
+Method2
+- STEP 1: Convert P7B to CER
+```
+openssl pkcs7 -print_certs -in certificatename.p7b -out certificatename.cer
+```
+- STEP 2: Convert CER and Private Key to PFX
+```
+openssl pkcs12 -export -in certificatename.cer -inkey privateKey.key -out certificatename.pfx -certfile  cacert.cer
+```
+### Convert x509 to PEM
+openssl x509 -in certificatename.cer -outform PEM -out certificatename.pem
+
+### Convert PEM to DER
+openssl x509 -outform der -in certificatename.pem -out certificatename.der
+
 
 ### How to generate a self-signed SSL certificate using OpenSSL
 

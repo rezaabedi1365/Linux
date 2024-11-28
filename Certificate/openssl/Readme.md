@@ -75,7 +75,7 @@ Method1
 ```
 openssl pkcs7 -print_certs -in your_pkcs7_certificate.p7b -out your_pem_certificates.pem
 ```
-After that, the certificate can be converted into PFX.
+- After that, the certificate can be converted into PFX.
 ```
 openssl pkcs12 -export -out your_pfx_certificate.pfx -inkey your_private.key -in your_pem_certificate.crt
 ```

@@ -37,9 +37,22 @@ Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt
 ```
 openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
 ```
- ```
+```
 openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in chain.pem
- ```
+```
+```
+openssl pkcs12 -export -out certificate.pfx -inkey privatekey.pem -in certificate.pem
+```
+
+### convert a certificate from DER to PEM
+- https://tiloid.com/p/creating-a-pfx-file-from-certificate-and-private-key
+```
+openssl x509 -inform der -in certificate.der -out certificate.pem
+```
+```
+openssl rsa -inform der -in privatekey.der -out privatekey.pem
+```
+
 ### How to generate a self-signed SSL certificate using OpenSSL
 
 method 1

@@ -22,20 +22,23 @@ openssl rsa -in key.pem -out server.key
 ### Generate PFX file from private key and CRT files
 * Method1
   - https://serverfault.com/questions/1097033/generate-pfx-file-from-private-key-and-crt-files
-  - Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single chain.pem file
+  - Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single ca-bundle.crt file
    ```
-   openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
+   openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile ca-bundle.crt
    ```
 * Method2
   - https://stackoverflow.com/questions/6307886/how-to-create-pfx-file-from-certificate-and-private-key
    ```
    openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt -in intermediate.crt -in rootca.crt
-   ```
+     ```
 
 ### Generate PFX file from private key and PEM files 
-
+Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single chain.pem file
+```
+openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
+```
  ```
-openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.pem
+openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in chain.pem
  ```
 ### How to generate a self-signed SSL certificate using OpenSSL
 

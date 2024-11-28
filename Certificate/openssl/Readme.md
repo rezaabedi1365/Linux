@@ -30,10 +30,16 @@ openssl rsa -in key.pem -out server.key
    openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile ca-bundle.crt
    ```
 * Method2
+  - Combine the CRT files (Intermediate.crt then root.crt) into a single ca-bundle.ca-bundle file
+  - you may have more than one Intermediate
+    ```
+    f
+    ``` 
+* Method3
   - https://stackoverflow.com/questions/6307886/how-to-create-pfx-file-from-certificate-and-private-key
    ```
    openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt -in intermediate.crt -in rootca.crt
-     ```
+   ```
 
 ### Generate PFX file from private key and PEM files 
 Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single chain.pem file

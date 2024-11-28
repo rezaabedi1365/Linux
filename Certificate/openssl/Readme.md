@@ -41,7 +41,7 @@ openssl rsa -in key.pem -out server.key
    openssl pkcs12 -export -out domain.name.pfx -inkey domain.name.key -in domain.name.crt -in intermediate.crt -in rootca.crt
    ```
 
-### Generate PFX file from private key and PEM files 
+### Generate PEM to PFX  
 Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single chain.pem file
 ```
 openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
@@ -53,13 +53,30 @@ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in chain.pem
 openssl pkcs12 -export -out certificate.pfx -inkey privatekey.pem -in certificate.pem
 ```
 
-### convert a certificate from DER to PEM
+### convert DER to PEM
 - https://tiloid.com/p/creating-a-pfx-file-from-certificate-and-private-key
 ```
 openssl x509 -inform der -in certificate.der -out certificate.pem
 ```
 ```
 openssl rsa -inform der -in privatekey.der -out privatekey.pem
+```
+### convert PKCS#7 to PEM:
+```
+openssl pkcs7 -print_certs -in your_pkcs7_certificate.p7b -out your_pem_certificates.pem
+```
+### convert PEM to PKCS#7:
+```
+openssl crl2pkcs7 -nocrl -certfile your_pem_certificate.crt -out your_pkcs7_certificate.p7b -certfile CA-bundle.crt
+```
+### convert PKCS#7 to PFX:
+To convert a certificate from PKCS#7 to PFX, the certificate should be first converted into PEM:
+```
+openssl pkcs7 -print_certs -in your_pkcs7_certificate.p7b -out your_pem_certificates.pem
+```
+After that, the certificate can be converted into PFX.
+```
+openssl pkcs12 -export -out your_pfx_certificate.pfx -inkey your_private.key -in your_pem_certificate.crt
 ```
 
 ### How to generate a self-signed SSL certificate using OpenSSL

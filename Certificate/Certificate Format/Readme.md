@@ -2,7 +2,7 @@ https://www.namecheap.com/support/knowledgebase/article.aspx/9617/69/how-to-conv
 - P7B/PKCS#7 --------*.p7b, *.p7s, *.cer
 - PFX/P12/PKCS#12----*.p12 ,  *.pfx.
 - PEM----------------*.pem, *.crt , *.cer
-- DER/binady
+- DER/binary
 - x509            
 ------------------------------------------------------------------------
 1) PEM is a base64 encoded certificate placed between the headers -----BEGIN CERTIFICATE----- and -----END CERTIFICATE-----. It is the most widespread certificate format, which is mostly used by Linux-based servers, like Apache, Nginx, and by the majority of webhosting control panels (cPanel, Plesk, DirectAdmin, WebMin, etc.). PEM certificates may have the following file extensions: *.pem, *.crt, *.cer. Comodo CA (now Sectigo CA) sends out their certificates in PEM, if any server type except ‘Microsoft Internet Information Server’ (Microsoft IIS) is chosen during the certificate activation.

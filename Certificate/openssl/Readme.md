@@ -1,4 +1,7 @@
-
+### PFX Converter
+- https://www.interssl.com/en/ssl-tools-pfxconverter.php
+- https://www.sslshopper.com/ssl-converter.html
+  
 ### How to Convert pfx to pem
 https://www.xolphin.com/support/Certificate_conversions/Convert_pfx_file_to_pem_file
 

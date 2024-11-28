@@ -27,6 +27,7 @@ openssl rsa -in key.pem -out server.key
 * Method1
   - https://serverfault.com/questions/1097033/generate-pfx-file-from-private-key-and-crt-files
   - Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single ca-bundle.crt file
+  - CA-bundles usually have extensions .pem, .cert , .crt , .crt file
    ```
    openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile ca-bundle.crt
    ```
@@ -43,7 +44,8 @@ openssl rsa -in key.pem -out server.key
    ```
 
 ### Generate PEM to PFX  
-Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single chain.pem file
+- Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single chain.pem file
+- CA-bundles usually have extensions .pem, .cert , .crt , .crt file
 ```
 openssl.exe pkcs12 -in chain.pem -inkey PRIVATEKEY.key -export -out myPrivateCert.pfx
 ```

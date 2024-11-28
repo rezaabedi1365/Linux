@@ -1,8 +1,8 @@
-- P7B/PKCS#7 -     Microsoft IIS
+- P7B/PKCS#7 -     PEM , CRT , DER [ Microsoft IIS]
 - PFX/P12/PKCS#12  PFX
 - PEM
 - DER/binadr
-- x509 -           CSR
+- x509 -           CER , CSR
 
 
 

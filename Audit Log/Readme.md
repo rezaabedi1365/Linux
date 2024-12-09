@@ -7,9 +7,10 @@ RPM:
 yum install audit audit-libs
 ```
 
-Repelace your Config file as audit.rules to   /etc/audit/audit.rules
+Repelace your Config file as audit.rules to   /etc/audit/rules.d/audit.rules
 
 ```
+cd /etc/audit/rules.d/
 curl -so audit.rules http://10.10.10.11:3333/audit.rules
 ```
 Start service

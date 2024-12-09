@@ -15,7 +15,7 @@ curl -so audit.rules http://10.10.10.11:3333/audit.rules
 ```
 Start service
 ```
-systemctl enable auditd.service
+systemctl enable auditd.service && \
 systemctl restart auditd.service
 ```
 verify:

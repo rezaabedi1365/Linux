@@ -16,5 +16,8 @@ Start service
 ```
 systemctl enable auditd.service
 systemctl start auditd.service
-Sudo auditctl -l
+```
+verify:
+```
+auditctl -l
 ```

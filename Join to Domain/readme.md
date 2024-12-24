@@ -75,7 +75,7 @@ sudo realm join --verbose --user=administrator water.lab
 ```
 sudo nano /etc/sssd/sssd.conf
 ```
-- add ssh to service 
+    - add ssh to service 
 ![image](https://github.com/user-attachments/assets/c2b61bf7-4722-4675-a453-44aed24e1815)
 
 ```
@@ -85,4 +85,13 @@ sudo systemctl restart sssd
 ### Access user and group to sudoers Group
 
 ![image](https://github.com/user-attachments/assets/e2cdd90f-7482-4547-8f0b-21d6a1de8744)
+
+```
+su admin-abedi@.domain.suffix
+```
+verify
+```
+cd /
+sudo apt update
+```
 

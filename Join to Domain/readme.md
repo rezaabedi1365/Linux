@@ -75,7 +75,7 @@ sudo realm join --verbose --user=administrator water.lab
 ```
 sudo nano /etc/sssd/sssd.conf
 ```
-add ssh to service 
+- add ssh to service 
 ![image](https://github.com/user-attachments/assets/c2b61bf7-4722-4675-a453-44aed24e1815)
 
 ```

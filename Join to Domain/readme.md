@@ -28,7 +28,7 @@ verify:
 resolvectl status
 ```
 ### Timing is everything
-sudo nano /etc/systemd/timesyncd.conf
+    - sudo nano /etc/systemd/timesyncd.conf
 ![image](https://github.com/user-attachments/assets/fff3d06c-65c4-464c-bb5f-1e08cb5231e2)
 ```
 sudo timedatectl set-ntp on

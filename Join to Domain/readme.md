@@ -84,6 +84,17 @@ sudo systemctl restart sssd
 ```
 
 ### Access user and group to sudoers Group
+add individual
+```
+SMB\\<aduser01> ALL=(ALL) ALL
+```
+add group
+```
+%domainname\\group ALL=(ALL) ALL
+nor the
+%domainname.local\\group ALL=(ALL) ALL
+%Domain^Admins ALL=(ALL) ALL
+```
 
 ![image](https://github.com/user-attachments/assets/e2cdd90f-7482-4547-8f0b-21d6a1de8744)
 
@@ -98,6 +109,13 @@ verify
 cd /
 sudo apt update
 ```
+
+## method2
+
+```
+sudo touch /etc/sudoers.d/{yourdomain}
+```
+
 # Disjoin Domain
 
 ```

@@ -95,4 +95,9 @@ verify
 cd /
 sudo apt update
 ```
+# Disjoin Domain
+
+```
+realm leave water.lab
+```
 

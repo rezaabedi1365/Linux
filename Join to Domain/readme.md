@@ -86,14 +86,23 @@ sudo systemctl restart sssd
 ### Access user and group to sudoers Group
 add individual
 ```
+%linuxadm@mycompany.com  ALL=(ALL:ALL) ALL
 SMB\\<aduser01> ALL=(ALL) ALL
 ```
 add group
 ```
-%domainname\\group ALL=(ALL) ALL
-nor the
-%domainname.local\\group ALL=(ALL) ALL
+#If group consists of single word then it should be sufficient to add following record to /etc/sudoers file:
+%ActiveDirectoryUserGroup ALL=(ALL:ALL) ALL
+
+#If group contain spaces then record should look like:
+%Domain\ Users ALL=(ALL:ALL) ALL
+%Linux\ Admins ALL=(ALL:ALL) NOPASSWD:ALL
 %Domain^Admins ALL=(ALL) ALL
+
+%MY_DOMAIN\\MY_AD_GROUP ALL=(ALL) ALL
+%MY_AD_GROUP@MY_DOMAIN ALL=(ALL) ALL
+
+%domainname.local\\group ALL=(ALL) ALL
 ```
 
 ![image](https://github.com/user-attachments/assets/e2cdd90f-7482-4547-8f0b-21d6a1de8744)

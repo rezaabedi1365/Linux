@@ -1,6 +1,9 @@
 https://michaelwaterman.nl/2022/10/02/domain-join-ubuntu-22-04-to-active-directory/
 
+https://virgool.io/@devops523/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D9%88%DB%8C%D9%86-%DA%A9%D8%B1%D8%AF%D9%86-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-debianubuntu-%D8%A8%D9%87-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88%D8%AF%D8%A7%DB%8C%D8%B1%DA%A9%D8%AA%D9%88%D8%B1%DB%8C-%D8%AF%D8%A7%D9%85%DB%8C%D9%86-ajq6cw387sxb
+
 https://tosinso.com/articles/42963/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D9%88%DB%8C%D9%86-%DA%A9%D8%B1%D8%AF%D9%86-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%AF%D8%A8%DB%8C%D9%86-(-Debian-)-%D8%AF%D8%B1-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88%D8%AF%D8%A7%DB%8C%D8%B1%DA%A9%D8%AA%D9%88%D8%B1%DB%8C
+
 
 
 ### Hostname
@@ -84,25 +87,56 @@ sudo systemctl restart sssd
 ```
 
 ### Access user and group to sudoers Group
-add individual
+
 ```
+#Permit access to individual users
+$ sudo realm permit user1@example.com
+$ sudo realm permit user2@example.com user3@example.com
+
+#Permit access to group – Examples
+$ sudo ream permit -g sysadmins
+$ sudo realm permit -g 'Security Users'
+$ sudo realm permit 'Domain Users' 'admin users'
+```
+```
+$ sudo realm permit –all
+```
+OR
+```
+$ sudo realm deny –all
+```
+
+Create new file
+```
+$ sudo vi /etc/sudoers.d/Domain_Name
+```
+```
+#Permit access to individual users
+user1@example.com ALL=(ALL) ALL
+user2@example.com ALL=(ALL) ALL
+
+#Permit access to group – Examples
+%group1@example.com ALL=(ALL) ALL
+%security\ users@example.com ALL=(ALL) ALL
+%system\ super\ admins@example.com ALL=(ALL) ALL
+```
+
+#### Method2
+nano /etc/sudoers
+
+```
+#Permit access to individual users
 %linuxadm@mycompany.com  ALL=(ALL:ALL) ALL
 SMB\\<aduser01> ALL=(ALL) ALL
-```
-add group
-```
-#If group consists of single word then it should be sufficient to add following record to /etc/sudoers file:
-%ActiveDirectoryUserGroup ALL=(ALL:ALL) ALL
 
-#If group contain spaces then record should look like:
+#Permit access to group – Examples
+%ActiveDirectoryUserGroup ALL=(ALL:ALL) ALL
 %Domain\ Users ALL=(ALL:ALL) ALL
 %Linux\ Admins ALL=(ALL:ALL) NOPASSWD:ALL
 %Domain^Admins ALL=(ALL) ALL
-
+%domainname.local\\group ALL=(ALL) ALL
 %MY_DOMAIN\\MY_AD_GROUP ALL=(ALL) ALL
 %MY_AD_GROUP@MY_DOMAIN ALL=(ALL) ALL
-
-%domainname.local\\group ALL=(ALL) ALL
 ```
 
 ![image](https://github.com/user-attachments/assets/e2cdd90f-7482-4547-8f0b-21d6a1de8744)
@@ -119,13 +153,7 @@ cd /
 sudo apt update
 ```
 
-## method2
-
-```
-sudo touch /etc/sudoers.d/{yourdomain}
-```
-
-# Disjoin Domain
+### Disjoin Domain
 
 ```
 realm leave water.lab

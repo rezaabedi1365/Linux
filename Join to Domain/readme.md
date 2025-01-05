@@ -87,6 +87,34 @@ sudo systemctl restart sssd
 ```
 
 ### Access user and group to sudoers Group
+    - Method1
+        + Edit /etc/sudoers
+    - Method2
+        + Add /etc/sudoers.d/sample.com
+      
+```
+#Permit access to individual users
+user1 ALL=(ALL:ALL) ALL
+user1@sample.com ALL=(ALL:ALL) ALL
+SMB\\user1 ALL=(ALL:ALL) ALL
+SMB\\user1@sample.com ALL=(ALL:ALL) ALL
+
+#Permit access to group – Examples
+%ServerAdmins  ALL=(ALL:ALL) ALL
+%ServerAdmins@sample.com  ALL=(ALL:ALL) ALL
+%Domain^Admins ALL=(ALL) ALL
+%sample.com\\ServerAdmins ALL=(ALL) ALL
+%ServerAdmins@sample.com ALL=(ALL) ALL
+
+```
+with no password
+```
+user1 ALL=(ALL:ALL) NOPASSWD:ALL
+%ServerAdmins ALL=(ALL:ALL) NOPASSWD:ALL
+```
+
+![image](https://github.com/user-attachments/assets/0d03c538-b89f-4d97-ae63-88858afa6e29)
+
 realm access
 ```
 #Permit access to individual users
@@ -105,42 +133,6 @@ OR
 ```
 sudo realm deny all
 ```
-
-Create new file
-```
-$ sudo vi /etc/sudoers.d/Domain_Name
-```
-```
-#Permit access to individual users
-user1@example.com ALL=(ALL) ALL
-user2@example.com ALL=(ALL) ALL
-
-#Permit access to group – Examples
-%group1@example.com ALL=(ALL) ALL
-%security\ users@example.com ALL=(ALL) ALL
-%system\ super\ admins@example.com ALL=(ALL) ALL
-```
-
-#### Method2
-nano /etc/sudoers
-
-```
-#Permit access to individual users
-%linuxadm@mycompany.com  ALL=(ALL:ALL) ALL
-SMB\\<aduser01> ALL=(ALL) ALL
-
-#Permit access to group – Examples
-%ActiveDirectoryUserGroup ALL=(ALL:ALL) ALL
-%Domain\ Users ALL=(ALL:ALL) ALL
-%Linux\ Admins ALL=(ALL:ALL) NOPASSWD:ALL
-%Domain^Admins ALL=(ALL) ALL
-%domainname.local\\group ALL=(ALL) ALL
-%MY_DOMAIN\\MY_AD_GROUP ALL=(ALL) ALL
-%MY_AD_GROUP@MY_DOMAIN ALL=(ALL) ALL
-```
-
-![image](https://github.com/user-attachments/assets/0d03c538-b89f-4d97-ae63-88858afa6e29)
-
 
 ```
 usermod -aG sudo,root sample.com\\user1

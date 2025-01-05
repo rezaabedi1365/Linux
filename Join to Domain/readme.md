@@ -142,7 +142,7 @@ SMB\\<aduser01> ALL=(ALL) ALL
 ![image](https://github.com/user-attachments/assets/e2cdd90f-7482-4547-8f0b-21d6a1de8744)
 
 ```
-usermod -aG sudo,root water.lab\\user1
+usermod -aG sudo,root sample.com\\user1
 ```
 ```
 su admin-abedi@.domain.suffix

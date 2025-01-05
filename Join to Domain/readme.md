@@ -87,23 +87,23 @@ sudo systemctl restart sssd
 ```
 
 ### Access user and group to sudoers Group
-
+realm access
 ```
 #Permit access to individual users
-$ sudo realm permit user1@example.com
-$ sudo realm permit user2@example.com user3@example.com
+sudo realm permit user1@example.com
+sudo realm permit user2@example.com user3@example.com
 
 #Permit access to group – Examples
-$ sudo ream permit -g sysadmins
-$ sudo realm permit -g 'Security Users'
-$ sudo realm permit 'Domain Users' 'admin users'
+sudo ream permit -g sysadmins
+sudo realm permit -g 'Security Users'
+sudo realm permit 'Domain Users' 'admin users'
 ```
 ```
-$ sudo realm permit –all
+sudo realm permit all
 ```
 OR
 ```
-$ sudo realm deny –all
+sudo realm deny all
 ```
 
 Create new file

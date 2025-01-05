@@ -145,7 +145,7 @@ SMB\\<aduser01> ALL=(ALL) ALL
 usermod -aG sudo,root sample.com\\user1
 ```
 ```
-su admin-abedi@.domain.suffix
+su admin-abedi@sample.com
 ```
 verify
 ```

@@ -90,7 +90,7 @@ sudo systemctl restart sssd
 check read user and group
 ```
 id user01
-getent group SeverAdnis
+getent group ServerAdmins
 ```
     - Method1
         + Edit /etc/sudoers

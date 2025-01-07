@@ -87,6 +87,11 @@ sudo systemctl restart sssd
 ```
 
 ### Access user and group to sudoers Group
+check read user and group
+```
+id user01
+getent group SeverAdnis
+```
     - Method1
         + Edit /etc/sudoers
     - Method2

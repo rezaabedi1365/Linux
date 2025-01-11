@@ -80,7 +80,8 @@ sudo realm join --verbose --user=administrator water.lab
 sudo nano /etc/sssd/sssd.conf
 ```
     - add ssh to service 
-![image](https://github.com/user-attachments/assets/c2b61bf7-4722-4675-a453-44aed24e1815)
+![image](https://github.com/user-attachments/assets/9aa48faa-9778-46d5-81ff-181483d959c8)
+
 
 ```
 sudo systemctl restart sssd

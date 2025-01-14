@@ -63,7 +63,12 @@ timedatectl list-timezone | grep Tehran
 timedatectl set-timezone "Asia/Tehran"
 ```
 
-
+----------------------------------------------------------
+nano /etc/systemd/timesyncd.conf
+```
+NTP= ntp.sample.com
+FallbackNTP=
+```
 
  
 

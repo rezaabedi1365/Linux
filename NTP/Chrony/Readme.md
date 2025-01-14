@@ -58,36 +58,38 @@ nano /etc/systemd/timesyncd.conf
 
 
 ### with timedatectl:
-verify
+configuration
+- nano /etc/systemd/timesyncd.conf
+```
+NTP= ntp.sample.com
+FallbackNTP=
+```
+- verify
 ```
 timedatectl timesync-status
 systemctl status systemd-timesyncd
 ```
-RTC
+- RTC
 ```
 timedatectl set-ntp false
 timedatectl set-ntp true
 hwclock --systohc
 timedatectl set-local-rtc 0
 ```
-Service
+- Service
 ```
 systemctl restart systemd-timesyncd
 timedatectl status
 timedatectl timesync-status
 ```
-timezone
+- timezone
 ```
 timedatectl list-timezone | grep Tehran
 timedatectl set-timezone "Asia/Tehran"
 ```
 
 ----------------------------------------------------------
-nano /etc/systemd/timesyncd.conf
-```
-NTP= ntp.sample.com
-FallbackNTP=
-```
+
 
  
 

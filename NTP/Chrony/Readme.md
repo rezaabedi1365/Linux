@@ -28,6 +28,10 @@ chronyc sourcestats
 netstat -ntlup 
 ```
 
+```
+nc -vz -u 10.1.0.100 123
+```
+
  ### Client 
 with config file:
  * nano /etc/chrony/chrony.conf

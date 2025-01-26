@@ -34,7 +34,8 @@ verify:
 ```
 chronyc sources
 chronyc sourcestats
-netstat -ntlup 
+netstat -ntlup
+ss -uln
 ```
 
 ```

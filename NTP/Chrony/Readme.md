@@ -34,9 +34,14 @@ verify:
 ```
 chronyc sources
 chronyc sourcestats
+timedatectl
 netstat -ntlup
 ss -uln
 ```
+![image](https://github.com/user-attachments/assets/ebf79962-7393-4279-aaac-c556ea41406a)
+![image](https://github.com/user-attachments/assets/640e4ce5-2013-4f5a-8ab2-dfb2fbb017c3)
+
+
 
 ```
 nc -vz -u 10.1.0.100 123
@@ -52,10 +57,7 @@ keyfile /etc/chrony.keys
 log measurements statistics tracking
 logdir /var/log/chrony
 ```
-```
-nano /etc/systemd/timesyncd.conf
- * NTP=10.10.12.18
- ```
+
 
 
 

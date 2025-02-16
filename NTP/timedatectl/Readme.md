@@ -1,27 +1,16 @@
 ### timedatectl
-configuration
-- nano /etc/systemd/timesyncd.conf
+
+sudo nano /etc/systemd/timesyncd.conf
+
+![image](https://github.com/user-attachments/assets/fff3d06c-65c4-464c-bb5f-1e08cb5231e2)
 ```
-NTP= ntp.sample.com
-FallbackNTP=
+sudo timedatectl set-ntp on
+sudo systemctl restart systemd-timesyncd.service
+sudo timedatectl --adjust-system-clock
 ```
-- verify
+verity:
 ```
-timedatectl timesync-status
-systemctl status systemd-timesyncd
-```
-- RTC
-```
-timedatectl set-ntp false
-timedatectl set-ntp true
-hwclock --systohc
-timedatectl set-local-rtc 0
-```
-- Service
-```
-systemctl restart systemd-timesyncd
-timedatectl status
-timedatectl timesync-status
+sudo timedatectl --adjust-system-clock
 ```
 - timezone
 ```

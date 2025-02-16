@@ -6,7 +6,6 @@ sudo nano /etc/systemd/timesyncd.conf
 ```
 sudo timedatectl set-ntp on
 sudo systemctl restart systemd-timesyncd.service
-sudo timedatectl --adjust-system-clock
 ```
 verity:
 ```

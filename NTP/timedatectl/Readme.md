@@ -18,3 +18,12 @@ timedatectl set-timezone "Asia/Tehran"
 ```
 
 ----------------------------------------------------------
+### Error:
+Failed to start systemd-timesyncd.service: Unit systemd-timesyncd.service is masked.
+```
+ sudo systemctl unmask systemd-timesyncd.service
+```
+
+```
+apt install systemd-timesyncd
+```

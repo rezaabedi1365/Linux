@@ -41,7 +41,7 @@ mkfs.vfat /dev/sdb3
 ```
 mkfs.ex4 /dev/sdb4 
 ```
-  
+##### Other 
 - JFS                  IBM 
 - HFS                 Apple 
 

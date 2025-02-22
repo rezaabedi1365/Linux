@@ -100,44 +100,18 @@ show
 ls /media/      list of auto mount device for example flash disk 
 ```
 
-Permanently mount        (Automaticly  mount )  
+Permanently mount:        (Automaticly  mount )  
 - vi /etc/fstap            add your maunt in latest line for save mout setting
 
 ```
 <Device_File>     <Mount_Point>     <File_System>   <Mount_Options>  <Dump_Flag>  <FSCK> 
 /dev/hda1                   /DISK2/P1                    ext2             defaults                             0                 0 
  ```
-show 
+show :
 ```
-#mount –a      automatic save mount any thing in /etc/fstap 
+mount –a      automatic save mount any thing in /etc/fstap 
 ```
   
-
-  
-
- 
-
- 
-
-How to Resize a Partition on Ubuntu 
-
-https://pimylifeup.com/ubuntu-resize-partition/ 
-
-1- use gparterd 
-
-2-parted 
-
-#umunt –f /dev/sda 
-
-#parted 
-
- 
-
-3-cfdisk 
-
-#select resize 
-
-#resize2fs  /dev/sda3 
 
  
 

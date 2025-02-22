@@ -1,6 +1,5 @@
-https://linuxconfig.org/how-to-mount-cdrom-in-linux 
-https://www.linuxfordevices.com/tutorials/linux/mount-usb-drives-in-linux 
-
+- https://linuxconfig.org/how-to-mount-cdrom-in-linux 
+- https://www.linuxfordevices.com/tutorials/linux/mount-usb-drives-in-linux 
   
 ```
 lsblk 

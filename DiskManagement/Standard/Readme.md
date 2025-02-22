@@ -10,26 +10,57 @@ Remove partiton table
 ```
 wipefs -a -f /dev/sdb 
 ```
-### Disk 
-    + Sda
-        * Sda1 [Partiton1] 
-        * Sda2 [Partiton2] 
-        * Sda3 [Partiton3] 
-    + Sdb 
-    + Sdc 
 
+### Disk 
+- Sda
+    + Sda1 [Partiton1] 
+    + Sda2 [Partiton2] 
+    + Sda3 [Partiton3] 
+- Sdb 
+- Sdc
+
+```
+#fdisk  /dev/sdb 
+  #Primary /dev/sdb1 
+  #Primary /dev/sdb2 
+  #Primary /dev/sdb3 
+  #Extended /dev/sdb4 
+```
 
 ### Filesystem  
 - Fat
 - NTFS
 - ext 2/3/4
 
+```
+mkfs. 
+mkfs.fat  /dev/sdb1 
+mkfs.nfts /dev/sdb2 
+mkfs.ext3 /dev/sdb3 
+mkfs.ext4 /dev/sdb4 
+```
+ 
+Verify : 
+```
+df  -h 
+df –T  /    (show filessystem) 
+```
+```
+lsblk
+lsblk -o FSTYPE /dev/sda3 
+```
+```
+fdisk –s  /dev/sda  (show disk size) 
+fdisk –s /dev/sda1  (show partition size) 
+```
+```
+wipefs /dev/sdb   (show partitioin table) 
+```
+
 ### Mount Point 
 
 - / 
-
 - /boot 
-
 - /swap 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------- 

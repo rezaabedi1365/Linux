@@ -1,7 +1,7 @@
 # Disk Management
 ### Standard Partition 
-- Disk 
-        * Partition table 
+- Disk
+         + Partition table 
 - Partition 
         * Filesystem 
 - Mount point 

@@ -1,8 +1,16 @@
   
-#### Disk partition table 
+### Disk partition table 
 - disk partition table diffrent with partition 
-
-#### Disk 
+```
+fdisk /dev/sdb 
+  #g  (gpt ) 
+  #o  (dos or mbr)    Default 
+```
+Remove partiton table 
+```
+wipefs -a -f /dev/sdb 
+```
+### Disk 
     + Sda
         * Sda1 [Partiton1] 
         * Sda2 [Partiton2] 
@@ -11,7 +19,7 @@
     + Sdc 
 
 
-#### Filesystem  
+### Filesystem  
 - Fat
 - NTFS
 - ext 2/3/4
@@ -28,15 +36,6 @@
 
 Partition table : 
 
-#fdisk /dev/sdb 
-
-#g  (gpt ) 
-
-#o  (dos or mbr)    Default 
-
-Remove partiton table 
-
-# wipefs -a -f /dev/sdb 
 
  
 

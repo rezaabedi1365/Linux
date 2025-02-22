@@ -56,6 +56,8 @@ fdisk –s /dev/sda1  (show partition size)
 ```
 wipefs /dev/sdb   (show partitioin table) 
 ```
+![image](https://github.com/user-attachments/assets/ecd1dabc-aad6-4ef5-a3d8-82000edd0708)
+
 
 ### Mount Point 
 

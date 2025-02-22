@@ -17,7 +17,7 @@
      * Mount point 
 
 # Partition Table
-     * MBR (dos) 
-     * GPT 
+- MBR (dos) 
+- GPT 
 
 ![image](https://github.com/user-attachments/assets/ed8920c1-f1e6-4e28-9558-4d6f7d3d459b)

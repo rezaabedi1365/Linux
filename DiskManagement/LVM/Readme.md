@@ -60,7 +60,7 @@ mkfs.ext3 /dev/VG1/LV1
 mkfs -t ext3 /dev/VG1/LV2 
 ```
 
-###Step 6) Mount LV(s) 
+### Step 6) Mount LV(s) 
 ```
 mkdir /P1 ; mkdir /P2 
 mount /dev/VG1/LV1 /P1 ; mount /dev/VG1/LV2 /P2 

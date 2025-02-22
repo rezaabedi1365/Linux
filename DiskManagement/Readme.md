@@ -21,9 +21,14 @@
 - GPT 
 
 ![image](https://github.com/user-attachments/assets/ed8920c1-f1e6-4e28-9558-4d6f7d3d459b)
-
+```
+fdisk  
+```
+![image](https://github.com/user-attachments/assets/76e39bf0-c3d2-4a0e-ad76-572cc3b79c4e)
 
 # File System Type 
+![image](https://github.com/user-attachments/assets/98f51cc6-07e2-49a9-8405-bfde437f17b2)
+
 #### Windows
 - NTFS              Windows 
 ```

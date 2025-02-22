@@ -13,7 +13,7 @@
 - Phisical Volume  (PV)                   
 - Volume Group    (VG)    
 - Logical Volume   (LV)         
-        * Filesystem 
+       * Filesystem 
 - Mount point 
 
 # Partition Table

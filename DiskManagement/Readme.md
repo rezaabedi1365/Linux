@@ -3,17 +3,17 @@
 - Disk
     + Partition table 
 - Partition 
-        * Filesystem 
+    + Filesystem 
 - Mount point 
 
 ### LVM Partition 
 
 - Disk 
-        * Partition table for lvm by default is devtmpfs 
+    + Partition table for lvm by default is devtmpfs 
 - Phisical Volume  (PV)                   
 - Volume Group    (VG)    
 - Logical Volume   (LV)         
-       + Filesystem 
+    + Filesystem 
 - Mount point 
 
 # Partition Table

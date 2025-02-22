@@ -29,10 +29,11 @@ wipefs -a -f /dev/sdb
 ```
 vgcreate VG1  /dev/hda1 /dev/hda2 /dev/sdb2 
 ```
+
 verify:
 ```
 vgs  or #vgdisplay 
-
+```
 ```
 vgrename vg01   vg02 
 vgremove vg02 
@@ -45,8 +46,8 @@ vgextend vg02 /dev/hda1
 lvcreate -n    LV1    -L     20GB         VG1 
 lvcreate -n    LV2    -L     10GB         VG1 
 lvcreate –n   LV3    -l   100%FREE   VG2 
+```
 
- ```
 Verify:
 ```
 lvs or #lvdisplay 
@@ -70,12 +71,7 @@ fdisk -a
   /dev/VG1/LV1   /P1      ext3    defaults  0 0  
   /dev/VG1/LV2   /P2      ext3    defaults  0 0 
 ```
-  
-
- 
-
- 
-
+ 
  
 
 

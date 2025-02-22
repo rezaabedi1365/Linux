@@ -1,20 +1,20 @@
 # Disk Management
 ### Standard Partition 
-     * Disk 
-        - Partition table 
-     * Partition 
-        - Filesystem 
-     * Mount point 
+- Disk 
+        * Partition table 
+- Partition 
+        * Filesystem 
+- Mount point 
 
 ### LVM Partition 
 
-     * Disk 
-         - Partition table for lvm by default is devtmpfs 
-     * Phisical Volume  (PV)                   
-     * Volume Group    (VG)    
-     * Logical Volume   (LV)         
-         - Filesystem 
-     * Mount point 
+- Disk 
+        * Partition table for lvm by default is devtmpfs 
+- Phisical Volume  (PV)                   
+- Volume Group    (VG)    
+- Logical Volume   (LV)         
+        * Filesystem 
+- Mount point 
 
 # Partition Table
 - MBR (dos) 

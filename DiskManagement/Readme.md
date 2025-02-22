@@ -24,6 +24,7 @@
 
 
 # File System Type 
+
 - NTFS              Windows 
 ```
 mkfs.ntfs  /dev/sdb1 
@@ -33,26 +34,22 @@ mkfs.ntfs  /dev/sdb1
 mkfs.fat /dev/sdb2 
 mkfs.vfat /dev/sdb3 
 ```
-     
+   
 
-     
-
-    EXT2/2/4       Linux 
-
-    #mkfs.ex4 /dev/sdb4 
-
-     
-
-    JFS                  IBM 
-
-    HFS                 Apple 
+- ext2   Non-Journaling File System
+- ext3/4 Journaling File Syste 
+```
+mkfs.ex4 /dev/sdb4 
+```
+  
+- JFS                  IBM 
+- HFS                 Apple 
 
   
 
-    Non-Journaling File System 
+    
 
-      ext2 
 
-    Journaling File System 
 
-      Ext3/ext4 
+    m 
+

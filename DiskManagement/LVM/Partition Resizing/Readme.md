@@ -22,6 +22,7 @@ cfdisk
 ```
 
 ### Method2 [ add New Disk ]
+
 ``
 cfdisk /dev/sdb  *by default cfdisk /dev/sda
 ```
@@ -41,13 +42,6 @@ cfdisk /dev/sdb  *by default cfdisk /dev/sda
 
 
 
-- command line 
-```
-lvextend 
-gvextend 
-resize2fs 
-```
-- cfdisk 
-- gparted 
+
 
 -----------------------------------------------------------------------------------------------------------------

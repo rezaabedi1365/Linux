@@ -53,5 +53,6 @@ vgsextend
 ```
 lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
 ```
-![image](https://github.com/user-attachments/assets/cbe1a375-9904-4f1f-8a4a-9dfe1e790971)
+![image](https://github.com/user-attachments/assets/bc1707ff-f8ae-4833-b5e1-8fe9e4a07625)
+
 

@@ -1,9 +1,20 @@
 ```
 ls -l
 ```
+### umask
+```
+umask [-p] [-S] [mask]
+```
+![image](https://github.com/user-attachments/assets/6460d989-5c47-40cf-81ad-3e2fc4d602b0)
+
+
 
 ### Chmod
-
+sysntex:
+```
+u=#,g=#,o=#
+u=rwx,g=rwx,o=rwx
+```
 ```
 chmod u=rw,og=r new_file.txt
 ```

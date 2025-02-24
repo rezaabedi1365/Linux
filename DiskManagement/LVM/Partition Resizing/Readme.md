@@ -20,7 +20,8 @@ fdisk -cu /dev/sdb
           # t (table)
             # 1 to 8e (Linux LVM)
       # w (write)
-        
+# verify
+fdisk -l /dev/sda       
 ```
 
 ![image](https://github.com/user-attachments/assets/9f1eb716-dad1-4e8c-bc17-6ef04f3cc991)
@@ -52,3 +53,15 @@ lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
 
 ![image](https://github.com/user-attachments/assets/2c93ebd5-b194-4e24-a505-9c0a8f4b58c6)
 
+### Step5)
+```
+#for ext/2/3/4
+resize2fs -p /dev/ubuntu-vg/unbuntu-lv
+#for xfs filesystem
+xfs_growfs /dev/ubuntu-vg/ubuntu-lv
+```
+verity:
+```
+lsblk
+df -h
+```

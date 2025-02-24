@@ -1,5 +1,7 @@
 # Partition Resizing
-- https://packetpushers.net/ubuntu-extend-your-default-lvm-space/ 
+- in Partition Resizing you dont need to filesystem (mkfs.) and mount 
+- https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
+
 - Method1 [ add free space to Disk]
 - Method2 [ add New Disk ]
 

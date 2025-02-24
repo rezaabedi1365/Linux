@@ -45,7 +45,7 @@ vgextend vg02 /dev/hda1
 ```
 lvcreate -n    LV1    -L     20GB         VG1 
 lvcreate -n    LV2    -L     10GB         VG1 
-lvcreate –n   LV3    -l   100%FREE   VG2 
+lvcreate –n    LV3    -l   100%FREE       VG2 
 ```
 
 Verify:

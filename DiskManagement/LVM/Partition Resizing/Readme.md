@@ -21,6 +21,7 @@ fdisk -cu /dev/sdb
       # t (change partition type)
             # L (list of partiotion  (30 (Linux LVM))
       # w (write)
+```
 # verify
 ```
 fdisk -l /dev/sda

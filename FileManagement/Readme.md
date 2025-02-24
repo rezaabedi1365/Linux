@@ -43,6 +43,17 @@ chmod 777 new_script.sh
 
 
 ### Chown
+```
+chown [OPTIONS] USER[:GROUP] FILE(s)
+```
 
+```
+sudo chown :root example.txt
+sudo chown root: example.txt
+sudo chown root:root example.txt
+
+#Recursively Change
+sudo chown -R root:root example.txt
+```
 
 

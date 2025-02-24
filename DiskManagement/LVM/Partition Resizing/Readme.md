@@ -23,7 +23,7 @@ cfdisk
 
 ### Method2 [ add New Disk ]
 
-``
+```
 cfdisk /dev/sdb  *by default cfdisk /dev/sda
 ```
 

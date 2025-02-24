@@ -14,14 +14,18 @@ cfdisk /dev/sdb  *by default cfdisk /dev/sda
 or fdisk
 ```
 fdisk -cu /dev/sdb
+      # g (GPT) o (MBR)
       # n (new)
         # P primary partition (1-4)
         # e extended Partiton 
-          # t (table)
-            # 1 to 8e (Linux LVM)
+      # t (change partition type)
+            # L (list of partiotion  (30 (Linux LVM))
       # w (write)
 # verify
-fdisk -l /dev/sda       
+```
+fdisk -l /dev/sda
+# lvm partition have tree in lsblk
+lsblk     
 ```
 
 ![image](https://github.com/user-attachments/assets/9f1eb716-dad1-4e8c-bc17-6ef04f3cc991)

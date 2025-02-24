@@ -25,6 +25,15 @@ cfdisk
 ```
 pvresize /dev/sda
 ```
+### step3
+```
+vgsextend
+```
+
+### Step4
+```
+lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
+```
 
 # Method2 [ add New Disk ]
 

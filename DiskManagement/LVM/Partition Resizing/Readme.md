@@ -39,8 +39,19 @@ cfdisk /dev/sdb  *by default cfdisk /dev/sda
 
 ### step2)
 ```
-pvcreage /dev/sdb
+pvcreate /dev/sdb
 ```
 ![image](https://github.com/user-attachments/assets/00ac1966-85c2-4b87-ad8f-961f58426ceb)
 
+### step3)
+```
+vgsextend
+```
+![image](https://github.com/user-attachments/assets/75a5b1d7-4c5d-4492-83fb-435f819969e3)
+
+### step4)
+```
+lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
+```
+![image](https://github.com/user-attachments/assets/cbe1a375-9904-4f1f-8a4a-9dfe1e790971)
 

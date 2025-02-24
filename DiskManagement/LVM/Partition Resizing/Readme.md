@@ -20,6 +20,10 @@ lvs or #lvdisplay
 ```
 cfdisk
 ```
+### step2
+```
+pvresize /dev/sda
+```
 
 # Method2 [ add New Disk ]
 

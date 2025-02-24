@@ -32,16 +32,3 @@ cfdisk /dev/sdb  *by default cfdisk /dev/sda
 ![image](https://github.com/user-attachments/assets/b5664201-a3a6-40bc-b26b-c51088f1b176)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
------------------------------------------------------------------------------------------------------------------

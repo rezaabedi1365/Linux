@@ -20,6 +20,7 @@ lvs or #lvdisplay
 ```
 cfdisk
 ```
+
 ### step2
 ```
 pvresize /dev/sda
@@ -55,4 +56,5 @@ lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
 ```
 ![image](https://github.com/user-attachments/assets/bc1707ff-f8ae-4833-b5e1-8fe9e4a07625)
 
+![image](https://github.com/user-attachments/assets/2c93ebd5-b194-4e24-a505-9c0a8f4b58c6)
 

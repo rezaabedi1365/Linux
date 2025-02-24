@@ -16,12 +16,12 @@ lvs or #lvdisplay
     #/dev/ubuntu-vg/ubuntu-lv
 ```
 
-### Method1 [ add free space to Disk]
+# Method1 [ add free space to Disk]
 ```
 cfdisk
 ```
 
-### Method2 [ add New Disk ]
+# Method2 [ add New Disk ]
 
 ```
 cfdisk /dev/sdb  *by default cfdisk /dev/sda
@@ -32,5 +32,11 @@ cfdisk /dev/sdb  *by default cfdisk /dev/sda
 ![image](https://github.com/user-attachments/assets/b0530c3b-4425-4dfe-adff-f705f32d8460)
 
 ![image](https://github.com/user-attachments/assets/b5664201-a3a6-40bc-b26b-c51088f1b176)
+
+### step2)
+```
+pvcreage /dev/sdb
+```
+![image](https://github.com/user-attachments/assets/00ac1966-85c2-4b87-ad8f-961f58426ceb)
 
 

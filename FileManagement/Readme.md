@@ -23,7 +23,8 @@ umask 444
 umask -S u=wx,g=wx,o=wx
 ```
 
-show default umask (0022)
+show 
+- default umask (0022 OR u=rwx,g=rx,o=rx)
 ```
 umask
 ```
@@ -32,7 +33,7 @@ umask
 ### Chmod
 sysntex:
 ```
-chmod u=#,g=#,o=#
+chmod 1-7,1-7,1-7
 chmod u=rwx,g=rwx,o=rwx
 ```
 ```

@@ -26,9 +26,6 @@ show default umask (0022)
 umask
 ```
 
-![image](https://github.com/user-attachments/assets/6460d989-5c47-40cf-81ad-3e2fc4d602b0)
-
-
 
 ### Chmod
 sysntex:

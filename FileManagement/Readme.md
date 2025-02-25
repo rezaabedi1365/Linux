@@ -32,6 +32,7 @@ show
 - default umask (0022 OR u=rwx,g=rx,o=rx)
 ```
 umask
+umask -S
 ```
 
 

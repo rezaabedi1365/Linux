@@ -2,6 +2,8 @@
 ls -l
 ```
 ### umask
+![image](https://github.com/user-attachments/assets/35d20ecc-09ce-431e-b4f7-b3de105ec615)
+
 syntax:
 ```
 umask [-p] [-S] [mask]

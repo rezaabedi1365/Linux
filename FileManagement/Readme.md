@@ -11,7 +11,7 @@ ls -l
 
 syntax:
 ```
-umask [-p] [-S] [mask]
+umask [-p] [-S] 
 ```
 example:
 ```

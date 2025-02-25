@@ -1,5 +1,8 @@
 ```
-ls -l
+#show permission sort reverce by time
+ls -lhtr
+#show permission sort reverce by size
+ls -lhSr
 ```
 ![image](https://github.com/user-attachments/assets/82e68b2e-da19-4d8f-89e5-db94149d7f12)
 

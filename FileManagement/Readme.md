@@ -6,4 +6,8 @@ ls -lhtr
 ls -lhSr
 ```
 
-
+## echo
+```
+echo "test"
+echo \"test"\
+```

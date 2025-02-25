@@ -1,6 +1,11 @@
 ```
 ls -l
 ```
+![image](https://github.com/user-attachments/assets/82e68b2e-da19-4d8f-89e5-db94149d7f12)
+
+
+
+--------------------------------------------------------------------------------------------------
 ### umask
 ![image](https://github.com/user-attachments/assets/35d20ecc-09ce-431e-b4f7-b3de105ec615)
 

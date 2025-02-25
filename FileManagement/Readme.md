@@ -3,11 +3,14 @@ ls -l
 ```
 ![image](https://github.com/user-attachments/assets/82e68b2e-da19-4d8f-89e5-db94149d7f12)
 
-
+#### Umask vs chnmod
+- umask Sets the default permission mask that determines the permissions of files and directories when they are created. It does not affect existing files and directories.
+- chmod (change mode) is used to change the permissions of existing files and directories. It does not affect the permissions of files and directories that will be created in the future
 
 --------------------------------------------------------------------------------------------------
 ### umask
 - umask subtracts from the default system permissions, which are usually 666 for files (rw-rw-rw-) and 777 for directories (rwxrwxrwx). Thus, umask 022 causes new files to have permissions of 644 (rw-r–r–) and new directories to have permissions of 755 (rwxr-xr-x).
+- Changes to umask only affect the current shell session and do not persist after exit unless you include commands to set these permissions in a system startup file such as /etc/bash.bashrc or .profile.
 ![image](https://github.com/user-attachments/assets/35d20ecc-09ce-431e-b4f7-b3de105ec615)
 
 syntax:

@@ -7,6 +7,7 @@ ls -l
 
 --------------------------------------------------------------------------------------------------
 ### umask
+- umask subtracts from the default system permissions, which are usually 666 for files (rw-rw-rw-) and 777 for directories (rwxrwxrwx). Thus, umask 022 causes new files to have permissions of 644 (rw-r–r–) and new directories to have permissions of 755 (rwxr-xr-x).
 ![image](https://github.com/user-attachments/assets/35d20ecc-09ce-431e-b4f7-b3de105ec615)
 
 syntax:

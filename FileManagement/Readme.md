@@ -2,9 +2,30 @@
 ls -l
 ```
 ### umask
+syntax:
 ```
 umask [-p] [-S] [mask]
 ```
+example:
+```
+umask 000
+umask -S u=rwx,g=rwx,o=rwx
+
+umask 111
+umask -S u=rw,g=rw,o=rw
+
+umask 222
+umask -S u=rx,g=rx,o=rx
+
+umask 444
+umask -S u=wx,g=wx,o=wx
+```
+
+show default umask (0022)
+```
+umask
+```
+
 ![image](https://github.com/user-attachments/assets/6460d989-5c47-40cf-81ad-3e2fc4d602b0)
 
 
@@ -12,33 +33,36 @@ umask [-p] [-S] [mask]
 ### Chmod
 sysntex:
 ```
-u=#,g=#,o=#
-u=rwx,g=rwx,o=rwx
+chmod u=#,g=#,o=#
+chmod u=rwx,g=rwx,o=rwx
 ```
 ```
-chmod u=rw,og=r new_file.txt
+chmod 777 new_file.txt
+chmod u=rwx,og=r new_file.txt
+chmod a+x new_script.sh
 ```
-
+Recursively Change
+```
+chmod +x -R ./testdir
+```
+----------------------------------------------------------------------------------------------
 - u: User, meaning the owner of the file.
 - g: Group, meaning members of the group the file belongs to.
 - o: Others, meaning people not governed by the u and g permissions.
 - a: All, meaning all of the above.
 
+-----------------------------------------------------------------------------------------------
 -  -: Minus sign. Removes the permission.
 -  +: Plus sign. Grants the permission. The permission is added to the existing permissions. If you want to have this permission and only this permission set, use the = option, described below.
 -  =: Equals sign. Set a permission and remove others.
 
-```
-chmod a+x new_script.sh
-```
+-----------------------------------------------------------------------------------------------
 
 - r: The read permission.
 - w: The write permission.
 - x: The execute permission.
 
-```
-chmod 777 new_script.sh
-```
+-----------------------------------------------------------------------------------------------
 
 - 0: (000) No permission.
 - 1: (001) Execute permission.
@@ -49,10 +73,7 @@ chmod 777 new_script.sh
 - 6: (110) Read and write permissions.
 - 7: (111) Read, write, and execute permissions.
 
-Recursively Change
-```
-chmod +x -R ./testdir
-```
+
 
 ### Chown
 ```

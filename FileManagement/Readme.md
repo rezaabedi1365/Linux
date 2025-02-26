@@ -22,3 +22,7 @@ cat -n file1.txt
 tail -f /var/log/auth.log
 
 ```
+### wc
+```
+wc -l /var/log/syslog
+```

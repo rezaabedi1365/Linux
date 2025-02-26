@@ -24,11 +24,18 @@ strout & stderr redirect 2>&1
 date  > log.txt 2>&1  
 ```
 
-* redirect to null
+redirect to null
 ```
-date  log.txt   "insert answer to standard output" 1&2>/dev/null
+date > log.txt   /dev/null
+#or
+date > log.txt   1&2>/dev/null
 ```
 
+redirect output command to input other command
+```
+ls -l /etc | wc -l
+ls -l /etc | grep ab
+```
 ----------------------------------------------------
 ### echo 
 ```

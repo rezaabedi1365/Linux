@@ -68,3 +68,31 @@ watch "cat /var/log/syslog"
 ```
 wc -l /var/log/syslog
 ```
+### cut
+```
+# -c: character culumn 6-12
+cut -c 6-12 file1.txt
+
+# -f:
+cut 
+
+# -d: Delimiter
+# default delimiter is tab
+cut -f 1,5,6,7 /etc/passwd
+cut -d":" -f 1,5,6,7 /etc/passwd
+```
+```
+redirection
+cut -d":" -f1,5,6,7 /etc/passwd > ./log.txt
+```
+
+
+
+
+
+
+
+
+
+
+

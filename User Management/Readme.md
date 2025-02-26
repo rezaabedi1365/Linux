@@ -5,12 +5,12 @@
 - /etc/bash.bashrc
 - ~/.profile
 - ~/.bashrc
-  
+-----------------
 ```
 w
 tial -f /var/log/auth.log
 ```
-
+-----------------
 ### Userdd
 ```
 useradd -m user1 -s /bin/bash -G root,sudo

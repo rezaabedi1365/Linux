@@ -3,7 +3,7 @@
 - 0: Standard input (keyboard)
 - 1: standard output(screen)
 - 2: standard error (screen)
-
+---------------------------------------------------
 * stdout redirect 1>
 ```
 date > log.txt    "insert answer to standard output"

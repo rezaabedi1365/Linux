@@ -11,3 +11,14 @@ ls -lhSr
 echo "test"
 echo \"test"\
 ```
+### cat
+```
+cat file1.txt
+cat -n file1.txt
+```
+
+### tail
+```
+tail -f /var/log/auth.log
+
+```

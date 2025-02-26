@@ -37,7 +37,7 @@ ls -l /etc | wc -l
 ls -l /etc | grep ab
 ```
 ----------------------------------------------------
-### echo 
+### Redirecton with echo 
 ```
 echo "test" > ./log.txt
 echo "test" >> ./log.txt

@@ -52,6 +52,7 @@ cat -n file1.txt
 ### tail
 ```
 tail -f /var/log/auth.log
+tail -20 /var/log/aoth.log
 ```
 
 ### head

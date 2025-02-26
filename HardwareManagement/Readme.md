@@ -2,5 +2,9 @@
 
 ### CPU
 ```
-cat /proc/cpuinfo
+watch "cat /proc/cpuinfo"
+```
+### memory
+```
+watch "cat /proc/meminfo"
 ```

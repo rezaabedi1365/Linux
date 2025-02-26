@@ -52,9 +52,14 @@ cat -n file1.txt
 ### tail
 ```
 tail -f /var/log/auth.log
-
 ```
-###
+
+### head
+show last 5 line
+```
+head 5 /var/log/syslog
+```
+### watch
 ```
 watch "cat /var/log/syslog"
 ```

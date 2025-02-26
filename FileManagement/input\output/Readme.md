@@ -36,6 +36,10 @@ redirect output command to input other command
 ls -l /etc | wc -l
 ls -l /etc | grep ab
 ```
+show tail with line number
+```
+cat -n /var/log/syslog | tail -50 /var/log/syslog
+```
 ----------------------------------------------------
 Redirecton with echo 
 ```

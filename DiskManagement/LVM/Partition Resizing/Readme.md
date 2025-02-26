@@ -69,4 +69,6 @@ verity:
 ```
 lsblk
 df -h
+df -h /dev/sda3
+fdisk -l /dev/sda3
 ```

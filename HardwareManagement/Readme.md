@@ -1,0 +1,6 @@
+
+
+### CPU
+```
+cat /proc/cpuinfo
+```

@@ -10,6 +10,7 @@
 ls [e-z]*
 ls [!e-z]*
 ls {file*,log.??}
+ls {[!e-z],[!E-Z]}
 ```
 
   

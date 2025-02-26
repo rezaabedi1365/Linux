@@ -1,7 +1,7 @@
 - /etc/passwd
 - /etc/group
 - /etc/sudoers
-- 
+
 - /etc/bash.bashrc
 - ~/.profile
 - ~/.bashrc

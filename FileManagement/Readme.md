@@ -8,14 +8,27 @@ ls -lhSr
 ```
 ### du
 ```
+du [option] [directory-or-file]
+```
+```
 du -h --max-depth=1 /opt
 du -h --max-depth=1 /opt/services
 du -h --max-depth=1 /opt/services/mssql/
-```
-```
+
 du --summarize --human-readable *
 du -sh *
 ```
+
+* -h, --human-readable	  Shows file/directory size in a human-friendly format.
+* -s, --summarize	        Shows only the total size of the specified directories rather than breaking down the sizes for each subdirectory and file within them.
+* -S, --separate-dirs	    Excludes subdirectories.
+* -x, --one-file-system   Skips directories on different file systems.
+* -a, --all	              Shows sizes for files as well as directories.
+* -c, --total	            Displays the total disk usage in the last line.
+* -X, --exclude=[pattern]	Excludes files/directories that match the specified [pattern].
+* d, --max-depth=[N]	    Limits the depth of the directory tree du travels to [N] levels.
+* --time	                Shows the last modification time for any file or directory.
+* –apparent-size  	      Prints apparent size and disregards the additional space occupied by metadata.
 
 ### cat
 ```

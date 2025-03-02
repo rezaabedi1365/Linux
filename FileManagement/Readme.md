@@ -8,7 +8,9 @@ ls -lhSr
 ```
 ### du
 ```
-du -h --max-depth=1 /opt/services/mssql/log/
+du -h --max-depth=1 /opt
+du -h --max-depth=1 /opt/services
+du -h --max-depth=1 /opt/services/mssql/
 ```
 ```
 du --summarize --human-readable *

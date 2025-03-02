@@ -30,6 +30,15 @@ du -sh *
 * --time	                __Shows the last modification time for any file or directory.
 * –apparent-size  	      __Prints apparent size and disregards the additional space occupied by metadata.
 
+### tree
+```
+tree [options]
+```
+
+- Combine tree with du
+```
+tree -h --du ./example1
+```
 ### cat
 ```
 cat file1.txt

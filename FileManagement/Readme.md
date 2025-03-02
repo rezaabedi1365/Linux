@@ -19,16 +19,16 @@ du --summarize --human-readable *
 du -sh *
 ```
 
-* -h, --human-readable	  Shows file/directory size in a human-friendly format.
-* -s, --summarize	        Shows only the total size of the specified directories rather than breaking down the sizes for each subdirectory and file within them.
-* -S, --separate-dirs	    Excludes subdirectories.
-* -x, --one-file-system   Skips directories on different file systems.
-* -a, --all	              Shows sizes for files as well as directories.
-* -c, --total	            Displays the total disk usage in the last line.
-* -X, --exclude=[pattern]	Excludes files/directories that match the specified [pattern].
-* d, --max-depth=[N]	    Limits the depth of the directory tree du travels to [N] levels.
-* --time	                Shows the last modification time for any file or directory.
-* –apparent-size  	      Prints apparent size and disregards the additional space occupied by metadata.
+* -h, --human-readable	  __Shows file/directory size in a human-friendly format.
+* -s, --summarize	        __Shows only total size of specified directories rather than breaking down the sizes for each subdirectory and file within them.
+* -S, --separate-dirs	    __Excludes subdirectories.
+* -x, --one-file-system   __Skips directories on different file systems.
+* -a, --all	              __Shows sizes for files as well as directories.
+* -c, --total	            __Displays the total disk usage in the last line.
+* -X, --exclude=[pattern]	__Excludes files/directories that match the specified [pattern].
+* d, --max-depth=[N]	    __Limits the depth of the directory tree du travels to [N] levels.
+* --time	                __Shows the last modification time for any file or directory.
+* –apparent-size  	      __Prints apparent size and disregards the additional space occupied by metadata.
 
 ### cat
 ```

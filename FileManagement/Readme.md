@@ -108,7 +108,10 @@ rsync -ah --progress source destination
 ```
 pv my_big_file > backup/my_big_file
 ```
-
+- use the pv command with dd
+```
+pv my_big_file | dd of=/opt/my_big_file
+```
 ### mv
 ```
 mv file[123] /tmp

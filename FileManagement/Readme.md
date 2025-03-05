@@ -1,4 +1,4 @@
-# show file and Directory
+# Show File and Directory
 ### ls 
 ```
 #show permission sort reverce by time
@@ -82,7 +82,7 @@ redirection
 cut -d":" -f1,5,6,7 /etc/passwd > ./log.txt
 ```
 --------------------------------------------------------------
-# change file and Direcroty
+# Change File and Direcroty
 ### mkdir
 ```
 mkdir ./dir1

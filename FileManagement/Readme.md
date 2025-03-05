@@ -95,9 +95,18 @@ cp file[123] /tmp
 cp file1 file2 file3 /tmp
 cp /etc/passwed .
 ```
-- Recurciv : copy directory with its contents 
+- -r : Recurciv(copy directory with its contents)
+- -v : verbos mode
 ```
-cp -r /etc ~/dir1
+cp -rv /etc ~/dir1
+```
+### rsync
+```
+rsync -ah --progress source destination
+```
+### pv
+```
+pv my_big_file > backup/my_big_file
 ```
 
 ### mv

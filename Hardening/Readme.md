@@ -22,7 +22,18 @@ ClientAliveCountMax 3
 UsePAM yes
 PermitRootLogin no
 ```
+### user and groups 
+```
+#Run the following command to remove all users from the shadow group 
+sed -ri 's/(^shadow:[^:]*:[^:]*:)([^:]+$)/\1/' /etc/group.
+```
 
+```
+##password hashing algorithm is SHA-512:
+#Edit file
+nano /etc/pam.d/common-password file to include the sha512 option for pam_unix.so as shown:
+password [success=1 default=ignore] pam_unix.so sha512
+```
 ### ufw 
 ```
 ufw status
@@ -58,4 +69,11 @@ touch /etc/cron.allow
 #Run the following commands to set permissions and ownership for /etc/cron.allow
 chmod g-wx,o-rwx /etc/cron.allow 
 chown root:root /etc/cron.allow
+```
+### Command.log
+```
+```
+
+### auditt
+```
 ```

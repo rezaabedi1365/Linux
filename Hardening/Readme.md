@@ -47,3 +47,15 @@ apt remove --purge telnet
 apt remove --purge vsftpd
 apt remove --purge samba
 ```
+restrict access to cron
+```
+#Run the following commands to remove /etc/cron.deny: 
+rm /etc/cron.deny
+
+#Run the following command to create /etc/cron.allow
+touch /etc/cron.allow
+
+#Run the following commands to set permissions and ownership for /etc/cron.allow
+chmod g-wx,o-rwx /etc/cron.allow 
+chown root:root /etc/cron.allow
+```

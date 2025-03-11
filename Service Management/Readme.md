@@ -1,6 +1,9 @@
 ### show services
 ```
 service --status-all
+
+systemctl list-units
+sudo systemctl list-units --state running
 ```
 
 ### systemctl 

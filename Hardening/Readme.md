@@ -57,6 +57,7 @@ update-grub
 apt remove --purge telnet
 apt remove --purge vsftpd
 apt remove --purge samba
+apt remove --purge rsh-client
 ```
 restrict access to cron
 ```

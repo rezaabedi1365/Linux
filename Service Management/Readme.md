@@ -1,7 +1,5 @@
 ### Kernel setting
 /etc/sysctl.conf
-* 
-
 ```
 sysctl net.ipv6.bindv6only
 #to effect the change.

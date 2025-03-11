@@ -1,3 +1,17 @@
+### Kernel setting
+/etc/sysctl.conf
+* 
+
+```
+sysctl net.ipv6.bindv6only
+#to effect the change.
+sudo sysctl -p
+```
+if set to 1 then only ipv6 connection are allowed
+```
+sysctl -w net.ipv6.bindv6only=0
+```
+
 ### show services
 ```
 service --status-all

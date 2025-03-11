@@ -31,12 +31,19 @@ ufw allow
 ```
 
 ### ipv6
+nano /etc/default/grub
 ```
+ipv6.disable=1
+#to
+GRUB_CMDLINE_LINUX parameters: GRUB_CMDLINE_LINUX="ipv6.disable=1"
+
+#Run the following command to update the grub2 configuration
+update-grub
 ```
 
 ### service
----
+```
 apt remove --purge telnet
 apt remove --purge vsftpd
 apt remove --purge samba
----
+```

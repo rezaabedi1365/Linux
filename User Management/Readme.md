@@ -18,6 +18,11 @@ sudo passwd user1
 ```
 verify: 
 ```
+grep "user1" /etc/shadow
+grep "user1" /etc/group
+id -u user1
+id -g user1
+
 groups user1
 ls /root
 cd /

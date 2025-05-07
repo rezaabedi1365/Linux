@@ -34,10 +34,4 @@ To add an IP to eth0:
 To add a route via gateway 192.168.1.1:  
 `sudo ip route add 192.168.2.0/24 via 192.168.1.1 dev eth0`[1][4][5].
 
-Citations:
-[1] Linux ip Command with Examples {+ ip Cheat Sheet} - phoenixNAP https://phoenixnap.com/kb/linux-ip-command-examples
-[2] [PDF] ip COMMAND CHEAT SHEET https://access.redhat.com/sites/default/files/attachments/rh_ip_command_cheatsheet_1214_jcs_print.pdf
-[3] Exploring the Linux 'ip' Command - Cisco Blogs https://blogs.cisco.com/learning/exploring-the-linux-ip-command
-[4] How to Use the ip Command in Linux | Linode Docs https://www.linode.com/docs/guides/how-to-use-the-linux-ip-command/
-[5] How to Use the ip Command in Linux: A Comprehensive Tutorial https://hostman.com/tutorials/how-to-use-the-ip-command-in-linux/
-[6] Linux-ip-route-reference-by-examples.adoc - GitHub https://github.com/yuriskinfo/cheat-sheets/blob/master/cheat-sheets/Linux-ip-route-reference-by-examples.adoc
+

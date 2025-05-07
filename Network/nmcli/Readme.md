@@ -34,12 +34,14 @@ To disable DHCP for IPv4 on Oracle Linux (including version 9.5), you typically 
 ## Alternative: Editing NetworkManager config files
 
 You can also edit the connection file under `/etc/NetworkManager/system-connections/` and set:
+
 ```
 [ipv4]
 method=manual
-address1=/,
-dns=;;
+address1=YOUR_IP/NETMASK,GATEWAY
+dns=DNS1;DNS2;
 ```
+
 Then restart NetworkManager:
 ```bash
 systemctl restart NetworkManager

@@ -86,11 +86,5 @@ If your network goes down after some time on Oracle Linux, it could be due to se
 6. **Make Network Configuration Persistent and Correct**
    Oracle Linux 9 uses NetworkManager profiles stored in `/etc/NetworkManager/system-connections/`. Ensure your static IP, gateway, and DNS are correctly configured there to avoid DHCP conflicts or misconfigurations that cause drops[2].
 
-## Additional Tools and Tips
 
-- Install and use `netcat` (`yum install nc`) to test TCP connectivity to hosts and ports[1].
-- Use `nmcli` or `nmtui` to manage and verify network settings interactively[2].
-- Review system logs (`/var/log/messages` or `journalctl`) for hardware or driver errors.
-
----
 

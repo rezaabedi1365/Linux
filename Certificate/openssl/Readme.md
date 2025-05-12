@@ -40,6 +40,27 @@ Remove persharkey from key
 ```
 openssl rsa -in key.pem -out server.key 
 ```
+Error
+* 40C7C43E0D7F0000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:../crypto/evp/evp_fetch.c:349:Global default library context, Algorithm (RC2-40-CBC : 0), Properties ()
+Permanent fix (optional)
+
+* If you want OpenSSL to always load legacy algorithms, you can modify the OpenSSL configuration file (openssl.cnf) to activate the legacy provider:
+
+- Add or modify these sections:
+```
+text
+[provider_sect]
+default = default_sect
+legacy = legacy_sect
+
+[default_sect]
+activate = 1
+
+[legacy_sect]
+activate = 1
+```
+Then set the environment variable OPENSSL_CONF to point to this config file before running OpenSSL commands
+
 ### Generate PFX file from private key and ca-bundle files
 * Method1
   - https://serverfault.com/questions/1097033/generate-pfx-file-from-private-key-and-crt-files

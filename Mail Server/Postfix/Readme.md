@@ -142,34 +142,4 @@ This setup gives you a fully functional mail server with Postfix handling mail t
 
 ---
 
-**References:**
 
-- ServerStadium: Configuring Postfix, Dovecot, and Roundcube[1]
-- Bitnami: Roundcube with Postfix and Dovecot[2]
-- Vultr: Install Postfix, Dovecot, Roundcube on Ubuntu[3]
-- Reintech.io: Mail Server with Roundcube on Ubuntu 22.04[6]
-
-Citations:
-[1] https://serverstadium.com/knowledge-base/configuring-a-mail-server-with-postfix-dovecot-and-roundcube-on-serverstadium/
-[2] https://docs.bitnami.com/aws/apps/roundcube/configuration/use-postfix-dovecot/
-[3] https://docs.vultr.com/how-to-install-postfix-dovecot-and-roundcube-on-ubuntu-20-04
-[4] https://github.com/mazyaar/Postfix_Dovcout_Opendkim_Roundcube
-[5] https://dev.to/wovosoft/complete-guide-to-setting-up-a-mail-server-with-postfix-dovecot-and-roundcube-65c
-[6] https://reintech.io/blog/install-configure-mail-server-roundcube-ubuntu
-[7] https://www.atlantic.net/vps-hosting/how-to-set-up-fully-featured-mail-server-with-postfix-dovecot-and-roundcube-on-ubuntu/
-[8] https://www.youtube.com/watch?v=xtqZiM5_NtE
-[9] https://www.grulic.org.ar/~mdione/glob/posts/webmail-with-roundcube-postfix-dovecot/
-[10] https://forums.rockylinux.org/t/installation-of-postfix-dovecot-and-roundcube/7142
-[11] https://www.roundcubeforum.net/index.php?topic=30613.0
-[12] https://github.com/SebastianUA/postfix-dovecot-mysql-roundcube
-[13] https://www.tecmint.com/setup-postfix-mail-server-in-ubuntu-debian/
-[14] https://serverfault.com/questions/1163816/roundcube-1-6-5-smtp-configuration
-[15] https://serverfault.com/questions/915342/getting-roundcube-to-work-with-dovecot-postfix-and-letsencrypt
-
----
-Answer from Perplexity: pplx.ai/share
-```
-sudo apt update
-
-sudo systemctl status postfix
-```

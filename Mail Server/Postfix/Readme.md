@@ -1,4 +1,4 @@
-Linux Mail server With Postfix,Dovecote and RoundCube
+### Linux Mail server With Postfix,Dovecote and RoundCube
 To set up a complete Linux mail server on Ubuntu 22.04 using Postfix, Dovecot, and Roundcube, you need to install and configure each component properly. Here is a detailed step-by-step guide based on best practices and recent resources:
 
 ## 1. Prerequisites

@@ -1,6 +1,0 @@
-
-# NFS
-# Samba
-# FTP
-
-

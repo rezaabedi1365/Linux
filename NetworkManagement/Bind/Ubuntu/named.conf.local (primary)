@@ -1,0 +1,33 @@
+#https://computingforgeeks.com/configure-slave-bind-dns-server-on-ubuntu/
+#https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04
+# /etc/bind/named.conf.local
+
+//#tsig-keygen -a hmac-md5 dnskey > /etc/bind/named.conf.tsig
+//#echo "include "/etc/bind/named.conf.tsig";" >> /etc/bind/named.conf
+//#scp /etc/bind/named.conf.tsig root@10.128.20.12:/root
+
+
+
+
+##Forward zone
+zone "faradis.net" IN {
+    type master;                                  // Primary DNS
+    file "/etc/bind/zones/faradis.fwd.zone";      // Forward lookup file
+    allow-update { none; };                       // Since this is the primary DNS, it should be none.    
+    allow-transfer { 10.128.20.12; };             // Slave address
+//  allow-transfer { key "dnskey"; };             //key for encrypt and decrypt
+    also-notify { 172.16.10.10; };                //Notify slave for zone changes
+};
+
+
+
+##Reverse zone
+zone "168.192.in-addr.arpa" IN {                  //Reverse lookup name, should match your network in reverse order
+    type master;                                  // Primary DNS
+    file "/etc/bind/faradis.rev.zone";            //Reverse lookup file
+    allow-transfer { 172.16.10.10; };            // Slave address
+    allow-update { none; };                      //Since this is the primary DNS, it should be none.
+    allow-transfer  { 172.16.10.10; };           //Allow Transfer of zone from the master server
+    also-notify { 172.16.10.10; };               //Notify slave for zone changes
+};
+

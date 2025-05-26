@@ -1,0 +1,18 @@
+#/etc/bind/db.168.192
+
+$TTL    604800  #ttl for SOA record
+@       IN      SOA     faradis.net     root.localhost. (
+                              2         ; Serial
+                          43200         ; Refresh               //varies from 1200 to 43200 seconds [ 20 to 720 min (12 H)]
+                           1800         ; Retry interval        //default value is 1800 seconds. The retry rate varies from 180 to 2419200 seconds. [ 30 to 40320 min (672 H or 28 Day)]
+                        2419200         ; Expire                //The default value is 1209600 seconds.[20160 min (336 H OR 14 Day)]
+                         604800 )       ; Cache TTL             //The default value is 3600 seconds (1 Hour).
+  
+@       IN      NS      ns01.faradis.net.      
+@       IN      NS      ns02.faradis.net   
+
+
+20.10            IN            PTR            ns01.faradis.net.
+20.11            IN            PTR            ns02.faradis.net.
+20.15            IN            PTR            srv01.faradis.net.
+20.16            IN            PTR            srv02.faradis.net.

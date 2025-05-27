@@ -1,6 +1,8 @@
 To configure DNS for the domain **sanbod.tech** on an Ubuntu Linux server using BIND9 as the primary DNS server, follow these steps:
 
-## 1. Install BIND9
+----------------------------------------------------------------------------------------------
+# 1- install
+-----------------------------------------------------------------------------------------------
 
 Update your system and install BIND9:
 
@@ -9,8 +11,9 @@ sudo apt update
 sudo apt install bind9 bind9utils bind9-doc -y
 ```
 
-## 2. Configure the DNS Zone for sanbod.tech
-
+----------------------------------------------------------------------------------------------
+# 2- Forward Lookup Zone
+----------------------------------------------------------------------------------------------
 ### a. Define the zone in BIND configuration
 
 Edit the file `/etc/bind/named.conf.local` to add your domain zone:
@@ -77,47 +80,9 @@ Run:
 sudo named-checkzone sanbod.tech /etc/bind/zones/db.sanbod.tech
 ```
 
-Fix any errors if reported.
 
-## 3. Configure BIND Options (Optional)
-
-Edit `/etc/bind/named.conf.options` to set forwarders (external DNS servers) for queries your server cannot resolve:
-
-```bash
-sudo nano /etc/bind/named.conf.options
-```
-
-Inside the `options` block, add:
-
-```bash
-forwarders {
-    8.8.8.8;
-    8.8.4.4;
-};
-```
-
-Save and exit.
-
-## 4. Restart BIND9 Service
-
-Apply all changes:
-
-```bash
-sudo systemctl restart bind9
-```
-
-## 5. Test Your DNS Server
-
-Test resolving your domain locally:
-
-```bash
-dig @localhost sanbod.tech
-dig @localhost www.sanbod.tech
-```
-
-You should see the IP addresses you configured.
 ----------------------------------------------------------------------------------------------
-# reverse lookup zone
+# 3- reverse lookup zone
 ----------------------------------------------------------------------------------------------
 A **reverse lookup zone** in DNS is a special authoritative zone used to resolve IP addresses back to domain names, essentially performing the opposite function of a forward lookup zone[1][2][3].
 
@@ -197,7 +162,7 @@ You should get the hostname `sanbod.tech` in the answer.
 ---
 
 ----------------------------------------------------------------------------------------------
-# how to set conditional forwarder ?
+# 4- how to set conditional forwarder ?
 ----------------------------------------------------------------------------------------------
 
 To set up a conditional forwarder in BIND9 on Ubuntu, follow these steps. A conditional forwarder directs specific domain queries to designated DNS servers while using default resolvers for other requests.
@@ -266,13 +231,41 @@ Successful responses will show the IP address resolved via the specified forward
 
 ---
 
-## Key Considerations
+----------------------------------------------------------------------------------------------
+# 5- Configure BIND Options (Optional)
+----------------------------------------------------------------------------------------------
 
-- **Recursion**: Ensure `recursion yes;` is set in `/etc/bind/named.conf.options` [1][4].
-- **ACLs**: Restrict queries using `allow-query` if needed (e.g., `allow-query { trusted_clients; };`) [6].
-- **Logging**: Enable query logging in `/etc/bind/named.conf` for debugging if issues arise [5].
+Edit `/etc/bind/named.conf.options` to set forwarders (external DNS servers) for queries your server cannot resolve:
 
----
+```bash
+sudo nano /etc/bind/named.conf.options
+```
 
-This method allows you to route specific domains to internal or external DNS servers while retaining default resolution for other queries.
+Inside the `options` block, add:
+
+```bash
+forwarders {
+    8.8.8.8;
+    8.8.4.4;
+};
+```
+
+Save and exit.
+
+## 4. Restart BIND9 Service
+
+Apply all changes:
+
+```bash
+sudo systemctl restart bind9
+```
+
+## 5. Test Your DNS Server
+
+Test resolving your domain locally:
+
+```bash
+dig @localhost sanbod.tech
+dig @localhost www.sanbod.tech
+```
 

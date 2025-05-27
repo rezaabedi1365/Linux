@@ -249,23 +249,15 @@ forwarders {
     8.8.4.4;
 };
 ```
-
 Save and exit.
 
-## 4. Restart BIND9 Service
-
+----------------------------------------------------------------------------------------------
+# 6- Restart BIND9 Service
+----------------------------------------------------------------------------------------------
 Apply all changes:
 
 ```bash
 sudo systemctl restart bind9
 ```
 
-## 5. Test Your DNS Server
-
-Test resolving your domain locally:
-
-```bash
-dig @localhost sanbod.tech
-dig @localhost www.sanbod.tech
-```
 

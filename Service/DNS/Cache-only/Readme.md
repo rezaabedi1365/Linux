@@ -98,16 +98,3 @@ This setup creates a caching-only DNS server with BIND9 on Ubuntu, which will ca
 
 This method is based on the detailed guides for setting up caching DNS servers on Ubuntu using BIND9[5][6][8][9].
 
-Citations:
-[1] https://ubuntu.com/server/docs/domain-name-service-dns
-[2] https://www.cherryservers.com/blog/how-to-install-and-configure-a-private-bind-dns-server-on-ubuntu-22-04
-[3] https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-20-04
-[4] https://askubuntu.com/questions/346838/how-do-i-configure-my-dns-settings-in-ubuntu-server
-[5] https://mailserverguru.com/linux-dns-server/
-[6] https://kifarunix.com/setup-caching-only-dns-server-using-bind9-on-ubuntu-20-04/
-[7] https://tecadmin.net/configure-dns-server-on-ubuntu-linuxmint/
-[8] https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-caching-or-forwarding-dns-server-on-ubuntu-16-04
-[9] https://serverspace.ca/support/help/configure-bind9-dns-server-on-ubuntu/
-
----
-Answer from Perplexity: pplx.ai/share

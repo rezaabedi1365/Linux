@@ -1,9 +1,9 @@
 ### top
 
 
-### AUX
+### PS
 ```
-aux | grep docker
+ps aux | grep docker
 ```
 
 ### CPU

@@ -1,4 +1,10 @@
+### top
 
+
+### AUX
+```
+aux | grep docker
+```
 
 ### CPU
 ```

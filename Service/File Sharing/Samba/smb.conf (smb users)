@@ -1,0 +1,48 @@
+[global]
+    workgroup = METRAN
+    browsable = no    # administrative Share IPC$
+    encrypt passwords = yes
+    wins support = yes
+    log level = 1 
+    max log size = 1000
+    read only = no    
+  ### Networking #####
+    interfaces= ens160
+    bind interfaces only= yes
+  ### Debuging #####
+    log file = /var/log/samba/log.%m
+    max log size = 1000
+    logging = file
+    panic action = /usr/share/samba/panic-action %d
+  ### Authentication, Domain, and Misc #####
+    server role = standalone server
+    obey pam restrictions = yes
+    unix password sync = yes
+    passwd program = /usr/bin/passwd
+    passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+    pam password change = yes
+    map to guest = bad user
+    usershare allow guests = yesCopied!
+
+
+[homes]   # share user home profile
+    browsable = no
+    map archive = yes
+
+[printers] 
+    path = /var/tmp
+    printable = yes
+    min print space = 2000
+    browseable = NO      # administrator print$
+
+[test]   #visible share name 
+    comment = Samba share directory
+    path = /home/sharing
+
+    public = yes      # anunymos access
+    quest_ok = yes    # anunymos access
+
+    read only = no   // or writable = yes
+    browseable = yes
+
+    valid users = @saraz @new_user

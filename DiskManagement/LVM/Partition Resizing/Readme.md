@@ -1,11 +1,38 @@
+https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
+  
 # Partition Resizing
-- in Partition Resizing you dont need to filesystem (mkfs.) and mount because before created
-- https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
 
 - Method1 [ add free space to Disk]
 - Method2 [ add New Disk ]
+--------------------------------------------------------------------------------------------------------------------
+### Mothod1 
+
+#### Step1) Resize Partition table 
+
+cfdisk > type Linux LVM > write > q
+```
+cfdisk /dev/sdb  # by default cfdisk /dev/sda
+```
+or fdisk
+```
+fdisk -cu /dev/sdb
+      # g (GPT) o (MBR)
+      # n (new)
+        # P primary partition (1-4)
+        # e extended Partiton 
+      # t (change partition type)
+            # L (list of partiotion  (30 (Linux LVM))
+      # w (write)
+```
+# verify
+```
+fdisk -l /dev/sda
+# lvm partition have tree in lsblk
+lsblk 
 
 
+
+### Method2
 ### Step1) Create Partition table and type lvm
 cfdisk > type Linux LVM > write > q
 ```

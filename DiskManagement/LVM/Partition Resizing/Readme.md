@@ -66,10 +66,9 @@ fdisk -cu /dev/sdb
             # L (list of partiotion  (30 (Linux LVM))
       # w (write)
 ```
-# verify
+verify
 ```
-fdisk -l /dev/sda
-# lvm partition have tree in lsblk
+fdisk -l /dev/sdb
 lsblk     
 ```
 

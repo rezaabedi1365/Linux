@@ -24,13 +24,13 @@ fdisk -cu /dev/sdb
             # L (list of partiotion  (30 (Linux LVM))
       # w (write)
 ```
-# verify
+#### verify
 ```
 fdisk -l /dev/sda
 lsblk 
 ```
 
-
+-------------------------------------------------------------------------------------------------------------------
 ### Method2
 ### Step1) Create Partition table and type lvm
 cfdisk > type Linux LVM > write > q

@@ -72,17 +72,9 @@ fdisk -l /dev/sdb
 lsblk     
 ```
 
-![image](https://github.com/user-attachments/assets/9f1eb716-dad1-4e8c-bc17-6ef04f3cc991)
-
-![image](https://github.com/user-attachments/assets/b0530c3b-4425-4dfe-adff-f705f32d8460)
-
-![image](https://github.com/user-attachments/assets/b5664201-a3a6-40bc-b26b-c51088f1b176)
-
 ### step2)
 ```
 pvcreate /dev/sdb
-#in method1 and add free space to disk
-
 ```
 ![image](https://github.com/user-attachments/assets/00ac1966-85c2-4b87-ad8f-961f58426ceb)
 

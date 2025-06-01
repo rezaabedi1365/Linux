@@ -3,7 +3,8 @@ https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
 # Partition Resizing
 
 - Method1 [ add free space to Disk]
-- Method2 [ add New Disk ]
+- Method2 [ add New Disk with on vg ]
+- Method3 [ add New Disk with create new vg ]
 --------------------------------------------------------------------------------------------------------------------
 ### Mothod1 
 
@@ -106,11 +107,56 @@ for xfs filesystem
 ```
 xfs_growfs /dev/ubuntu-vg/ubuntu-lv
 ```
-
-verify:
+-------------------------------------------------------------------------------------------------------------
+### Method3
+### Step1) Create Partition table and type lvm
+cfdisk > type Linux LVM > write > q
 ```
-lsblk
-df -h
-df -h /dev/sda3
-fdisk -l /dev/sda3
+cfdisk /dev/sdb  *by default cfdisk /dev/sda
+```
+or fdisk
+```
+fdisk -cu /dev/sdb
+      # g (GPT) o (MBR)
+      # n (new)
+        # P primary partition (1-4)
+        # e extended Partiton 
+      # t (change partition type)
+            # L (list of partiotion  (30 (Linux LVM))
+      # w (write)
+```
+verify
+```
+fdisk -l /dev/sdb
+lsblk     
+```
+
+### step2) Create pv
+```
+pvcreate /dev/sdb
+```
+![image](https://github.com/user-attachments/assets/00ac1966-85c2-4b87-ad8f-961f58426ceb)
+
+### step3) Create new vg
+```
+sudo vgextend <vg_name> /dev/sdb
+```
+
+
+### step4) resize lv with new vg
+```
+sudo lvextend -l +100%FREE /dev/<vg_name>/<lv_name>
+```
+![image](https://github.com/user-attachments/assets/bc1707ff-f8ae-4833-b5e1-8fe9e4a07625)
+
+![image](https://github.com/user-attachments/assets/2c93ebd5-b194-4e24-a505-9c0a8f4b58c6)
+
+### Step5) Resize the filesystem
+for ext/2/3/4
+```
+resize2fs -p /dev/ubuntu-vg/unbuntu-lv
+```
+for xfs filesystem
+```
+xfs_growfs /dev/ubuntu-vg/ubuntu-lv
 ```

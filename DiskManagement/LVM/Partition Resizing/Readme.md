@@ -27,9 +27,8 @@ fdisk -cu /dev/sdb
 # verify
 ```
 fdisk -l /dev/sda
-# lvm partition have tree in lsblk
 lsblk 
-
+```
 
 
 ### Method2

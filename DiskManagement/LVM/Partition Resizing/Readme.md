@@ -45,8 +45,13 @@ in this method before assigned
 sudo lvextend -l +100%FREE /dev/<vg_name>/<lv_name>
 ```
 #### Step5) Resize the filesystem
+for ext/2/3/4
 ```
-sudo resize2fs /dev/<vg_name>/<lv_name>
+resize2fs -p /dev/ubuntu-vg/unbuntu-lv
+```
+for xfs filesystem
+```
+xfs_growfs /dev/ubuntu-vg/ubuntu-lv
 ```
 -------------------------------------------------------------------------------------------------------------------
 ### Method2
@@ -80,26 +85,29 @@ pvcreate /dev/sdb
 
 ### step3) assign pv to vg
 ```
-vgextend /dev/ununtu-vg
+sudo vgextend <vg_name> /dev/sdb
 ```
 ![image](https://github.com/user-attachments/assets/75a5b1d7-4c5d-4492-83fb-435f819969e3)
 
-### step4)
+### step4) resize lv
 ```
-lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
+sudo lvextend -l +100%FREE /dev/<vg_name>/<lv_name>
 ```
 ![image](https://github.com/user-attachments/assets/bc1707ff-f8ae-4833-b5e1-8fe9e4a07625)
 
 ![image](https://github.com/user-attachments/assets/2c93ebd5-b194-4e24-a505-9c0a8f4b58c6)
 
-### Step5)
+### Step5) Resize the filesystem
+for ext/2/3/4
 ```
-#for ext/2/3/4
 resize2fs -p /dev/ubuntu-vg/unbuntu-lv
-#for xfs filesystem
+```
+for xfs filesystem
+```
 xfs_growfs /dev/ubuntu-vg/ubuntu-lv
 ```
-verity:
+
+verify:
 ```
 lsblk
 df -h

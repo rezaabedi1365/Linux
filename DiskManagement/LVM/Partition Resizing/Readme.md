@@ -24,12 +24,30 @@ fdisk -cu /dev/sdb
             # L (list of partiotion  (30 (Linux LVM))
       # w (write)
 ```
-#### verify
+verify
 ```
 fdisk -l /dev/sda
 lsblk 
 ```
+#### Step2) 
+```
+pvresize /dev/sda3
+pvs
+pvdisplay
+```
+#### Step3)  assign pv to vg
+```
+in this method before assigned
+```
 
+#### Step4) change lv size
+```
+sudo lvextend -l +100%FREE /dev/<vg_name>/<lv_name>
+```
+#### Step5) Resize the filesystem
+```
+sudo resize2fs /dev/<vg_name>/<lv_name>
+```
 -------------------------------------------------------------------------------------------------------------------
 ### Method2
 ### Step1) Create Partition table and type lvm
@@ -65,7 +83,7 @@ lsblk
 ```
 pvcreate /dev/sdb
 #in method1 and add free space to disk
-pvresize /dev/sda
+
 ```
 ![image](https://github.com/user-attachments/assets/00ac1966-85c2-4b87-ad8f-961f58426ceb)
 

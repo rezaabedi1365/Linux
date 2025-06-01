@@ -29,7 +29,7 @@ verify
 fdisk -l /dev/sda
 lsblk 
 ```
-#### Step2) 
+#### Step2) resize pv
 ```
 pvresize /dev/sda3
 pvs
@@ -72,13 +72,13 @@ fdisk -l /dev/sdb
 lsblk     
 ```
 
-### step2)
+### step2) Create pv
 ```
 pvcreate /dev/sdb
 ```
 ![image](https://github.com/user-attachments/assets/00ac1966-85c2-4b87-ad8f-961f58426ceb)
 
-### step3)
+### step3) assign pv to vg
 ```
 vgextend /dev/ununtu-vg
 ```
@@ -86,7 +86,6 @@ vgextend /dev/ununtu-vg
 
 ### step4)
 ```
-lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
 lvextend -l +100%Freee /dev/ubuntu-vg/ubuntu-lv
 ```
 ![image](https://github.com/user-attachments/assets/bc1707ff-f8ae-4833-b5e1-8fe9e4a07625)

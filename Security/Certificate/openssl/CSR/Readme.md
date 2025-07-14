@@ -1,7 +1,7 @@
 
 ### How to Generate CSR With OpenSSL
 * https://phoenixnap.com/kb/generate-openssl-certificate-signing-request  
-  - Step 2:Create RSA Private Key and CSR
+  - Create RSA Private Key and CSR
    ```
   openssl req -new -newkey rsa:2048 -nodes -keyout [your_domain].key -out your_domain.csr
   ```

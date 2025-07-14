@@ -8,5 +8,5 @@
   ```
   openssl req -text -in [file_name].csr -noout -verify
   ```
-<img width="757" height="344" alt="image" src="https://github.com/user-attachments/assets/630bd27f-8166-45fc-99d9-61f441c4ee2f" />
+   <img width="757" height="344" alt="image" src="https://github.com/user-attachments/assets/630bd27f-8166-45fc-99d9-61f441c4ee2f" />
 

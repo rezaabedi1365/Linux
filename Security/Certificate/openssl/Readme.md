@@ -1,8 +1,3 @@
-### PFX Converter
-- https://www.interssl.com/en/ssl-tools-pfxconverter.php
-- https://www.sslshopper.com/ssl-converter.html
-- https://www.httpcs.com/en/ssl-converter
-
 
 ### convert DER to PEM
 - https://tiloid.com/p/creating-a-pfx-file-from-certificate-and-private-key

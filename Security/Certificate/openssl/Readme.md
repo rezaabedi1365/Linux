@@ -3,17 +3,6 @@
 - https://www.sslshopper.com/ssl-converter.html
 - https://www.httpcs.com/en/ssl-converter
 
-### How to Generate CSR With OpenSSL
-* https://phoenixnap.com/kb/generate-openssl-certificate-signing-request  
-  - Step 2:Create RSA Private Key and CSR
-   ```
-  openssl req -new -newkey rsa:2048 -nodes -keyout [your_domain].key -out your_domain.csr
-  ```
-  ```
-  openssl req -text -in [file_name].csr -noout -verify
-  ```
-
-
 
 ### How to Convert pfx to pem
 https://www.xolphin.com/support/Certificate_conversions/Convert_pfx_file_to_pem_file

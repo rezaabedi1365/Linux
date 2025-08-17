@@ -9,7 +9,12 @@ https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
 ### Mothod1 
 
 #### Step1) Resize Partition table 
-
+- add disk in vmware
+```
+for host in /sys/class/scsi_host/host*; do 
+    echo "- - -" > $host/scan 
+done
+```
 cfdisk > type Linux LVM > write > q
 ```
 cfdisk /dev/sdb  # by default cfdisk /dev/sda

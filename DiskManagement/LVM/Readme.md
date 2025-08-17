@@ -6,13 +6,34 @@ https://blog.victormendonca.com/2020/11/18/linux-logical-volume-manager/
 ![image](https://github.com/user-attachments/assets/9cabe764-546a-4514-aa7c-646f7b959519)
 
 
-### Step 1) Phisical Volume System ID to LVM ---> "8e" 
+#### Step1) Add Disk 
 - add disk in vmware
 ```
 for host in /sys/class/scsi_host/host*; do 
     echo "- - -" > $host/scan 
 done
 ```
+- cfdisk > type Linux LVM > write > q
+```
+cfdisk /dev/sdb  # by default cfdisk /dev/sda
+```
+or fdisk
+```
+fdisk -cu /dev/sdb
+      # g (GPT) o (MBR)
+      # n (new)
+        # P primary partition (1-4)
+        # e extended Partiton 
+      # t (change partition type)
+            # L (list of partiotion  (30 (Linux LVM))
+      # w (write)
+```
+verify
+```
+fdisk -l /dev/sda
+lsblk 
+```
+
 
 ### Step 2) Create Physical Volume(PV) 
 ```

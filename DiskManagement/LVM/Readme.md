@@ -7,6 +7,12 @@ https://blog.victormendonca.com/2020/11/18/linux-logical-volume-manager/
 
 
 ### Step 1) Phisical Volume System ID to LVM ---> "8e" 
+- add disk in vmware
+```
+for host in /sys/class/scsi_host/host*; do 
+    echo "- - -" > $host/scan 
+done
+```
 
 ### Step 2) Create Physical Volume(PV) 
 ```

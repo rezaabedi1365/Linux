@@ -9,7 +9,7 @@ https://packetpushers.net/ubuntu-extend-your-default-lvm-space/
 ### Mothod1 
 
 #### Step1) Resize Partition table 
-- add disk in vmware
+- Change disk in vmware
 ```
 for host in /sys/class/scsi_host/host*; do 
     echo "- - -" > $host/scan 

@@ -1,4 +1,4 @@
-## Fullchain Certificate Structur
+## Fullchain Certificate (Bundle) Structur
 ```
 -----BEGIN CERTIFICATE-----
 (Your server certificate)

@@ -2,6 +2,7 @@
 # Vi 
 - Normal Mode (ESC Key)
    * Delete line    [dd]
+   * cut    line    [d]
    * copy   line    [yy]
    * pase   line    [p]
    * search [/]
@@ -11,7 +12,7 @@
    * 
    * 
 - Insert Mode (INS Key)
-- Visual Mode (Ctrl + v)
+- Visual Mode (v or ctrl+v)
    * copy     [y]
    * paste    [p]
    * delete   [d]
@@ -55,15 +56,7 @@ Find and Replace
 :.,$d # removes all lines starting from the current line till the end
 :%d # clears all line
 ```
-######  How to Delete a Single Line in Vi/Vim 
-Hitting dd or D multiple times will delete several lines one by one.
 
-## cut , copy , past Lines
-
-* dd - detelte line
-* d  - cut line
-* yy - copy line
-* p  - past line
 
 ## Select
  * V - select line

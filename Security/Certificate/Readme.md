@@ -1,3 +1,41 @@
+
+
+---
+
+### 1. **SSL Termination (پایان‌دهی SSL)**
+
+* SSL فقط در نقطه‌ی جلویی (مثلا Load Balancer) باز می‌شود.
+* ترافیک از آنجا به سرور **HTTP ساده** منتقل می‌شود.
+* وب سرور نیاز به گواهینامه ندارد یا از HTTPS استفاده نمی‌کند.
+
+### 2. **SSL Passthrough**
+
+* SSL اصلا در Load Balancer یا Reverse Proxy باز نمی‌شود.
+* ترافیک رمزگذاری شده مستقیم به وب سرور منتقل می‌شود.
+* وب سرور خودش SSL را terminate می‌کند.
+* Load Balancer هیچ دسترسی به محتوای رمزگذاری شده ندارد.
+
+### 3. **SSL Bridging / SSL Re-encryption**
+
+* SSL در Load Balancer terminate می‌شود، سپس ترافیک دوباره با HTTPS به سرور اصلی ارسال می‌شود.
+* یعنی **دو لایه رمزگذاری:** یکی بین کاربر و Load Balancer، یکی بین Load Balancer و وب سرور.
+* وب سرور هم SSL فعال دارد و محتوای رمزگذاری شده دریافت می‌کند.
+
+---
+
+💡 پس وقتی هم در Load Balancer و هم در وب سرور گواهینامه دارید، بیشتر به **SSL Bridging / Re-encryption** گفته می‌شود تا صرفا Termination.
+
+---------------------------
+
+
+
+
+
+
+
+
+
+
 ## Fullchain Certificate (Bundle) Structur
 ```
 -----BEGIN CERTIFICATE-----

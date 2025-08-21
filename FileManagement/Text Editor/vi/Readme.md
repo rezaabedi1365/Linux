@@ -1,6 +1,6 @@
 
 # Vi 
-- Normal Mode
+- Normal Mode (ESC Key)
    * Delete line    [dd]
    * copy   line    [yy]
    * pase   line    [p]
@@ -10,12 +10,12 @@
       + Replace
    * 
    * 
-- Insert Mode
-- Visual Mode
+- Insert Mode (INS Key)
+- Visual Mode (Ctrl + v)
    * copy     [y]
    * paste    [p]
    * delete   [d]
-- Command-Line Mode
+- Command-Line Mode  (: Key)
    * Save              [w] 
    * Exit with save    [wq] 
    * Exit              [q] 

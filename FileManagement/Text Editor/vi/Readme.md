@@ -1,9 +1,9 @@
 
 # Vi 
 - Normal Mode
-   * Deleter line [dd]
-   * copy line    [yy]
-   * pase [p]
+   * Delete line    [dd]
+   * copy   line    [yy]
+   * pase   line    [p]
    * search [/]
       + Next  [n]
       + back  [N]

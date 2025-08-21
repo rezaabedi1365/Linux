@@ -1,5 +1,30 @@
 
 # Vi 
+- Normal Mode
+   * Deleter line [dd]
+   * copy line    [yy]
+   * pase [p]
+   * search [/]
+      + Next  [n]
+      + back  [N]
+      + Replace
+   * 
+   * 
+- Insert Mode
+- Visual Mode
+   * copy     [y]
+   * paste    [p]
+   * delete   [d]
+- Command-Line Mode
+   * Save              [w] 
+   * Exit with save    [wq] 
+   * Exit              [q] 
+   * Exit without Save [q!] 
+
+
+
+
+
 
 ## Delete and Repelace
 Remove Lines Based on Regular Expressions 

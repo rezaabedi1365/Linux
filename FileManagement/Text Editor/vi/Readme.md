@@ -9,13 +9,18 @@
       + Next  [n]
       + back  [N]
       + Replace
-   * 
-   * 
+
 - Insert Mode (INS Key)
+  
 - Visual Mode (v or ctrl+v)
    * copy     [y]
    * paste    [p]
    * delete   [d]
+   * undo     [u]
+   * redo     [ctrl+u]
+   * go to start line [gg]
+   * go to end   line [G]
+     
 - Command-Line Mode  (: Key)
    * Save              [w] 
    * Exit with save    [wq] 
@@ -58,15 +63,5 @@ Find and Replace
 ```
 
 
-## Select
- * V - select line
- * v + arrow keys - selection
-   
-## Undo / Redo 
-* u  - Undo
-* ctrl+r - Redo
 
-## Page 
-* gg - Go to first line file
-* G  - Go to last line in file
 

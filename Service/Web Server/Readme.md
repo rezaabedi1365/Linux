@@ -1,4 +1,6 @@
 
+---
+
 ## 🔹 مقایسه کامل Nginx vs HAProxy vs Apache vs Squid
 
 | ویژگی / ابزار                   | **Nginx**                                                                | **HAProxy**                                                   | **Apache (mod\_proxy)**                                 | **Squid**                                                   |
@@ -22,3 +24,7 @@
 * **Nginx** → همه‌کاره، عالی برای **وب و API**، هم Reverse Proxy هم Load Balancer.
 * **HAProxy** → بهترین انتخاب برای **Load Balancing حرفه‌ای و High Availability**.
 * **Apache** → بیشتر برای **سایت‌ها و اپلیکیشن‌های قدیمی**.
+* **Squid** → بهترین برای **Forward Proxy + Caching + ACL/فیلترینگ اینترنت**.
+
+---
+

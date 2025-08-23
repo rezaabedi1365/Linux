@@ -31,7 +31,73 @@
    * gRPC Servers that accept health checking protocol
    * gRPC Servers that do not accept health checking protocol
 
+------------------------------------------------------------------------------------------------------------------
+## HTTP Health check
+```
+
+```
+## TCP Health chek
+```
+stream {
+    upstream mysql_backend {
+        least_conn;   # الگوریتم: کمترین اتصال فعال
+
+        # دو سرور دیتابیس
+        server 192.168.1.10:3306 max_fails=3 fail_timeout=30s;
+        server 192.168.1.11:3306 max_fails=3 fail_timeout=30s;
+        server 192.168.1.12:3306 backup;   # فقط وقتی بقیه Down باشند
+    }
+
+    server {
+        listen 3306;
+        proxy_pass mysql_backend;
+        
+        # تنظیمات اختیاری
+        proxy_connect_timeout 5s;
+        proxy_timeout 1m;
+    }
+}
+
+```
+- TCP Health check for mysql
+```
+stream {
+    upstream mysql_backend {
+        least_conn;   # الگوریتم: کمترین اتصال فعال
+
+        # دو سرور دیتابیس
+        server 192.168.1.10:3306 max_fails=3 fail_timeout=30s;
+        server 192.168.1.11:3306 max_fails=3 fail_timeout=30s;
+        server 192.168.1.12:3306 backup;   # فقط وقتی بقیه Down باشند
+    }
+
+    server {
+        listen 3306;
+        proxy_pass mysql_backend;
+        
+        # تنظیمات اختیاری
+        proxy_connect_timeout 5s;
+        proxy_timeout 1m;
+    }
+}
+```
+- TCP Health check for Redis
+```
+stream {
+    upstream redis_backend {
+        server 192.168.1.20:6379 max_fails=2 fail_timeout=20s;
+        server 192.168.1.21:6379;
+    }
+
+    server {
+        listen 6379;
+        proxy_pass redis_backend;
+    }
+}
+
+```
+
+## UDP Health Checks
 
 
-
-
+## gRPC Health Checks

@@ -33,7 +33,6 @@
 
 ------------------------------------------------------------------------------------------------------------------
 ## HTTP Passive Health check (HTTP Load Balancing)
-- 
 ```
 http {
     upstream backend {
@@ -120,8 +119,48 @@ stream {
 
 ## UDP Passive Health Checks (UDP Load Balancing)
 ```
+stream {
+    upstream dns_backend {
+        # الگوریتم Round Robin (پیش‌فرض)
+        server 192.168.1.10:53 max_fails=3 fail_timeout=30s;
+        server 192.168.1.11:53 max_fails=3 fail_timeout=30s;
+        server 192.168.1.12:53 backup;
+    }
+
+    server {
+        listen 53 udp;
+        proxy_pass dns_backend;
+
+        # تنظیمات timeout
+        proxy_connect_timeout 5s;
+        proxy_timeout 30s;
+    }
+}
 ```
 
 ## gRPC Passive Health Checks (gPRC Load Balancing)
 ```
+http {
+    upstream grpc_backend {
+        least_conn;
+
+        # دو سرور gRPC با Passive Health Check
+        server 192.168.1.10:50051 max_fails=3 fail_timeout=30s;
+        server 192.168.1.11:50051 max_fails=3 fail_timeout=30s;
+        server 192.168.1.12:50051 backup;
+    }
+
+    server {
+        listen 80 http2;
+        server_name grpc.myapp.local;
+
+        location / {
+            grpc_pass grpc://grpc_backend;
+            grpc_set_header Host $host;
+            grpc_set_header X-Real-IP $remote_addr;
+        }
+    }
+}
+
+
 ```

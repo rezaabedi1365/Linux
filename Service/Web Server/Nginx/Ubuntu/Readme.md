@@ -56,8 +56,8 @@ http {
 }
 ```
 example :
-- /etc/nginx/sites-available/your_domain
-- // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+- /etc/nginx/sites-available/Your_SiteName
+- // ln -s /etc/nginx/sites-available/Your_SiteName /etc/nginx/sites-enabled/
 
 ```
 # فایل اصلی: /etc/nginx/nginx.conf
@@ -140,8 +140,9 @@ http {
 ```
 
 ------------------------------------------------------
-/etc/nginx/sites-available/your_domain
-- // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+example :
+- /etc/nginx/sites-available/Your_SiteName
+- // ln -s /etc/nginx/sites-available/Your_SiteName /etc/nginx/sites-enabled/
 ## Alternative Port
 ```
 server {
@@ -171,8 +172,9 @@ server {
 ```
 
 ## Virtual Host (same port)
-/etc/nginx/sites-available/your_domain
-- // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+example :
+- /etc/nginx/sites-available/Your_SiteName
+- // ln -s /etc/nginx/sites-available/Your_SiteName /etc/nginx/sites-enabled/
 ```
 server {
         # Default server configuration        **********open web both ip and name 

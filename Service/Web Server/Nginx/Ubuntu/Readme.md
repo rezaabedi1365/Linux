@@ -21,12 +21,37 @@ recomende:
 
 ---------------------------------------------------------------------------------------------
 # Nginx Directive
-- Main / Global
+- Main / Global Block Drections
+   * user www-data;          # کاربری که Nginx را اجرا می‌کند
+   * worker_processes auto;  # تعداد پروسس‌های Nginx (معمولاً auto)
+   * pid /run/nginx.pid;     # مسیر فایل PID
 - HTTP Block Directives
+   * include       mime.types;         # فایل نوع MIME
+   * default_type  application/octet-stream;
+   * sendfile        on;               # بهبود سرعت ارسال فایل
+   * keepalive_timeout 65;             # مدت زمان اتصال پایدار
+   * server_tokens   off;              # غیرفعال کردن نمایش نسخه Nginx
+   * log_format main '
+   * access_log /var/log/nginx/access.log main;
+   * error_log /var/log/nginx/error.log warn;
 - Server Block Directives
+   * listen 80;                        # پورت گوش دادن
+   * server_name example.com www.example.com;  # نام دامنه
+   * root /var/www/html/example;        # مسیر فایل‌های سایت
+   * index index.html index.htm;        # ف
+   * SSL in Server
 - Location Block Directives
+   * ACL
+   * Response Code
+   * SSL in location
+   * autoindex on;
+   * try_files $uri $uri/ =404; 
 - Security Directives
+   * allow 192.168.1.0/24;   # فقط شبکه داخلی دسترسی دارد
+   * deny all;               #
 - proxy and fastg Directive for applications
+   * include snippets/fastcgi-php.conf;
+   * fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
 
 Default :
 /etc/nginx/nginx.conf
@@ -58,10 +83,11 @@ http {
 
 
 ------------------------------------------------------
+
+## Alternative Port
 example :
 - /etc/nginx/sites-available/Your_SiteName
 - // ln -s /etc/nginx/sites-available/Your_SiteName /etc/nginx/sites-enabled/
-## Alternative Port
 ```
 server {
         listen 8091 default_server;
@@ -121,7 +147,7 @@ server {
 }
 ```
 
-## location Directive
+## location Block Directive
 ```
 server {
         listen 8091 default_server;
@@ -142,7 +168,7 @@ server {
 
 ```
 
-## location Directive (ACL)
+## location Block Directive (ACL)
 ```
 server {
         listen 8091 default_server;
@@ -158,7 +184,7 @@ server {
 }
 ```
 
-## location Directive (Response Code)
+## location block Directive (Response Code)
 ```
 server {
         listen 8091 default_server;

@@ -1,8 +1,9 @@
 
 ## Nginx Config files
 /etc/nginx/
-- sites-available  : 
-- sites-enabled  : 
+- sites-available  :   /etc/nginx/sites-available/your_domain
+
+- sites-enabled  :   ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 - nginx.conf  :
 
 /etc/nginx/nginx.conf
@@ -39,7 +40,37 @@ http {
     * Yoursite\index.html
    
 
+## Virtual Host
+```
 
+
+
+server {
+        # Default server configuration        **********open web both ip and name 
+        listen 8090 default_server;    
+        root /var/www/html/web1;
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+        server_name web1.faradis.net;
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
+
+server {
+        listen 8090 ;
+        #                                   **********open web only with name      
+        server_name web2.faradis.net;
+        root /var/www/html/web2;
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+        location / {
+
+        }
+}
+```
 
 ## ACL
 ```
@@ -50,6 +81,20 @@ server {
         location / {
                 allow 192.168.1.20;
                 deny all;
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
+```
+
+## Response Code
+```
+server {
+        listen 8091 default_server;
+        root /var/www/html/web1;
+
+        location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
                 try_files $uri $uri/ =404;

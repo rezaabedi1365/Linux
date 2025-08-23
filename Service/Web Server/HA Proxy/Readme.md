@@ -11,14 +11,15 @@ Here is a concise guide to installing and configuring HAProxy on Ubuntu Linux fo
 2. **Start HAProxy**
 
    ```bash
-   sudo systemctl start haproxy
-   ```
-
-3. **Enable HAProxy to Start at Boot**
-
-   ```bash
    sudo systemctl enable haproxy
+   sudo systemctl start haproxy
+   
    ```
+3. **Verification
+
+  ```bash
+  sudo systemctl status haproxy
+  ```
 
 ## Basic Configuration
 
@@ -62,38 +63,84 @@ backend http_back
    * server**: Replace IPs and ports with your actual backend servers.
 
 
-## Start and Enable HAProxy
+## SSL
+```
+cat yourdomain.crt yourdomain.key > /etc/ssl/certs/haproxy.pem
+chmod 600 /etc/ssl/certs/haproxy.pem
+```
+```
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    daemon
+    maxconn 2000
 
-1. **Start HAProxy**
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5000ms
+    timeout client  50000ms
+    timeout server  50000ms
 
-   ```bash
-   sudo systemctl start haproxy
-   ```
+frontend https_front
+    bind *:443 ssl crt /etc/ssl/certs/haproxy.pem
+    mode http
+    default_backend https_back
 
-2. **Enable HAProxy to Start at Boot**
+backend https_back
+    balance roundrobin
+    mode http
+    option http-server-close
+    option forwardfor
+    server web1 192.168.1.10:443 ssl verify none
+    server web2 192.168.1.11:443 ssl verify none
 
-   ```bash
-   sudo systemctl enable haproxy
-   ```
-   This ensures HAProxy will start automatically after a reboot[6][5].
+```
 
-## Verification
+## ssl and HTTP Redirect to HTTPS
+```
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    daemon
+    maxconn 2000
 
-- **Check HAProxy Status**
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5000ms
+    timeout client  50000ms
+    timeout server  50000ms
 
-  ```bash
-  sudo systemctl status haproxy
-  ```
-- **Access Your Load Balancer**
+# --- HTTP frontend (برای ریدایرکت به HTTPS) ---
+frontend http_front
+    bind *:80
+    mode http
+    redirect scheme https code 301 if !{ ssl_fc }
 
-  Open a browser and navigate to your HAProxy server’s IP address. Requests will be distributed to your backend servers[6].
+# --- HTTPS frontend ---
+frontend https_front
+    bind *:443 ssl crt /etc/ssl/certs/haproxy.pem
+    mode http
+    default_backend https_back
 
-## Additional Options
+# --- Backend با Load Balancing ---
+backend https_back
+    balance roundrobin
+    mode http
+    option http-server-close
+    option forwardfor
+    server web1 192.168.1.10:443 ssl verify none
+    server web2 192.168.1.11:443 ssl verify none
 
-- **Authentication**: You can set up basic authentication by adding user/password directives in the configuration[7].
-- **SSL/TLS**: For HTTPS, add `bind *:443` and SSL certificate configuration in the frontend section.
+```
 
----
 
-HAProxy is a powerful and flexible open-source solution for load balancing and proxying HTTP, TCP, and other protocols on Ubuntu Linux[6][5][8].
+
+
+
 

@@ -20,7 +20,7 @@ recomende:
 
 
 ---------------------------------------------------------------------------------------------
-### Nginx Directive
+# Nginx Directive
 - Main / Global
 - HTTP Block Directives
 - Server Block Directives

@@ -1,4 +1,4 @@
-## Heals check
+## Health check
 - Active health checks – which are exclusive to NGINX Plus 
 - Passive health checks – available in both NGINX Open Source and NGINX Plus 
 

@@ -1,4 +1,7 @@
 ## Health check
+در Load Balancer → Health Check قلب ماجراست.
+
+در Reverse Proxy → Health Check بیشتر برای پشتیبان‌گیری و Failover کاربرد داره.
 - Active health checks – which are exclusive to NGINX Plus 
 - Passive health checks – available in both NGINX Open Source and NGINX Plus 
 

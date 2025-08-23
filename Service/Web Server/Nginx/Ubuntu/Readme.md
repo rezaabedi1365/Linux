@@ -151,6 +151,23 @@ server {
         }
 }
 ```
+- Maintenance / Failover
+```
+upstream backend_pool {
+    server backend1.example.com;
+    server backend2.example.com backup;
+}
+
+server {
+    listen 80;
+    location / {
+        proxy_pass http://backend_pool;
+    }
+}
+```
+
+# Nginx Direction
+
 
 ## location Block Directive
 ```
@@ -242,7 +259,38 @@ server {
 }
 
 ```
-## 
+## location Block Directive (Compression)
+```
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://backend_server;
+        gzip on;
+        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+    }
+}
+
+```
+## location Block Directive (Rate Limiting / Throttling)
+```
+http {
+    limit_req_zone $binary_remote_addr zone=one:10m rate=10r/s;
+
+    server {
+        listen 80;
+
+        location / {
+            limit_req zone=one burst=5 nodelay;
+            proxy_pass http://backend_server;
+        }
+    }
+}
+```
+
+## location Block Directive (Header / Request Manipulation)
+
+
 ## example :
 - /etc/nginx/sites-available/Your_SiteName
 - // ln -s /etc/nginx/sites-available/Your_SiteName /etc/nginx/sites-enabled/

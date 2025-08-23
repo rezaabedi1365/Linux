@@ -38,13 +38,42 @@ http {
 - /var/www/html/
     * index.nginx-debian.html
     * Yoursite\index.html
-   
 
-## Virtual Host
+------------------------------------------------------
+/etc/nginx/sites-available/your_domain
+- // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+## Alternative Port
+```
+server {
+        listen 8091 default_server;
+        root /var/www/html/web1;
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+        server_name web1.faradis.net;
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
+
+server {
+        listen 8092 ;
+        server_name web2.faradis.net;
+        root /var/www/html/web2;
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+        location / {
+
+        }
+}
+
 ```
 
-
-
+## Virtual Host (same port)
+/etc/nginx/sites-available/your_domain
+- // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+```
 server {
         # Default server configuration        **********open web both ip and name 
         listen 8090 default_server;    
@@ -72,7 +101,28 @@ server {
 }
 ```
 
-## ACL
+## location Directive
+```
+server {
+        listen 8091 default_server;
+        root /var/www/html/web1;
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+        server_name web1.faradis.net;
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+        location /image {
+                root /var/www/html/web1/image/;
+                index index.html index.htm index.nginx-debian.html;
+                
+}
+
+```
+
+## location Directive (ACL)
 ```
 server {
         listen 8091 default_server;
@@ -88,12 +138,37 @@ server {
 }
 ```
 
-## Response Code
+## location Directive (Response Code)
 ```
 server {
         listen 8091 default_server;
         root /var/www/html/web1;
 
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
+```
+
+## SSL Directive
+```
+
+
+server {
+        listen 443 default_server;
+        server_name web1.faradis.net;
+        ssl on;
+        ssl_certificate /tmp/faradis.net/cert.pem;
+        ssl_certificate_key     /tmp/faradis.net/server.key;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+        ssl_prefer_server_ciphers on;
+
+        root /var/www/html/web1;
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+        server_name web1.faradis.net;
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.

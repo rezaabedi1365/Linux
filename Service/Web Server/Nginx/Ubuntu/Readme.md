@@ -55,9 +55,9 @@ http {
         include /etc/nginx/sites-enabled/*;
 }
 ```
-- example :
+example :
 - /etc/nginx/sites-available/your_domain
-        *  // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+- // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
 ```
 # فایل اصلی: /etc/nginx/nginx.conf

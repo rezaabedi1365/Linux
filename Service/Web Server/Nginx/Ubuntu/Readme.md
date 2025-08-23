@@ -46,12 +46,14 @@ recomende:
    * SSL in location
    * autoindex on;
    * try_files $uri $uri/ =404; 
-- Security Directives
-   * allow 192.168.1.0/24;   # فقط شبکه داخلی دسترسی دارد
-   * deny all;               #
-- proxy and fastg Directive for applications
-   * include snippets/fastcgi-php.conf;
-   * fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+   * Security Directives
+      + allow 192.168.1.0/24;   # فقط شبکه داخلی دسترسی دارد
+      + deny all;               #
+   * proxy and fastg Directive for applications
+      + include snippets/fastcgi-php.conf;
+      + fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+    
+:x: log and ssl directive impliment in ServerBlock and httpBlock
 
 Default :
 /etc/nginx/nginx.conf
@@ -198,10 +200,8 @@ server {
 }
 ```
 
-## SSL Directive
+## location Block Directive (SSL)
 ```
-
-
 server {
         listen 443 default_server;
         server_name web1.faradis.net;
@@ -223,7 +223,7 @@ server {
 }
 ```
 
-## log Directive
+## location Block Directive (log)
 ```
 server {
     listen 80;

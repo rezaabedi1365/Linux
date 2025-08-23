@@ -33,7 +33,7 @@ http {
 ```
 
 
-## Nginx Default Suite
+## Nginx Default Site
 - /var/www/html/
     * index.nginx-debian.html
     * Yoursite\index.html

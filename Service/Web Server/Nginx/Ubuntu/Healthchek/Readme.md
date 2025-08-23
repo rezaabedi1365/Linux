@@ -32,11 +32,32 @@
    * gRPC Servers that do not accept health checking protocol
 
 ------------------------------------------------------------------------------------------------------------------
-## HTTP Health check
+## HTTP Passive Health check
+- Passive Health Check (HTTP Load Balancing)
+```
+http {
+    upstream backend {
+        least_conn;   # الگوریتم کمترین اتصال
+
+        server 192.168.1.10 max_fails=3 fail_timeout=30s;
+        server 192.168.1.11 max_fails=3 fail_timeout=30s;
+        server 192.168.1.12 backup;
+    }
+
+    server {
+        listen 80;
+        server_name myapp.local;
+
+        location / {
+            proxy_pass http://backend;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
+}
 ```
 
-```
-## TCP Health chek
+## TCP Passive Health chek
 ```
 stream {
     upstream mysql_backend {
@@ -97,7 +118,10 @@ stream {
 
 ```
 
-## UDP Health Checks
+## UDP Passive Health Checks
+```
+```
 
-
-## gRPC Health Checks
+## gRPC Passive Health Checks
+```
+```

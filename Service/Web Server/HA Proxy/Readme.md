@@ -2,53 +2,65 @@ Here is a concise guide to installing and configuring HAProxy on Ubuntu Linux fo
 
 ## Installation
 
-1. **Update Your System**
-
-   ```bash
-   sudo apt update
-   sudo apt upgrade -y
-   ```
-   This ensures your system is up to date[6].
-
-2. **Install HAProxy**
+1. **Install HAProxy**
 
    ```bash
    sudo apt install haproxy
    ```
    This installs the latest stable version from the Ubuntu repository[6][5].
+2. **Start HAProxy**
+
+   ```bash
+   sudo systemctl start haproxy
+   ```
+
+3. **Enable HAProxy to Start at Boot**
+
+   ```bash
+   sudo systemctl enable haproxy
+   ```
 
 ## Basic Configuration
 
-1. **Edit the HAProxy Configuration File**
+- Edit the HAProxy Configuration File**
 
    ```bash
    sudo nano /etc/haproxy/haproxy.cfg
    ```
-   This is the main configuration file for HAProxy[6][5].
 
-2. **Add or Modify Configuration for Load Balancing**
+```
+global
+    log /dev/log    local0
+    log /dev/log    local1 notice
+    daemon
+    maxconn 2000
 
-   For example, to balance HTTP traffic between two backend servers, add the following at the end of the file:
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5000ms
+    timeout client  50000ms
+    timeout server  50000ms
 
-   ```conf
-   frontend myapp
-     bind *:80
-     mode http
-     default_backend backend_servers
+frontend http_front
+    bind *:80
+    default_backend http_back
 
-   backend backend_servers
-     mode http
-     balance roundrobin
-     server webserver1 192.168.0.101:80 check
-     server webserver2 192.168.0.102:80 check
-   ```
-   - **frontend**: Listens on port 80 and forwards requests to the backend.
-   - **backend**: Defines the servers to balance traffic between, using the `roundrobin` algorithm[6][8].
-   - **server**: Replace IPs and ports with your actual backend servers.
+backend http_back
+    balance roundrobin
+    server web1 192.168.1.10:80 check
+    server web2 192.168.1.11:80 check
 
-3. **Save and Exit**
+```
 
-   Press `Ctrl+O` to save and `Ctrl+X` to exit.
+- This is the main configuration file for HAProxy[6][5].
+
+   * frontend**: Listens on port 80 and forwards requests to the backend.
+   * backend**: Defines the servers to balance traffic between, using the `roundrobin` algorithm[6][8].
+   * server**: Replace IPs and ports with your actual backend servers.
+
 
 ## Start and Enable HAProxy
 

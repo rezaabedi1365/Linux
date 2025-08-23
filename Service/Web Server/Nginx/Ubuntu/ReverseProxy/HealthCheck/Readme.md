@@ -1,8 +1,6 @@
-#https://coderpad.io/blog/development/how-to-configure-different-load-balancing-algorithms-on-nginx/
-#https://www.f5.com/company/blog/nginx/active-or-passive-health-checks-which-is-right-for-you
-
-*****Active health checks – which are exclusive to NGINX Plus 
-*****Passive health checks – available in both NGINX Open Source and NGINX Plus 
+## Heals check
+- Active health checks – which are exclusive to NGINX Plus 
+- Passive health checks – available in both NGINX Open Source and NGINX Plus 
 
 ----------------------------------------------------------------------------------------------------- 
 HTTP Health Checks

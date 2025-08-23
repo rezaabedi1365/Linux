@@ -15,7 +15,7 @@ Here is a concise guide to installing and configuring HAProxy on Ubuntu Linux fo
    sudo systemctl start haproxy
    
    ```
-3. **Verification
+3. **Verification**
 
   ```bash
   sudo systemctl status haproxy

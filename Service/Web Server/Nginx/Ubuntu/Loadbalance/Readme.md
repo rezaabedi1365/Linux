@@ -71,7 +71,7 @@ http {
 
 ```
 
-## loadbalance with health check
+## loadbalance with Passive health check
 ```
 http {
     upstream myapp {
@@ -82,10 +82,7 @@ http {
         server 192.168.1.10 max_fails=3 fail_timeout=30s;
         server 192.168.1.11 max_fails=3 fail_timeout=30s;
         server 192.168.1.12 backup;  # سرور بکاپ (فقط وقتی بقیه Down هستند)
-
-        # توضیحات:
-        # max_fails → چند بار خطا باعث می‌شود سرور غیر فعال شود
-        # fail_timeout → مدت زمان بلاک شدن سرور پس از خطا
+دت زمان بلاک شدن سرور پس از خطا
     }
 
     server {

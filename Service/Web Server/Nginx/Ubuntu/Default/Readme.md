@@ -1,6 +1,6 @@
 
 
-# /etc/nginx/nginx.conf
+### /etc/nginx/nginx.conf
 ```
 user www-data;
 worker_processes auto;

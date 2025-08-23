@@ -1,11 +1,28 @@
-## Nginx Loadbalace Algirithm
-- Round Robin (Default)
-- Least Connections
-- IP Hash (session persistence
-- Hash (Custom Hash)
-- Weight
-------------------------------------------------------------------------------------------
-- Least Connections
+## Nginx Opensource Loadbalace 
+- Algirithm
+    * Round Robin (Default)
+    * Least Connections
+    * IP Hash (session persistence)
+    * Hash (Custom Hash)
+    * Weight
+- Healch Check
+    * Passive Heals check
+## Nginx Plus Loadbalance
+🔹 امکانات پیشرفته در Nginx Plus (نسخه تجاری)
+
+Active Health Checks → درخواست‌های دوره‌ای به سرور (مثلاً /health) برای تست سالم بودن.
+
+Dynamic Reconfiguration → اضافه یا حذف سرورها بدون ری‌استارت.
+
+Session Persistence پیشرفته → بر اساس Cookie یا Header.
+
+API و داشبورد مانیتورینگ → مشاهده لحظه‌ای وضعیت لود بالانس.
+
+Dynamic Weight → تغییر خودکار وزن سرورها بر اساس لود.
+
+
+-------------------------------------------------------------------------
+- Least Connections loadbalance Algorithm
 ```
 upstream backend {
     least_conn;
@@ -14,6 +31,7 @@ upstream backend {
 }
 
 ```
+- IP Hash (session persistence) loadbalance Algorithm
 
 ```
 upstream backend {
@@ -23,6 +41,7 @@ upstream backend {
 }
 
 ```
+- Hash (Custom Hash) loadbalance Algorithm
 
 ```
 upstream backend {
@@ -32,6 +51,7 @@ upstream backend {
 }
 
 ```
+- Weight loadbalance Algorithm
 
 ```
 upstream backend {

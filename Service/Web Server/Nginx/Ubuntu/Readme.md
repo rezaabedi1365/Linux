@@ -7,7 +7,7 @@
 - nginx.conf  :  (Default setting and include site available and site enable) no change
 
 recomende:
-- :x: (Default setting and include site available and site enable) no change
+- :x: /etc/nginx/nginx.conf (Default setting and include site available and site enable) no change
 - mehod 1: create for each site one config file in sites-available and create link to site-enable
 - nethod 2: create one config file for all site in site-availabel and create link to site-enable (Recomend)
 

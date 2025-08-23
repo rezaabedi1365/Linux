@@ -32,8 +32,8 @@
    * gRPC Servers that do not accept health checking protocol
 
 ------------------------------------------------------------------------------------------------------------------
-## HTTP Passive Health check
-- Passive Health Check (HTTP Load Balancing)
+## HTTP Passive Health check (HTTP Load Balancing)
+- 
 ```
 http {
     upstream backend {
@@ -57,7 +57,7 @@ http {
 }
 ```
 
-## TCP Passive Health chek
+## TCP Passive Health chek (TCP Load Balancing)
 ```
 stream {
     upstream mysql_backend {
@@ -118,10 +118,10 @@ stream {
 
 ```
 
-## UDP Passive Health Checks
+## UDP Passive Health Checks (UDP Load Balancing)
 ```
 ```
 
-## gRPC Passive Health Checks
+## gRPC Passive Health Checks (gPRC Load Balancing)
 ```
 ```

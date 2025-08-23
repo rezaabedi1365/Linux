@@ -43,6 +43,9 @@ recomende:
 - Location Block Directives
    * ACL
    * Response Code
+   * Compression
+   * Rate Limiting / Throttling
+   * Header / Request Manipulation
    * SSL in location
    * autoindex on;
    * try_files $uri $uri/ =404; 
@@ -239,7 +242,7 @@ server {
 }
 
 ```
-
+## 
 ## example :
 - /etc/nginx/sites-available/Your_SiteName
 - // ln -s /etc/nginx/sites-available/Your_SiteName /etc/nginx/sites-enabled/

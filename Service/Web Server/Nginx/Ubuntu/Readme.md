@@ -56,7 +56,7 @@ http {
 }
 ```
 - example :
-/etc/nginx/sites-available/your_domain
+- /etc/nginx/sites-available/your_domain
         *  // ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
 ```

@@ -1,10 +1,10 @@
 # Zimbra Roles
-## Core Roles:
+### Core Roles:
   * LDAP
   * MTA
   * Mailbox
   * Proxy
-## Supporting Roles:
+### Supporting Roles:
   * Logger
   * SNMP
   * Archiving/Backup

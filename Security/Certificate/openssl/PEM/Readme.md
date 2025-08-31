@@ -44,22 +44,34 @@ openssl x509 -in fullchain.pem -noout -startdate
 # How to Convert pfx to pem
   - To convert a PFX file to a PEM file that contains both the certificate and private key, the following command needs to be used:
 ```
-openssl pkcs12 -in yourfile.pfx -out cert.pem -nodes
-openssl pkcs12 -legacy -in yourfile.pfx -out cert.pem -nodes
-```
-  - convert to seperate pem
-```
-# We can extract the private key form a PFX to a PEM file with this command:
-openssl pkcs12 -in yourfile.pfx -nocerts -out privatekey.pem
-openssl pkcs12 -legacy -in yourfile.pfx -nocerts -out privatekey.pem
+openssl pkcs12 -in yourfile.pfx -out fullchain.pem -nodes
 
-# Exporting the certificate only:
-openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out certificate.crt
-openssl pkcs12 -legacy -in yourfile.pfx -clcerts -nokeys -out certificate.crt
+openssl pkcs12 -in faradis_wild1404-5.pfx -nokeys -out fullchain2.pem
+openssl pkcs12 -in faradis_wild1404-5.pfx -clcerts -nokeys -out cert.pem
+```
+### convert to seperate pem
+- Export certificate
+- These certificate start with [Bag Attributes] means export from pfx
+     * fullchain
+     * only server certificate
+```
+## fullchain
+openssl pkcs12 -in yourfile.pfx -nokeys -out fullchain2.pem
+### server certificate
+openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out server.crt
+```
+
+- Export Envrypted Privatekey:
+```
+openssl pkcs12 -in yourfile.pfx -nocerts -out privateEncrypt.pem
+```
 
 ```
 Remove persharkey from key
 ```
-openssl rsa -in key.pem -out server.key 
+openssl rsa -in privateEncrypt.pem -out private.key 
 ```
+
+-------------------------------------------
+
 

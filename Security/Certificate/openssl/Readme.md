@@ -7,7 +7,6 @@
 ### 1. **PEM (Privacy-Enhanced Mail)**
 * پسوند: `.pem`, `.crt`, `.cer`, `.key`
 * متن ساده (Base64) با سرآیند/پایان:
-
   ```
   -----BEGIN CERTIFICATE-----
   MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A...

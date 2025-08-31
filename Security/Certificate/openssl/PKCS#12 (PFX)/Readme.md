@@ -8,6 +8,11 @@ cat domain.crt intermediate.crt root.crt > fullchain.pem
 cat domain.crt intermediate-cert.crt intermediate-root.crt root.crt > fullchain.pem
 ```
 - Method 1 : whth chain error in iis
+- Default cryptography algorithm :
+    * Encryption of certificates → 3DES-CBC
+    * Encryption of private keys → 3DES-CBC
+    * MAC (Message Authentication) → HMAC with SHA-1
+
 ```
 openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in domain.crt -certfile fullchain.pem
 ```
@@ -15,9 +20,12 @@ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in domain.crt
 ```
 openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -certfile intermediate.crt
 ```
-- method 3 : other protocol
+- method 3 : other protocol for legecy server
+    * -keypbe → الگوریتم رمزنگاری برای private key داخل PFX
+    * -certpbe → الگوریتم رمزنگاری برای certificateها
+    * -macalg → الگوریتم MAC (بهتره SHA256 باشه به جای SHA1)
 ```
-openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -certfile intermediate.crt -certpbe AES-256-CBC -keypbe AES-256-CBC
+openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -certfile intermediate.crt -certpbe AES-256-CBC -keypbe AES-256-CBC  -macalg SHA256
 ```
 ------------------------------------------------------------------------------------------------------------------------------
 # How to Convert pfx to pem

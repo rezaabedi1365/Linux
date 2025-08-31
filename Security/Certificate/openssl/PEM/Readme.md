@@ -36,4 +36,8 @@ openssl genrsa -aes256 -passout pass:MYPASSWORD -out private.key 2048
 ```
 openssl x509 -in fullchain.pem -noout -text
 ```
+```
+openssl x509 -in fullchain.pem -noout -enddate
+openssl x509 -in fullchain.pem -noout -startdate
+```
 

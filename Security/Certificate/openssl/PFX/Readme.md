@@ -1,6 +1,6 @@
 
 
-### Generate PFX file from private key and ca-bundle files
+# Generate PFX file from private key and ca-bundle files
 * Method1
   - https://serverfault.com/questions/1097033/generate-pfx-file-from-private-key-and-crt-files
   - Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a single ca-bundle file

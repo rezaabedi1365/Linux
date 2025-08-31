@@ -7,10 +7,14 @@
 cat domain.crt intermediate.crt root.crt > fullchain.pem
 cat domain.crt intermediate-cert.crt intermediate-root.crt root.crt > fullchain.pem
 ```
+- Method 1 : whth chain error in iis
 ```
 openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile fullchain.pem
 ```
-
+- Method 2 : not use fullchain
+```
+openssl pkcs12 -export -out faradis3.pfx -inkey private.key -in Star_faradis.net.crt -certfile intermediate.crt
+```
 ------------------------------------------------------------------------------------------------------------------------------
 # How to Convert pfx to pem
   - To convert a PFX file to a PEM file that contains both the certificate and private key, the following command needs to be used:

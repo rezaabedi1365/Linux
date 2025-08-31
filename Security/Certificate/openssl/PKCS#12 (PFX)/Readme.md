@@ -9,11 +9,15 @@ cat domain.crt intermediate-cert.crt intermediate-root.crt root.crt > fullchain.
 ```
 - Method 1 : whth chain error in iis
 ```
-openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile fullchain.pem
+openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in domain.crt -certfile fullchain.pem
 ```
 - Method 2 : not use fullchain
 ```
-openssl pkcs12 -export -out faradis3.pfx -inkey private.key -in Star_faradis.net.crt -certfile intermediate.crt
+openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -certfile intermediate.crt
+```
+- method 3 : other protocol
+```
+openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -certfile intermediate.crt -certpbe AES-256-CBC -keypbe AES-256-CBC
 ```
 ------------------------------------------------------------------------------------------------------------------------------
 # How to Convert pfx to pem

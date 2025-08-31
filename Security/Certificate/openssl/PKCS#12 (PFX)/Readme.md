@@ -8,7 +8,7 @@ cat domain.crt intermediate.crt root.crt > fullchain.pem
 cat domain.crt intermediate-cert.crt intermediate-root.crt root.crt > fullchain.pem
 ```
 ```
-openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile bundl.pem
+openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile fullchain.pem
 ```
 
 ------------------------------------------------------------------------------------------------------------------------------

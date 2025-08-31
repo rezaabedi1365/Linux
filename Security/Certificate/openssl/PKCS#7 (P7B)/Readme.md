@@ -9,9 +9,9 @@
 * بر اساس فرمت **ASN.1 / DER** یا **Base64 (PEM)** ذخیره میشه.
 * حاوی:
 
-  * گواهی (certificate)
-  * گواهی‌های intermediate
-  * گاهی root CA
+* گواهی (certificate)
+* گواهی‌های intermediate
+* گاهی root CA
 * ❌ پرایوت‌کی رو شامل نمی‌شه.
 
 ---

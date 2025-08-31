@@ -8,16 +8,16 @@ for f in domain.crt intermediate.crt root.crt; do sed -e '$a\' "$f"; done > full
 ```
 ```
 -----BEGIN CERTIFICATE-----
-(domain certificate)
+    domain certificate
 -----END CERTIFICATE-----
 -----BEGIN CERTIFICATE-----
-(intermediate certificate 1)
+intermediate certificate 1
 -----END CERTIFICATE-----
 -----BEGIN CERTIFICATE-----
-(intermediate certificate 2)   
+intermediate certificate 2 
 -----END CERTIFICATE-----
 -----BEGIN CERTIFICATE-----
-(root certificate)
+    root certificate
 -----END CERTIFICATE-----
 ```
 

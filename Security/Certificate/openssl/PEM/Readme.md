@@ -40,4 +40,26 @@ openssl x509 -in fullchain.pem -noout -text
 openssl x509 -in fullchain.pem -noout -enddate
 openssl x509 -in fullchain.pem -noout -startdate
 ```
+----------------------------------------------------------------------------------------
+# How to Convert pfx to pem
+  - To convert a PFX file to a PEM file that contains both the certificate and private key, the following command needs to be used:
+```
+openssl pkcs12 -in yourfile.pfx -out cert.pem -nodes
+openssl pkcs12 -legacy -in yourfile.pfx -out cert.pem -nodes
+```
+  - convert to seperate pem
+```
+# We can extract the private key form a PFX to a PEM file with this command:
+openssl pkcs12 -in yourfile.pfx -nocerts -out privatekey.pem
+openssl pkcs12 -legacy -in yourfile.pfx -nocerts -out privatekey.pem
+
+# Exporting the certificate only:
+openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out certificate.crt
+openssl pkcs12 -legacy -in yourfile.pfx -clcerts -nokeys -out certificate.crt
+
+```
+Remove persharkey from key
+```
+openssl rsa -in key.pem -out server.key 
+```
 

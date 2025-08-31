@@ -50,4 +50,3 @@ openssl pkcs7 -print_certs -in cert.p7b -out certs.pem
 
 ---
 
-می‌خوای یه نمودار ساده برات بکشم که فرق **PFX (PKCS#12)**، **P7B (PKCS#7)** و **PEM/CRT** رو کنار هم نشون بده تا راحت‌تر توی ذهن بمونه؟

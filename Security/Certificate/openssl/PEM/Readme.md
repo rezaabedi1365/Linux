@@ -2,18 +2,21 @@
 - split PEM files
     * root.crt + intermeditae.crt + Domain.crt
       
-- Fullchain
+- Fullchain or PEM Bundle
 ```
-cat domain.crt intermediate.crt root.crt > fullchain.pem
-```
-- PEM Bundle
-```
-cat private.key domain.crt intermediate.crt root.crt > server.pem
+for f in domain.crt intermediate.crt root.crt; do sed -e '$a\' "$f"; done > fullchain.pem
 ```
 
-- nginx use fullchain and privatekey
+- nginx 
 ```
 ssl_certificate     /path/to/nginx_ssl/fullchain.pem;
 ssl_certificate_key /path/to/nginx_ssl/private.key;
 ```
+# Encrypted Privatekey with presharekey
+- not use in nginx and apache
+```
+openssl genrsa -aes256 -passout pass:MYPASSWORD -out private.key 2048
+```
+
+
 

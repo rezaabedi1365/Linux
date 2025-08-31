@@ -1,4 +1,7 @@
 # Generate PEM
+- split PEM files
+    * root.crt + intermeditae.crt + Domain.crt
+      
 - Fullchain
 ```
 cat domain.crt intermediate.crt root.crt > fullchain.pem

@@ -1,5 +1,25 @@
+# Verify Certificate
+- match cert and private key
+- Both commands should output the same value. If they don't, you'll need to ensure you're using the correct private key for this certificate.
+```
+openssl rsa -noout -modulus -in private.key | openssl md5
+openssl x509 -noout -modulus -in Star_faradis.net.crt | openssl md5
+```
 
-### convert DER to PEM
+- Check pfx chain
+```
+openssl pkcs12 -in YourDomain.pfx -nodes -info
+```
+
+- Check Csr
+```
+openssl req -text -in [file_name].csr -noout -verify
+```
+
+
+-------------------------------------------------------------------------------------------------------------------
+# Convert Other Format
+### Convert DER to PEM
 - https://tiloid.com/p/creating-a-pfx-file-from-certificate-and-private-key
 ```
 openssl x509 -inform der -in certificate.der -out certificate.pem

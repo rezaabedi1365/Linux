@@ -41,7 +41,7 @@ openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out server.crt
 openssl pkcs12 -in yourfile.pfx -nocerts -out privateEncrypt.pem
 ```
 
-```
+
 Remove persharkey from key
 ```
 openssl rsa -in privateEncrypt.pem -out private.key 

@@ -32,5 +32,8 @@ ssl_certificate_key /path/to/nginx_ssl/private.key;
 openssl genrsa -aes256 -passout pass:MYPASSWORD -out private.key 2048
 ```
 
-
+# verify
+```
+openssl x509 -in fullchain.pem -noout -text
+```
 

@@ -59,3 +59,7 @@ Remove persharkey from key
 openssl rsa -in privateEncrypt.pem -out private.key 
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------
+# verify:
+```
+ openssl pkcs12 -in certificate.pfx -info
+```

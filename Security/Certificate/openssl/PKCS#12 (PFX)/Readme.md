@@ -21,7 +21,7 @@ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in domain.crt
 openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -certfile intermediate.crt
 ```
 - method 3 : other protocol for legecy server(server2016)
-:x: in windownserver 2016 password error - import cert in window 10 and export it and create certificate again
+- :x: in windownserver 2016 password error - import cert in window 10 and export it and create certificate again
     * -keypbe → الگوریتم رمزنگاری برای private key داخل PFX
     * -certpbe → الگوریتم رمزنگاری برای certificateها
     * -macalg → الگوریتم MAC (بهتره SHA256 باشه به جای SHA1)

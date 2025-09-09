@@ -8,7 +8,7 @@
     domain certificate
 -----END CERTIFICATE-----
 ```
-- intermeditae.crt
+- intermediate.crt
 ```
 -----BEGIN CERTIFICATE-----
 intermediate certificate 1
@@ -25,7 +25,7 @@ intermediate certificate 2
 ```
 
 
-### Fullchain 
+### Fullchain clear
 ```
 for f in domain.crt intermediate.crt root.crt; do sed -e '$a\' "$f"; done > fullchain.pem
 ```

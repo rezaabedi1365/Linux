@@ -1,4 +1,13 @@
-https://medium.com/@leanfolks/harnessing-the-power-of-lets-encrypt-a-step-by-step-guide-to-ssl-certificate-generation-with-9aa833b8b642
+
+# Let's Encrypt
+- ACME Protocol
+    * HTTP-01 Challenge
+        + automate with python3-certbot-nginx or python3-certbot-apache
+        + http://yourdomain.com/.well-known/acme-challenge/...
+    * DNS-01 Challenge
+        * automat with API DNS
+        + TXT Record _acme-challenge.yourdomain.com in DNS 
+    * TLS-ALPN-01 Challenge
 
 Prerequisites
 Add A record to Public DNS

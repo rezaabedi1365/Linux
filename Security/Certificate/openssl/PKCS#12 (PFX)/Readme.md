@@ -66,9 +66,13 @@ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in domain.crt
 ```
 openssl pkcs12 -in yourfile.pfx -nokeys -out fullchain.pem
 ```
-- verify
+- verify for nginx
 ```
 openssl s_client -connect yourdomain.com:443 -servername yourdomain.com
+```
+- verify with cert store
+```
+openssl s_client -connect nexus.faradis.net:443 -CAfile ~/.local/share/docker/certs.d/nexus.faradis.net/ca.crt
 ```
 ### PEM with Cleartext key
 ```

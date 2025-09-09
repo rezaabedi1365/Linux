@@ -66,6 +66,10 @@ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in domain.crt
 ```
 openssl pkcs12 -in yourfile.pfx -nokeys -out fullchain.pem
 ```
+- verify
+```
+openssl s_client -connect yourdomain.com:443 -servername yourdomain.com
+```
 ### PEM with Cleartext key
 ```
 openssl pkcs12 -in yourfile.pfx -out fullchain_with_key.pem -nodes

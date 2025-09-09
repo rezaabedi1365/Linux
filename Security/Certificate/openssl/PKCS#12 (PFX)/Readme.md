@@ -18,6 +18,7 @@ openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -c
 ```
 
 ### method 2 : other protocol for legecy server(server2016)
+- Customize cryptography algorithm
     * Encryption of certificates → -certpbe AES-256-CBC
     * Encryption of private keys → -keypbe  AES-256-CBC
     * MAC (Message Authentication) → HMAC with SHA256

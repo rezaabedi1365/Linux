@@ -1,13 +1,32 @@
 
-# Generate PFX 
-  - Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a fullchain file
-  - you may have more than one Intermediate
+# PFX 
+  - Combine the CRT files (ServerCertificate.crt then Intermediate.crt then root.crt) into a fullchain.ca-bundle file
+
+
+    
+# Create .ca-bundle
   - CA-bundles usually have extensions .pem, .cert , .crt , .ca-bundle file
+  - you may have more than one Intermediate
 ```
-cat domain.crt intermediate.crt root.crt > fullchain.pem
-cat domain.crt intermediate-cert.crt intermediate-root.crt root.crt > fullchain.pem
+-----BEGIN CERTIFICATE-----
+    domain certificate
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+intermediate certificate 1
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+intermediate certificate 2 
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+    root certificate
+-----END CERTIFICATE-----
+````
 ```
-- Method 1 : whth chain error in iis
+for f in domain.crt intermediate.crt root.crt; do sed -e '$a\' "$f"; done > fullchain.ca-bundle
+```
+
+# Create PFX
+### Method 1 : with chain error in iis
 - Default cryptography algorithm :
     * Encryption of certificates → 3DES-CBC
     * Encryption of private keys → 3DES-CBC
@@ -16,11 +35,13 @@ cat domain.crt intermediate-cert.crt intermediate-root.crt root.crt > fullchain.
 ```
 openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in domain.crt -certfile fullchain.pem
 ```
-- Method 2 : not use fullchain
+
+### Method 2 : not use fullchain
 ```
 openssl pkcs12 -export -out certificate.pfx -inkey private.key -in domain.crt -certfile intermediate.crt
 ```
-- method 3 : other protocol for legecy server(server2016)
+
+### method 3 : other protocol for legecy server(server2016)
 - :x: in windownserver 2016 password error - import cert in window 10 and export it and create certificate again
     * -keypbe → الگوریتم رمزنگاری برای private key داخل PFX
     * -certpbe → الگوریتم رمزنگاری برای certificateها
@@ -34,32 +55,26 @@ certutil -dump C:\certificate.pfx
 ```
 ------------------------------------------------------------------------------------------------------------------------------
 # How to Convert pfx to pem
-  - To convert a PFX file to a PEM file that contains both the certificate and private key, the following command needs to be used:
-```
-openssl pkcs12 -in yourfile.pfx -out fullchain.pem -nodes
+:x: These certificate start with [Bag Attributes] means export from pfx
 
-openssl pkcs12 -in faradis_wild1404-5.pfx -nokeys -out fullchain2.pem
-openssl pkcs12 -in faradis_wild1404-5.pfx -clcerts -nokeys -out cert.pem
+### PEM with Cleartext key
 ```
-### convert to seperate pem
-- Export certificate
-- These certificate start with [Bag Attributes] means export from pfx
-     * fullchain
-     * only server certificate
+openssl pkcs12 -in yourfile.pfx -out fullchain_with_key.pem -nodes
 ```
-## fullchain
-openssl pkcs12 -in yourfile.pfx -nokeys -out fullchain2.pem
-### server certificate
-openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out server.crt
+### PEM without key
+```
+openssl pkcs12 -in yourfile.pfx -nokeys -out fullchain.pem
+```
+### leaf certificate 
+```
+openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out cert.pem
 ```
 
-- Export Envrypted Privatekey:
+### PEM With Encrypted Privatekey:
 ```
 openssl pkcs12 -in yourfile.pfx -nocerts -out privateEncrypt.pem
 ```
-
-
-Remove persharkey from key
+- Remove persharkey from key
 ```
 openssl rsa -in privateEncrypt.pem -out private.key 
 ```

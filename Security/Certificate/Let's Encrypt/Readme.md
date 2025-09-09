@@ -18,7 +18,7 @@ apt-get install python-certbot-nginx
 ```
 
 Step2) Setting Up Nginx
-:x: your server with port 80 published and accessible in internet
+- :x: your server with port 80 published and accessible in internet
 ```
 server {
     listen 80 default_server;

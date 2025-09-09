@@ -28,6 +28,7 @@ certutil -dump C:\certificate.pfx
 ```
 
 ### Method 3 :
+- suitable for convert to fullchain.pem for nginx
 :x: with chain error in iis
 
 - Create .ca-bundle

@@ -1,6 +1,6 @@
 # PEM
 
-### split PEM files
+### Split PEM files
  
 - Domain.crt
 ```

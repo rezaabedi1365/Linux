@@ -5,7 +5,7 @@ Create RSA Private Key and CSR
 ```
 openssl req -new -newkey rsa:2048 -nodes -keyout [your_domain].key -out your_domain.csr
 ```
-verify
+CSR verify
 ```
 openssl req -text -in [file_name].csr -noout -verify
 ```

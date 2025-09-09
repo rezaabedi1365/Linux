@@ -24,6 +24,14 @@ intermediate certificate 2
 -----END CERTIFICATE-----
 ```
 
+###### verify cert and private key
+- two bellow command must be have same result
+```
+openssl rsa -noout -modulus -in private.key | openssl md5
+```
+```
+openssl x509 -noout -modulus -in cert.crt | openssl md5
+```
 
 ### Fullchain clear
 ```

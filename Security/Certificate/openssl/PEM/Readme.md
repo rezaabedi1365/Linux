@@ -1,7 +1,7 @@
 # PEM
 
 ### split PEM files
-:heavy_check_mark:  
+ 
 - Domain.crt
 ```
 -----BEGIN CERTIFICATE-----

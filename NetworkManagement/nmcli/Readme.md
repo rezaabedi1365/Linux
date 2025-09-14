@@ -1,3 +1,4 @@
+### Oracle Linux
 To disable DHCP for IPv4 on Oracle Linux (including version 9.5), you typically configure your network interface to use a static IP instead of DHCP. Since Oracle Linux 9 uses NetworkManager by default, the best way is to modify the connection profile with `nmcli` to set IPv4 method to manual (static) rather than auto (DHCP).
 
 ## How to disable DHCP and set static IP using `nmcli`

@@ -102,6 +102,10 @@ sudo lvextend -l +100%FREE /dev/<vg_name>/<lv_name>
 ![image](https://github.com/user-attachments/assets/2c93ebd5-b194-4e24-a505-9c0a8f4b58c6)
 
 ### Step5) Resize the filesystem
+show file system
+```
+lsblk -f
+```
 for ext/2/3/4
 ```
 resize2fs -p /dev/ubuntu-vg/unbuntu-lv

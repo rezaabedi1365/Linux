@@ -9,12 +9,12 @@ To disable DHCP for IPv4 on Oracle Linux (including version 9.5), you typically 
    Identify the connection name you want to configure (e.g., `ens33`).
 
 2. **Disable DHCP and set static IP:**
-   Replace ``, `/`, ``, and `` with your values:
-   ```bash
-   nmcli connection modify  ipv4.method manual
-   nmcli connection modify  ipv4.addresses /
-   nmcli connection modify  ipv4.gateway 
-   nmcli connection modify  ipv4.dns " "
+  ```bash
+nmcli connection modify ens33 ipv4.addresses 192.168.1.100/24
+nmcli connection modify ens33 ipv4.gateway 192.168.1.1
+nmcli connection modify ens33 ipv4.dns "8.8.8.8 4.2.2.4"
+nmcli connection modify ens33 ipv4.method manual
+
    ```
 
 3. **Bring the connection down and up to apply changes:**
